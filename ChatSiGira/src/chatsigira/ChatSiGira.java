@@ -16,7 +16,11 @@ public class ChatSiGira {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        new ViewChat().GUI();
+        
+        ViewChat v = new ViewChat();
+        v.GUI();
+        
+        
     }
     
 }

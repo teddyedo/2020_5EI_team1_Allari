@@ -7,12 +7,15 @@ package chatsigira;
 
 /**
  *
- * @author Bologna Abreham
+ * @author Bologna Abreham - Allari Edoardo
  */
 public class ViewChat {
     
     public void GUI(){
         
+        MainInterface mainInterface = new MainInterface();
+        
+        mainInterface.setVisible(true);
     }
     
 }
