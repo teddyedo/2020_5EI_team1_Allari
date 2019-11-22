@@ -73,4 +73,5 @@ public class ChangeOfAliasPacket {
     public void setNewAlias(String NewAlias) {
         this.NewAlias = NewAlias;
     }
+    
 }
