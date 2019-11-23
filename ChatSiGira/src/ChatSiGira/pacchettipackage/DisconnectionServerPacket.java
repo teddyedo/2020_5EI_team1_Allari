@@ -7,18 +7,30 @@ package ChatSiGira.pacchettipackage;
 
 /**
  *
- * @author 17959
+ * @author Allari Edoardo
+ * 
  */
-public class DisconnectionServerPacket {
-    private byte[] reason;
 
+public class DisconnectionServerPacket {
+    
+    private byte[] reason;
+    private final int OpCode = 11; 
+    
+    /**
+     * Constructor 
+     * @param reason 
+     */
+    
     public DisconnectionServerPacket(byte[] reason) {
         this.reason = reason;
     }
     
+    
+    //<editor-fold defaultstate="collapsed" desc="getters and setters">
+
     /**
-     *
-     * @return reason
+     * getter Reason
+     * @return byte[] --> reason
      */
 
     public byte[] getReason() {
@@ -26,11 +38,22 @@ public class DisconnectionServerPacket {
     }
     
     /**
-     * 
+     * setter reason
      * @param reason 
      */
 
     public void setReason(byte[] reason) {
         this.reason = reason;
     }
+
+    /**
+     * getter OpCode
+     * @return int --> Opcode
+     */
+    public int getOpCode() {
+        return OpCode;
+    }
+    
+    //</editor-fold>
+    
 }

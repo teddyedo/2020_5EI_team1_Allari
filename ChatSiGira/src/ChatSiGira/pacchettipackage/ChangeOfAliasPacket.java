@@ -8,21 +8,35 @@ package ChatSiGira.pacchettipackage;
 /**
  *
  * @author Zerbato,Nicolis
+ * @author Allari Edoardo
+ * 
  */
+
 public class ChangeOfAliasPacket {
+    
     private byte[] privateId;
     private String oldAlias;
     private String NewAlias;
-
+    private final int OpCode = 18;
+    
+    /**
+     * Constructor
+     * @param privateId
+     * @param oldAlias
+     * @param NewAlias 
+     */
+    
     public ChangeOfAliasPacket(byte[] privateId, String oldAlias, String NewAlias) {
         this.privateId = privateId;
         this.oldAlias = oldAlias;
         this.NewAlias = NewAlias;
     }
     
+    //<editor-fold defaultstate="collapsed" desc="getters and setters">
+
     /**
-     * 
-     * @return privateId
+     * getter privateId
+     * @return byte[] --> privateId
      */
 
     public byte[] getPrivateId() {
@@ -30,7 +44,7 @@ public class ChangeOfAliasPacket {
     }
     
     /**
-     * 
+     * setter privateId
      * @param privateId 
      */
 
@@ -39,8 +53,8 @@ public class ChangeOfAliasPacket {
     }
     
     /**
-     * 
-     * @return oldAlias
+     * getter oldAlias
+     * @return String --> oldAlias
      */
 
     public String getOldAlias() {
@@ -48,7 +62,7 @@ public class ChangeOfAliasPacket {
     }
     
     /**
-     * 
+     * setter oldAlias
      * @param oldAlias 
      */
 
@@ -57,8 +71,8 @@ public class ChangeOfAliasPacket {
     }
     
     /**
-     * 
-     * @return NewAlias
+     * getter newAlias
+     * @return String --> NewAlias
      */
 
     public String getNewAlias() {
@@ -66,11 +80,91 @@ public class ChangeOfAliasPacket {
     }
     
     /**
-     * 
+     * setter NewAlias
      * @param NewAlias 
      */
 
     public void setNewAlias(String NewAlias) {
         this.NewAlias = NewAlias;
     }
+
+    /**
+     * getter OpCode
+     * @return int --> OpCode
+     */
+    public int getOpCode() {
+        return OpCode;
+    }
+    
+    //</editor-fold>
+    
+    
+    /**
+    * create the packet header
+    * @return byte[] --> header
+    */
+    
+    public byte[] header() {
+        
+       byte[] buffer = new byte[3];
+        
+       int i=0;
+       
+       buffer[i++] = (byte) this.OpCode;
+       
+       for (byte b : this.getPrivateId())
+           buffer[i++] = b;
+       
+       return buffer;
+    }   
+    
+    /**
+     * Get the size of the final packet
+     * @return int size
+     */
+    
+    public int size()
+    {
+        return 5 + this.getOldAlias().length()+ this.getNewAlias().length();
+    }
+    
+    /**
+     * convert our packet class into a byte[]
+     * @return byte [] --> complete packet
+     */
+    
+    public byte[] toBytes(){
+        
+        byte[] buffer = new byte [this.size()];
+        int i = 0;
+        
+        //Add the header part to the final packet
+        
+        for (byte b : this.header())
+            buffer[i++] = b;
+        
+        //Add the oldAlias
+        
+        for (byte b : this.getOldAlias().getBytes())
+            buffer[i++] = b;
+        
+        //Separator
+        
+        buffer[i++] = 0;
+        
+        //Add the message
+        
+        for (byte b : this.getNewAlias().getBytes())
+            buffer[i++] = b;
+        
+        //Separator
+        
+        buffer[i++] = 0;
+        
+        
+        return buffer;
+       
+    }
+    
+    
 }

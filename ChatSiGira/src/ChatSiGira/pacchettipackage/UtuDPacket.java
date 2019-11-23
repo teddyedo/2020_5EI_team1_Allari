@@ -8,18 +8,32 @@ package ChatSiGira.pacchettipackage;
 /**
  *
  * @author Zerbato,Nicolis
+ * 
  */
+
 public class UtuDPacket {
+    
     private String SourceAlias;
     private String Message;
-
+    private final int OpCode = 01;
+    
+    /**
+     * Constructor
+     * @param SourceAlias
+     * @param Message 
+     */
+    
     public UtuDPacket(String SourceAlias, String Message) {
         this.SourceAlias = SourceAlias;
         this.Message = Message;
     }
+    
+    //<editor-fold defaultstate="collapsed" desc="getters and setters">
+
+   
     /**
-     * 
-     * @return SourceAlias
+     * getter SourceAlias
+     * @return string --> SourceAlias
      */
     
     public String getSourceAlias() {
@@ -27,7 +41,7 @@ public class UtuDPacket {
     }
     
     /**
-     * 
+     * setter sourceAlias
      * @param SourceAlias 
      */
 
@@ -36,8 +50,8 @@ public class UtuDPacket {
     }
     
     /**
-     * 
-     * @return Message
+     * getter message
+     * @return String --> Message
      */
 
     public String getMessage() {
@@ -45,7 +59,7 @@ public class UtuDPacket {
     }
     
     /**
-     * 
+     * setter Message
      * @param Message 
      */
 
@@ -53,6 +67,16 @@ public class UtuDPacket {
         this.Message = Message;
     }
 
+    /**
+     * getter OpCode
+     * @return int --> OpCode
+     */
+    public int getOpCode() {
+        return OpCode;
+    }
+    
+    
+    //</editor-fold>
    
     
 }

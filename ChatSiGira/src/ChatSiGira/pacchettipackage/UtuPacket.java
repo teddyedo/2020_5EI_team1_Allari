@@ -8,37 +8,54 @@ package ChatSiGira.pacchettipackage;
 /**
  *
  * @author Zerbato,Nicolis
+ * @author Allari Edoardo
  * 
  */
+
 public class UtuPacket {
+    
     private byte[] SenderId;
     private String DestinationAlias;
     private String Message;
-    private int OpCode;
+    private final int OpCode = 01;
 
-    public UtuPacket(byte[] SenderId, String DestinationAlias, String Message, int Opcode ) {
+    /**
+     * Constructor 
+     * 
+     * @param SenderId
+     * @param DestinationAlias
+     * @param Message 
+     */
+    
+    public UtuPacket(byte[] SenderId, String DestinationAlias, String Message) {
         this.SenderId = SenderId;
         this.DestinationAlias = DestinationAlias;
         this.Message = Message;
-        this.OpCode= 01;
     }
 
+    
+    //<editor-fold defaultstate="collapsed" desc="getters and setters">
+    
     /**
-     * 
-     * @return OpCode
+     * getter opcode
+     * @return int OpCode
      */
+    
     public int getOpCode() {
         return OpCode;
     }
 
-    
+    /**
+     * getter SenderId
+     * @return byte[] SenderId
+     */
     
     public byte[] getSenderId() {
         return SenderId;
     }
 
     /**
-     * 
+     * setter senderId
      * @param SenderId 
      */
     
@@ -47,15 +64,16 @@ public class UtuPacket {
     }
     
     /**
-     * 
-     * @return DestinationAlias
+     * getter DestinationAlias
+     * @return string DestinationAlias
      */
+    
     public String getDestinationAlias() {
         return DestinationAlias;
     }
     
     /**
-     * 
+     * setter DestinationAlias
      * @param DestinationAlias 
      */
     
@@ -63,8 +81,8 @@ public class UtuPacket {
         this.DestinationAlias = DestinationAlias;
     }
     /**
-     * 
-     * @return Message
+     * getter Message
+     * @return String Message
      */
 
     public String getMessage() {
@@ -72,7 +90,7 @@ public class UtuPacket {
     }
     
     /**
-     * 
+     * setter Message
      * @param Message 
      */
 
@@ -80,9 +98,21 @@ public class UtuPacket {
         this.Message = Message;
     }
 
+    /**
+     * Compose the header of the UTUPacket
+     * @return byte [] --> header
+     */
+    
+    //</editor-fold> 
+
+    /**
+    * create the packet header
+    * @return byte[] --> header
+    */
+    
     public byte[] header() {
         
-        byte[] buffer = new byte[1];
+       byte[] buffer = new byte[1];
         
        int i=0;
        
@@ -90,26 +120,52 @@ public class UtuPacket {
        
        return buffer;
     }   
+    
+    /**
+     * Get the size of the final packet
+     * @return int size
+     */
+    
     public int size()
     {
         return 5 + this.DestinationAlias.length()+ this.Message.length();
     }
     
+    /**
+     * convert our packet class into a byte[]
+     * @return byte [] --> complete packet
+     */
+    
     public byte[] toBytes(){
         
-        byte[] buffer = new byte [this.size() ];
-        int i=0;
+        byte[] buffer = new byte [this.size()];
+        int i = 0;
+        
+        //Add the header part to the final packet
         
         for (byte b : this.header())
-            
-        buffer[i++] = b;
+            buffer[i++] = b;
+        
+        //Add the alias
         
         for (byte b : this.DestinationAlias.getBytes())
             buffer[i++]=b;
-            
+        
+        //Separator
+        
+        buffer[i++] = 0;
+        
+        //Add the message
+        
         for (byte b : this.DestinationAlias.getBytes())
             buffer[i++]=b;
         
+        //Separator
+        
+        buffer[i++] = 0;
+        
+        
+        return buffer;
        
     }
 }

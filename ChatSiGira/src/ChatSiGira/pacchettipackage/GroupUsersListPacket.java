@@ -5,24 +5,41 @@
  */
 package ChatSiGira.pacchettipackage;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Zerbato,Nicolis
+ * @author Allari Edoardo
+ * 
  */
-public class GroupUsersListPacket {
-    private byte[] type;
-    private byte[] ListLenght;
-    private String JsonContent;
 
-    public GroupUsersListPacket(byte[] type, byte[] ListLenght, String JsonContent) {
+public class GroupUsersListPacket {
+    
+    private byte[] type;
+    private byte[] ListLength;
+    private String JsonContent;
+    private ArrayList UserConnected;
+    private final int OpCode = 51;
+    
+    /**
+     * Constructor
+     * @param type
+     * @param ListLength
+     * @param JsonContent 
+     */
+    
+    public GroupUsersListPacket(byte[] type, byte[] ListLength, String JsonContent) {
         this.type = type;
-        this.ListLenght = ListLenght;
+        this.ListLength = ListLength;
         this.JsonContent = JsonContent;
     }
     
+    //<editor-fold defaultstate="collapsed" desc="getters and setters">
+    
     /**
-     * 
-     * @return type
+     * getter tpye
+     * @return byte[] --> type
      */
 
     public byte[] getType() {
@@ -30,7 +47,7 @@ public class GroupUsersListPacket {
     }
     
     /**
-     * 
+     * setter type
      * @param type 
      */
 
@@ -39,26 +56,26 @@ public class GroupUsersListPacket {
     }
     
     /**
-     * 
-     * @return ListLenght
+     * getter List
+     * @return byte[] --> ListLength
      */
 
-    public byte[] getListLenght() {
-        return ListLenght;
+    public byte[] getListLength() {
+        return ListLength;
     }
     
     /**
-     * 
-     * @param ListLenght 
+     * setter ListLength
+     * @param ListLength 
      */
 
-    public void setListLenght(byte[] ListLenght) {
-        this.ListLenght = ListLenght;
+    public void setListLength(byte[] ListLength) {
+        this.ListLength = ListLength;
     }
     
     /**
-     * 
-     * @return JsonContent
+     * getter JsonContent
+     * @return string --> JsonContent
      */
 
     public String getJsonContent() {
@@ -66,12 +83,43 @@ public class GroupUsersListPacket {
     }
     
     /**
-     * 
+     * setter JsonContent
      * @param JsonContent 
      */
 
     public void setJsonContent(String JsonContent) {
         this.JsonContent = JsonContent;
     }
+
+    /**
+     * getter OpCode
+     * @return int OpCode
+     */
+    
+    public int getOpCode() {
+        return OpCode;
+    }
+    
+    /**
+     * getter List of user connected
+     * @return ArrayList --> userConnected
+     */
+    
+    public ArrayList getUserConnected() {
+        return UserConnected;
+    }
+
+    /**
+     * setter UserConnected
+     * @param UserConnected 
+     */
+    
+    public void setUserConnected(ArrayList UserConnected) {
+        this.UserConnected = UserConnected;
+    }
+    
+    //</editor-fold>
+
+   
     
 }

@@ -8,19 +8,33 @@ package ChatSiGira.pacchettipackage;
 /**
  *
  * @author Zerbato, Nicolis
+ * @author Allari Edoardo
+ * 
  */
+
 public class RegistrationHackPacket {
+
     private byte[] AssignedId;
     private String AliasConfirmation;
-
+    private final int OpCode = 20;
+    
+    /**
+     * Constructor
+     * @param AssignedId
+     * @param AliasConfirmation 
+     */
+    
     public RegistrationHackPacket(byte[] AssignedId, String AliasConfirmation) {
         this.AssignedId = AssignedId;
         this.AliasConfirmation = AliasConfirmation;
     }
     
+    //<editor-fold defaultstate="collapsed" desc="getters and setters">
+
+    
     /**
-     * 
-     * @return AssignedId
+     * getter AssignedId
+     * @return byte[] --> AssignedId
      */
 
     public byte[] getAssignedId() {
@@ -28,7 +42,7 @@ public class RegistrationHackPacket {
     }
     
     /**
-     * 
+     * setter AssignedId
      * @param AssignedId 
      */
 
@@ -37,8 +51,8 @@ public class RegistrationHackPacket {
     }
     
     /**
-     * 
-     * @return AliasConfirmation
+     * getter Alias COnfirmation
+     * @return String --> AliasConfirmation
      */
 
     public String getAliasConfirmation() {
@@ -47,7 +61,7 @@ public class RegistrationHackPacket {
     }
     
     /**
-     * 
+     * setter AliasConfirmation
      * @param AliasConfirmation 
      */
 
@@ -55,8 +69,15 @@ public class RegistrationHackPacket {
         this.AliasConfirmation = AliasConfirmation;
     }
 
- 
- 
+    /**
+     * getter OpCode
+     * @return int --> OpCode
+     */
     
+    public int getOpCode() {
+        return OpCode;
+    }
+
     
+    //</editor-fold>
 }

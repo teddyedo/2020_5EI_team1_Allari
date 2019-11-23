@@ -8,35 +8,41 @@ package ChatSiGira.pacchettipackage;
 /**
  *
  * @author Zerbato,Nicolis
+ * @author Allari Edoardo
  */
+
 public class RegistrationPacket {
     private byte[] version0;
     private String alias;
     private String topic;
-    private int Opcode;
+    private final int Opcode = 01;
 
     /**
-     * 
-     * @param version0
+     * Constructor 
      * @param alias
      * @param topic 
+     * 
      */
-    public RegistrationPacket(byte[] version0, String alias, String topic, int Opcode) {
-        this.version0 = version0;
+    
+    public RegistrationPacket( String alias, String topic) {
+        this.version0[0] = 0;
         this.alias = alias;
         this.topic = topic;
-        this.Opcode=10;
+
+    //<editor-fold defaultstate="collapsed" desc="getters and setters">
+       
     }
     /**
-     * 
-     * @return Version0
+     * getter version=
+     * @return byte[] --> Version0
      */
 
     public byte[] getVersion0() {
         return version0;
     }
+
     /**
-     * 
+     * setter version
      * @param version0 
      */
 
@@ -45,8 +51,8 @@ public class RegistrationPacket {
     }
     
     /**
-     * 
-     * @return Alias
+     * getter Alias
+     * @return String --> Alias
      */
 
     public String getAlias() {
@@ -54,7 +60,7 @@ public class RegistrationPacket {
     }
     
     /**
-     * 
+     * setter Alias
      * @param alias 
      */
 
@@ -63,8 +69,8 @@ public class RegistrationPacket {
     }
     
     /**
-     * 
-     * @return Topic
+     * getter Topic
+     * @return String --> Topic
      */
 
     public String getTopic() {
@@ -72,7 +78,7 @@ public class RegistrationPacket {
     }
     
     /**
-     * 
+     * setter Topic
      * @param topic 
      */
 
@@ -81,25 +87,29 @@ public class RegistrationPacket {
     }
     
     /**
-     * 
-     * @return Opcode
+     * getter Opcode
+     * @return int --> Opcode
      */
 
     public int getOpcode() {
         return Opcode;
     }
     
- 
+    //</editor-fold>
     
-    //Costruzione pacchetto header 
+    
+   /**
+     * create the packet header
+     * @return byte[] --> header
+     */
     
     public byte[] header(){
         
-        byte[] buffer = new byte[2];  //Lunghezza Array=2
+        byte[] buffer = new byte[2];  //buffer length = 2
         
         int i=0;
         
-        buffer[i++] =(byte) this.Opcode ; // the integer value of the Opcode is transformed into bytes
+        buffer[i++] =(byte) this.getOpcode() ; // the integer value of the Opcode is transformed into bytes
         
         //Versione
         
@@ -108,7 +118,11 @@ public class RegistrationPacket {
         return buffer;
     
 }
-   //Packet length
+     /**
+     * return the packet size
+     * @return int --> packetSize
+     */
+    
     
     public int size()
     {
@@ -117,6 +131,11 @@ public class RegistrationPacket {
     else 
         return 4 + this.alias.length() + this.topic.length();
     }
+    
+    /**
+     * convert our packet class into a byte[]
+     * @return byte [] --> complete packet
+     */
     
     public byte[] toBytes()
     {
