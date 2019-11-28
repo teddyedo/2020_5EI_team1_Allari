@@ -7,7 +7,7 @@ package ChatSiGira.interpreter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import pacchettipackage.*;
+import ChatSiGira.pacchettipackage.*;
 import com.google.gson.*;
 import ChatSiGira.UserList;
 
@@ -137,13 +137,10 @@ public class Interpreter {
                 UserList.chatUserList.remove(userList.get(0));
         }
         
-
-        
-        
-        
-        
         return groupUsersListPacket;
     }
+    
+    
 
     private UtuDPacket utuDPacketToBytes(byte[] data){
         

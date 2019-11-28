@@ -5,7 +5,6 @@
  */
 package ChatSiGira.pacchettipackage;
 
-import java.util.ArrayList;
 
 /**
  *
@@ -17,7 +16,6 @@ import java.util.ArrayList;
 public class ErrorsPacket {
     
     private byte[] ErrorCode;
-    private ArrayList ErrorTab;
     private final int OpCode = 255;
 
     /**
@@ -25,10 +23,9 @@ public class ErrorsPacket {
      * @param ErrorCode 
      */
     
-    public ErrorsPacket(byte[] ErrorCode, ArrayList a) {
+    public ErrorsPacket(byte[] ErrorCode) {
         
         this.ErrorCode = ErrorCode;
-        this.ErrorTab = a;
     }
     
     
@@ -62,23 +59,7 @@ public class ErrorsPacket {
         return OpCode;
     }
 
-    /**
-     * getter ErrorTab
-     * @return ArrayList --> ErrorTab
-     */
-    
-    public ArrayList getErrorTab() {
-        return ErrorTab;
-    }
-
-    /**
-     * Setter ErrorTab
-     * @param ErrorTab 
-     */
-    
-    public void setErrorTab(ArrayList ErrorTab) {
-        this.ErrorTab = ErrorTab;
-    }
+  
     
     //</editor-fold>
     
