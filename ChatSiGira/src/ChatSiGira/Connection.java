@@ -10,7 +10,7 @@ import java.net.Socket;
 
 /**
  *
- * @author Allari Edoardo
+ * @author Allari Edoardo supported by Jonathan Pollinari
  * 
  * 
  */
