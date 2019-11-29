@@ -5,6 +5,9 @@
  */
 package ChatSiGira;
 
+import java.io.IOException;
+import java.net.Socket;
+
 /**
  *
  * @author Allari Edoardo
@@ -14,7 +17,9 @@ package ChatSiGira;
 
 public class Connection {
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         
+        Socket client = new Socket("127.0.0.1", 53101);
+        client.close();
     }
 }
