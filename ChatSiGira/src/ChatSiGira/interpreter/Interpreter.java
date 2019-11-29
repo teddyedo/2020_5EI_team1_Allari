@@ -21,7 +21,7 @@ import ChatSiGira.UserList;
 
 public class Interpreter {
     
-    ArrayList<Object> packetList = new ArrayList<>();
+    ArrayList<Packet> packetList = new ArrayList<>();
 
     public Object interpret(byte[] data) {
         byte opCode = data[0];
@@ -172,7 +172,7 @@ public class Interpreter {
         
         boolean added = false;
         
-        for (Object p : packetList){
+        for (Packet p : packetList){
             if(p.getClass().isInstance(utuDPacket)){
                 UtuDPacket u = (UtuDPacket) p;
                 if(u.getSourceAlias() == utuDPacket.getSourceAlias()){
@@ -225,7 +225,7 @@ public class Interpreter {
         
         boolean added = false;
         
-        for (Object p : packetList){
+        for (Packet p : packetList){
             if(p.getClass().isInstance(utcDPacket)){
                 UtcDPacket u = (UtcDPacket) p;
                 if(u.getSourceAlias() == utcDPacket.getSourceAlias()){

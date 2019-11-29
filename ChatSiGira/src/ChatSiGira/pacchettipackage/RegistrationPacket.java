@@ -11,7 +11,7 @@ package ChatSiGira.pacchettipackage;
  * @author Allari Edoardo
  */
 
-public class RegistrationPacket {
+public class RegistrationPacket extends Packet{
     private byte[] version0;
     private String alias;
     private String topic;

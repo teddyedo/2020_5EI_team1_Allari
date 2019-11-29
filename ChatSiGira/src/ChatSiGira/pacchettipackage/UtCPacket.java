@@ -12,7 +12,7 @@ package ChatSiGira.pacchettipackage;
  * 
  */
 
-public class UtCPacket {
+public class UtCPacket extends Packet{
 
     private byte[] ID;
     private String Message;

@@ -11,7 +11,7 @@ package ChatSiGira.pacchettipackage;
  * 
  */
 
-public class UtuDPacket {
+public class UtuDPacket extends Packet{
     
     private String SourceAlias;
     private String Message;

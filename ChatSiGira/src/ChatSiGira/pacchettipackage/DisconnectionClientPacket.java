@@ -11,7 +11,7 @@ package ChatSiGira.pacchettipackage;
  * @author Allari Edoardo
  */
 
-public class DisconnectionClientPacket {
+public class DisconnectionClientPacket extends Packet{
     
     private byte[] ID;
     private final int OpCode = 11;

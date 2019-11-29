@@ -13,7 +13,7 @@ package ChatSiGira.pacchettipackage;
  * 
  */
 
-public class ErrorsPacket {
+public class ErrorsPacket extends Packet{
     
     private byte[] ErrorCode;
     private final int OpCode = 255;
