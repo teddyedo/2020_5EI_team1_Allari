@@ -12,7 +12,8 @@ package ChatSiGira.pacchettipackage;
  */
 
 public class RegistrationPacket extends Packet{
-    private byte[] version0;
+    
+    private byte version0;
     private String alias;
     private String topic;
     private final int Opcode = 01;
@@ -25,7 +26,7 @@ public class RegistrationPacket extends Packet{
      */
     
     public RegistrationPacket( String alias, String topic) {
-        this.version0[0] = 0;
+        this.version0 = 0;
         this.alias = alias;
         this.topic = topic;
 
@@ -37,7 +38,7 @@ public class RegistrationPacket extends Packet{
      * @return byte[] --> Version0
      */
 
-    public byte[] getVersion0() {
+    public byte getVersion0() {
         return version0;
     }
 
@@ -46,7 +47,7 @@ public class RegistrationPacket extends Packet{
      * @param version0 
      */
 
-    public void setVersion0(byte[] version0) {
+    public void setVersion0(byte version0) {
         this.version0 = version0;
     }
     

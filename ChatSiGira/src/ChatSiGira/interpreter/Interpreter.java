@@ -23,7 +23,7 @@ public class Interpreter {
     
     ArrayList<Packet> packetList = new ArrayList<>();
 
-    public Object interpret(byte[] data) {
+    public Packet interpret(byte[] data) {
         byte opCode = data[0];
 
         switch (opCode) {
