@@ -12,7 +12,7 @@ package ChatSiGira.pacchettipackage;
  * 
  */
 
-public class ChangeOfAliasPacket {
+public class ChangeOfAliasPacket extends Packet {
     
     private byte[] privateId;
     private String oldAlias;
