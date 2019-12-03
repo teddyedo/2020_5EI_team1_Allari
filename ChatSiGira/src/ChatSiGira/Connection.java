@@ -22,39 +22,81 @@ import ChatSiGira.interpreter.Interpreter;
 
 public class Connection {
     
-    public static void main(String[] args) throws IOException, InterruptedException {
+        protected static Socket client;
+
+        protected static DataInputStream is; 
+        protected static DataOutputStream os;
         
-        Socket client = new Socket("127.0.0.1", 53101);
+        protected static ReadClass reader;
+        protected static InterpretClass interpreter;
         
-        DataInputStream is = new DataInputStream(client.getInputStream());
-        DataOutputStream os = new DataOutputStream(client.getOutputStream());
+        protected static Interpreter i = new Interpreter();
+ 
+        public static void main(String[] args) throws IOException, InterruptedException {
+       
+            client = new Socket("127.0.0.1", 53101);
         
-        String alias = "GinoGino";
-        String topic = "BELLLOOOOOOO";
+            is = new DataInputStream(client.getInputStream());
+            os = new DataOutputStream(client.getOutputStream());
+
         
-        Interpreter i = new Interpreter();
         
-        RegistrationPacket r = new RegistrationPacket(alias, topic);
+       
         
-        os.write(r.toBytes());
         System.out.println("Ho Scritto");
         
         Thread.sleep(3);
+        
         int len = is.readInt();
         
         System.out.println(len);
-
         
         byte[] data = new byte[len];
         
-        is.readFully(data);
+        is.read(data);
         
-        
-        Packet ra = i.interpret(data);
-        System.out.println(ra.getClass());
     
         
         
         
     }
+    
+    public void registration() throws IOException{
+        
+        
+        String alias = "GinoGino";
+        String topic = null;      
+        
+        RegistrationPacket r = new RegistrationPacket(alias, topic);
+      
+        
+        os.write(r.toBytes());
+    }
+    
+    public static byte[] read() throws IOException{
+        
+        byte[] buffer = new byte[2048];
+        
+        is.read(buffer);
+        
+        return buffer;
+    }
+    
+    public static void interpret(Packet p){
+        
+        switch(p.){
+            
+            case RegistrationHackPacket:
+                 System.out.println("Ciao");
+            case UtuDPacket:
+                 System.out.println("Gino");
+            
+            
+        }
+        
+    }
+    
+    
+    
+    
 }

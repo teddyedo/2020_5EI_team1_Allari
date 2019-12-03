@@ -12,7 +12,7 @@ package ChatSiGira.pacchettipackage;
  * 
  */
 
-public class ChangeOfAliasPacket extends Packet {
+public class ChangeOfAliasPacket implements Packet {
     
     private byte[] privateId;
     private String oldAlias;
@@ -92,8 +92,9 @@ public class ChangeOfAliasPacket extends Packet {
      * getter OpCode
      * @return int --> OpCode
      */
+    @Override
     public int getOpCode() {
-        return OpCode;
+        return this.OpCode;
     }
     
     //</editor-fold>

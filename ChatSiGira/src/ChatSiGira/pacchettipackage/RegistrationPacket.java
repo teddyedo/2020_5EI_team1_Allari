@@ -11,7 +11,7 @@ package ChatSiGira.pacchettipackage;
  * @author Allari Edoardo
  */
 
-public class RegistrationPacket extends Packet{
+public class RegistrationPacket implements Packet{
     
     private byte version0;
     private String alias;
@@ -93,7 +93,7 @@ public class RegistrationPacket extends Packet{
      */
 
     public int getOpcode() {
-        return Opcode;
+        return this.Opcode;
     }
     
     //</editor-fold>

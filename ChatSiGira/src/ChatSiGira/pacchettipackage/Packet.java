@@ -11,6 +11,7 @@ package ChatSiGira.pacchettipackage;
  * 
  */
 
-public class Packet {
-    
+public interface Packet {
+
+    public int getOpCode();
 }
