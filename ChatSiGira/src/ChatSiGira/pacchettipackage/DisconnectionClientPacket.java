@@ -52,6 +52,7 @@ public class DisconnectionClientPacket implements Packet{
      * @return int --> OpCode
      */
     
+    @Override
     public int getOpCode() {
         return OpCode;
     }

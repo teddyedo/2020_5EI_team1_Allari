@@ -12,7 +12,7 @@ package ChatSiGira.pacchettipackage;
  * 
  */
 
-public class GroupUsersListRequestPacket extends Packet{
+public class GroupUsersListRequestPacket implements Packet{
 
     private byte[] AssignedId;
     private final int OpCode = 50;

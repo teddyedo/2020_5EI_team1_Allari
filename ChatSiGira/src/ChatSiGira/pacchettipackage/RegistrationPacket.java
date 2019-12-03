@@ -9,6 +9,7 @@ package ChatSiGira.pacchettipackage;
  *
  * @author Zerbato,Nicolis
  * @author Allari Edoardo
+ * 
  */
 
 public class RegistrationPacket implements Packet{
@@ -16,7 +17,7 @@ public class RegistrationPacket implements Packet{
     private byte version0;
     private String alias;
     private String topic;
-    private final int Opcode = 01;
+    private final int OpCode = 01;
 
     /**
      * Constructor 
@@ -92,8 +93,8 @@ public class RegistrationPacket implements Packet{
      * @return int --> Opcode
      */
 
-    public int getOpcode() {
-        return this.Opcode;
+    public int getOpCode(){
+        return this.OpCode;
     }
     
     //</editor-fold>
@@ -110,7 +111,7 @@ public class RegistrationPacket implements Packet{
         
         int i=0;
         
-        buffer[i++] =(byte) this.getOpcode() ; // the integer value of the Opcode is transformed into bytes
+        buffer[i++] =(byte) this.getOpCode() ; // the integer value of the Opcode is transformed into bytes
         
         //Versione
         

@@ -84,7 +84,7 @@ public class Connection {
     
     public static void interpret(Packet p){
         
-        switch(p.){
+        switch(p){
             
             case RegistrationHackPacket:
                  System.out.println("Ciao");

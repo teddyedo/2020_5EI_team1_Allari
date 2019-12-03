@@ -12,7 +12,7 @@ package ChatSiGira.pacchettipackage;
  * 
  */
 
-public class UtuPacket extends Packet {
+public class UtuPacket implements Packet {
     
     private byte[] SenderId;
     private String DestinationAlias;

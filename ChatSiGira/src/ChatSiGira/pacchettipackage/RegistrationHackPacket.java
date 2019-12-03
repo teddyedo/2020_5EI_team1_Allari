@@ -12,7 +12,7 @@ package ChatSiGira.pacchettipackage;
  * 
  */
 
-public class RegistrationHackPacket extends Packet{
+public class RegistrationHackPacket implements Packet{
 
     private byte[] AssignedId;
     private String AliasConfirmation;

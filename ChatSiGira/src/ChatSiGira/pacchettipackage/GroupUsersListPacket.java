@@ -14,7 +14,7 @@ import java.util.ArrayList;
  * 
  */
 
-public class GroupUsersListPacket extends Packet{
+public class GroupUsersListPacket implements Packet{
     
     private byte[] type;
     private byte[] ListLength;
