@@ -11,29 +11,31 @@ import java.util.ArrayList;
 /**
  *
  * @author Allari Edoardo
- * 
- * 
+ *
+ *
  */
-
 public class InterpretClass extends Thread {
 
-    protected static byte[] data = new byte[2048];
-    
-    public void setData(byte[] d){
-        this.data = d;
+    protected static byte[] data = null;
+    ArrayList<Packet> PacketList = new ArrayList<>();
+
+    public void setData(byte[] d) {
+        InterpretClass.data = d;
     }
-    
+
     @Override
     public void run() {
-        
-        ArrayList<Packet> PacketList = new ArrayList<>();
-        PacketList.add(Connection.i.interpret(data));
-        
-        Connection.interpret(PacketList.get(0));
-        
-        PacketList.remove(0);
-        
-        
+        while (true) {
+
+            if (data != null) {
+                PacketList.add(Connection.i.interpret(data));
+
+                Connection.interpret(PacketList.get(0));
+
+                PacketList.remove(0);
+                data = null;
+            }
+        }
     }
-    
+
 }

@@ -27,8 +27,8 @@ public class Connection {
         protected static DataInputStream is; 
         protected static DataOutputStream os;
         
-        protected static ReadClass reader;
-        protected static InterpretClass interpreter;
+        protected static ReadClass reader = new ReadClass();
+        protected static InterpretClass interpreter = new InterpretClass();
         
         protected static Interpreter i = new Interpreter();
  
@@ -38,30 +38,22 @@ public class Connection {
         
             is = new DataInputStream(client.getInputStream());
             os = new DataOutputStream(client.getOutputStream());
+            
+            
+            interpreter.start();
+            
+            
+            
+            registration();
+            
+            while ( true ) {
+                Thread.sleep( 90000 );
+            }
 
-        
-        
-       
-        
-        System.out.println("Ho Scritto");
-        
-        Thread.sleep(3);
-        
-        int len = is.readInt();
-        
-        System.out.println(len);
-        
-        byte[] data = new byte[len];
-        
-        is.read(data);
-        
-    
-        
-        
-        
     }
     
-    public void registration() throws IOException{
+        
+    public static void registration() throws IOException{
         
         
         String alias = "GinoGino";
@@ -71,6 +63,8 @@ public class Connection {
       
         
         os.write(r.toBytes());
+        System.out.println("Sended new Registration Packet");
+        reader.start();
     }
     
     public static byte[] read() throws IOException{
@@ -93,7 +87,7 @@ public class Connection {
             case 11:
                 System.out.println("disconnessioneDaServer");
             case 20:
-                System.out.println("registrationAck");
+                System.out.println("Registrazione avvenuta");
             case 51:
                 System.out.println("aggiornare lista");
             case 255:
