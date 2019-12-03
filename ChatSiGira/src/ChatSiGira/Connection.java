@@ -84,14 +84,20 @@ public class Connection {
     
     public static void interpret(Packet p){
         
-        switch(p){
+        switch(p.getOpCode()){
             
-            case RegistrationHackPacket:
-                 System.out.println("Ciao");
-            case UtuDPacket:
-                 System.out.println("Gino");
-            
-            
+            case 01:
+                 System.out.println("messaggio da utente");
+            case 05:
+                 System.out.println("messaggio da chat");
+            case 11:
+                System.out.println("disconnessioneDaServer");
+            case 20:
+                System.out.println("registrationAck");
+            case 51:
+                System.out.println("aggiornare lista");
+            case 255:
+                System.out.println("pacchetto di errore");
         }
         
     }
