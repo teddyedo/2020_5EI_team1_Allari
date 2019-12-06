@@ -116,14 +116,13 @@ public class Interpreter {
         
         byte type = data[1];
         
-        byte[] jsonByte = Arrays.copyOfRange(data, 3, data.length - 1);
+        byte[] jsonByte = Arrays.copyOfRange(data, 3, data.length);
         
         String jsonString = new String(jsonByte);
         
-        ArrayList<String> userList = new ArrayList<>();
         
         Gson json = new Gson();
-        userList = json.fromJson(jsonString, userList.getClass());
+        ArrayList<String> userList = json.fromJson(jsonString, ArrayList.class);
         
         switch(type){
             

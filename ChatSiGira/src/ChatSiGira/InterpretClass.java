@@ -6,7 +6,10 @@
 package ChatSiGira;
 
 import ChatSiGira.pacchettipackage.*;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -29,7 +32,11 @@ public class InterpretClass extends Thread {
     public void run() {
                 packet = Connection.i.interpret(data);
 
-                Connection.interpret(packet);
+        try {
+            Connection.interpret(packet);
+        } catch (IOException ex) {
+            Logger.getLogger(InterpretClass.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
     }
 

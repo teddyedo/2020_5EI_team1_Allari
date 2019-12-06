@@ -19,7 +19,6 @@ public class GroupUsersListPacket implements Packet{
     private byte[] type;
     private byte[] ListLength;
     private String JsonContent;
-    private ArrayList UserConnected;
     private final int OpCode = 51;
     
     /**
@@ -99,25 +98,7 @@ public class GroupUsersListPacket implements Packet{
     public int getOpCode() {
         return OpCode;
     }
-    
-    /**
-     * getter List of user connected
-     * @return ArrayList --> userConnected
-     */
-    
-    public ArrayList getUserConnected() {
-        return UserConnected;
-    }
-
-    /**
-     * setter UserConnected
-     * @param UserConnected 
-     */
-    
-    public void setUserConnected(ArrayList UserConnected) {
-        this.UserConnected = UserConnected;
-    }
-    
+  
     //</editor-fold>
 
    

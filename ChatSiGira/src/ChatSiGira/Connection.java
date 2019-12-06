@@ -41,30 +41,14 @@ public class Connection {
     public static void registration() throws IOException {
 
         String alias = "GinoGino";
-        String topic = null;
+        String topic = "general";
 
         RegistrationPacket r = new RegistrationPacket(alias, topic);
 
         os.write(r.toBytes());
 
         System.out.println("Sended new Registration Packet");
-        /*
-        byte[] buffer = new byte[4 + alias.length()];
-        
-        is.read(buffer);
-        
-        System.out.println(new String(buffer));
-        
-        
-        Packet p = i.interpret(buffer);
-        
-        RegistrationHackPacket regAck = (RegistrationHackPacket) p;
-        if ( ! regAck.getAliasConfirmation().equals(alias)) {
-            registration();
-        }
-        UserList.ID = regAck.getAssignedId();
-                
-         */
+
     }
 
     public static byte[] read() throws IOException {
@@ -91,11 +75,7 @@ public class Connection {
                 break;
             case 20:
                 System.out.println("Registrazione avvenuta");
-                RegistrationHackPacket regAck = (RegistrationHackPacket) p;
-                if (!regAck.getAliasConfirmation().equals("GinoGino")) {
-                    registration();
-                }
-                UserList.ID = regAck.getAssignedId();
+                registrationOccured(p);
                 break;
             case 51:
                 System.out.println("aggiornare lista");
@@ -105,6 +85,26 @@ public class Connection {
                 break;
         }
 
+    }
+
+    public static void registrationOccured(Packet p) throws IOException {
+        
+        //creation regAck packet
+        RegistrationHackPacket regAck = (RegistrationHackPacket) p;
+        
+        //alias verification
+        if (!regAck.getAliasConfirmation().equals("GinoGino")) {
+            registration();
+        }
+        
+        //set my ID
+        UserList.ID = regAck.getAssignedId();
+        
+        //request userList
+        GroupUsersListRequestPacket g = new GroupUsersListRequestPacket(UserList.ID);
+        os.write(g.toBytes());
+        
+        System.out.println("Richiesta lista inviata");
     }
 
 }
