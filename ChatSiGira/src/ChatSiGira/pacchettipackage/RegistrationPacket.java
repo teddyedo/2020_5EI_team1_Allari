@@ -17,7 +17,7 @@ public class RegistrationPacket implements Packet{
     private byte version0;
     private String alias;
     private String topic;
-    private final int OpCode = 01;
+    private final int OpCode = 10;
 
     /**
      * Constructor 

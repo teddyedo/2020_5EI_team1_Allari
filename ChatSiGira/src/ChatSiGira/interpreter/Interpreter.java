@@ -22,6 +22,7 @@ import ChatSiGira.UserList;
 public class Interpreter {
     
     ArrayList<Packet> packetList = new ArrayList<>();
+    
 
     public Packet interpret(byte[] data) {
         byte opCode = data[0];

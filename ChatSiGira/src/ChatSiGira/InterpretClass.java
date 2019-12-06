@@ -16,26 +16,21 @@ import java.util.ArrayList;
  */
 public class InterpretClass extends Thread {
 
-    protected static byte[] data = null;
-    ArrayList<Packet> PacketList = new ArrayList<>();
+    private byte[] data;
+    private Packet packet;
 
-    public void setData(byte[] d) {
-        InterpretClass.data = d;
+    public InterpretClass(byte[] data) {
+        this.data = data;
+        this.start();
     }
+
 
     @Override
     public void run() {
-        while (true) {
+                packet = Connection.i.interpret(data);
 
-            if (data != null) {
-                PacketList.add(Connection.i.interpret(data));
+                Connection.interpret(packet);
 
-                Connection.interpret(PacketList.get(0));
-
-                PacketList.remove(0);
-                data = null;
-            }
-        }
     }
 
 }

@@ -16,4 +16,5 @@ import java.util.ArrayList;
 public class UserList {
     
     public static ArrayList<String> chatUserList = new ArrayList<>();
+    public static byte[] ID = null;
 }

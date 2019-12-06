@@ -18,6 +18,12 @@ import java.util.logging.Logger;
 
 public class ReadClass extends Thread {
 
+    public ReadClass() {
+        this.start();
+    }
+    
+    
+
     @Override
     public void run() {
         
@@ -30,7 +36,7 @@ public class ReadClass extends Thread {
                 Logger.getLogger(ReadClass.class.getName()).log(Level.SEVERE, null, ex);
             }
             
-            Connection.interpreter.setData(data);
+            InterpretClass i = new InterpretClass(data);
             
         }
 
