@@ -25,7 +25,7 @@ public class Connection {
     protected static DataInputStream is;
     protected static DataOutputStream os;
 
-    protected static Interpreter i = new Interpreter();
+    protected static Interpreter interpreter = new Interpreter();
 
     public static void main(String[] args) throws IOException, InterruptedException {
 
@@ -35,9 +35,10 @@ public class Connection {
         os = new DataOutputStream(client.getOutputStream());
 
         registration();
-        ReadClass reader = new ReadClass();
+        Reader reader = new Reader();
     }
 
+    
     public static void registration() throws IOException {
 
         String alias = "GinoGino";
@@ -50,6 +51,7 @@ public class Connection {
         System.out.println("Sended new Registration Packet");
 
     }
+    
 
     public static byte[] read() throws IOException {
 
@@ -60,7 +62,8 @@ public class Connection {
         return buffer;
     }
 
-    public static void interpret(Packet p) throws IOException {
+    
+    public static void whatToDo(Packet p) throws IOException {
 
         switch (p.getOpCode()) {
 
@@ -98,10 +101,10 @@ public class Connection {
         }
         
         //set my ID
-        UserList.ID = regAck.getAssignedId();
+        UserInfo.ID = regAck.getAssignedId();
         
         //request userList
-        GroupUsersListRequestPacket g = new GroupUsersListRequestPacket(UserList.ID);
+        GroupUsersListRequestPacket g = new GroupUsersListRequestPacket(UserInfo.ID);
         os.write(g.toBytes());
         
         System.out.println("Richiesta lista inviata");

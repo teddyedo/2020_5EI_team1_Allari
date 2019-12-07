@@ -26,7 +26,7 @@
         <dependency>
             <groupId>com.github.JacopoWolf</groupId>
             <artifactId>PotatoChatProtocol</artifactId>
-            <version>Min.b.1</version>
+            <version>Min.b.2</version>
         </dependency>
 
     </dependencies>

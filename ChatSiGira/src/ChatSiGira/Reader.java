@@ -16,9 +16,9 @@ import java.util.logging.Logger;
  * 
  */
 
-public class ReadClass extends Thread {
+public class Reader extends Thread {
 
-    public ReadClass() {
+    public Reader() {
         this.start();
     }
     
@@ -33,10 +33,10 @@ public class ReadClass extends Thread {
             try {
                 data = Connection.read();
             } catch (IOException ex) {
-                Logger.getLogger(ReadClass.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Reader.class.getName()).log(Level.SEVERE, null, ex);
             }
             
-            InterpretClass i = new InterpretClass(data);
+            Executor i = new Executor(data);
             
         }
 

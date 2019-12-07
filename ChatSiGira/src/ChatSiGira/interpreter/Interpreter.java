@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import ChatSiGira.pacchettipackage.*;
 import com.google.gson.*;
-import ChatSiGira.UserList;
+import ChatSiGira.UserInfo;
 
 /**
  *
@@ -127,14 +127,14 @@ public class Interpreter {
         switch(type){
             
             case 0:
-                UserList.chatUserList.clear();
-                UserList.chatUserList = userList;
+                UserInfo.chatUserList.clear();
+                UserInfo.chatUserList = userList;
  
             case 1:
-                UserList.chatUserList.add(userList.get(0));
+                UserInfo.chatUserList.add(userList.get(0));
                 
             case 2:
-                UserList.chatUserList.remove(userList.get(0));
+                UserInfo.chatUserList.remove(userList.get(0));
         }
         
         return groupUsersListPacket;

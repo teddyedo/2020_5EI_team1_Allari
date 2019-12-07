@@ -6,6 +6,7 @@
 package ChatSiGira;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  *
@@ -13,8 +14,18 @@ import java.util.ArrayList;
  * 
  */
 
-public class UserList {
+public class UserInfo {
     
+    //User list
     public static ArrayList<String> chatUserList = new ArrayList<>();
+    
+    //Id assigned from the server 
     public static byte[] ID = null;
+    
+    //My alias
+    public static String alias = null;
+    
+    //Errors meaning
+    public static HashMap<Integer, String> ErrorsMeaning = new HashMap<>();
+    
 }
