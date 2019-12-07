@@ -8,7 +8,6 @@ package ChatSiGira.interpreter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import ChatSiGira.pacchettipackage.*;
-import com.google.gson.*;
 import ChatSiGira.UserInfo;
 
 /**
@@ -23,7 +22,13 @@ public class Interpreter {
     
     ArrayList<Packet> packetList = new ArrayList<>();
     
-
+    /**
+     * This method received a byte array that represent a packet and, according 
+     * to his first byte (opCode), translate this byte array into a specific 
+     * packet class
+     * @param data byte array received in input.
+     * @return a specific packet class.
+     */
     public Packet interpret(byte[] data) {
         byte opCode = data[0];
 
@@ -46,16 +51,20 @@ public class Interpreter {
                 
             case (byte) 255:
                 return errorPacketToBytes(data);
-
         }
         return null;
-
     }
-
-    private RegistrationHackPacket createRegistrationAckFromBytes(byte[] data) {
+    
+    
+    /**
+     * This method convert a byte array into a registrationAck packet.
+     * @param data a byte array received in input that represent a packet.
+     * @return a registrationAck packet.
+     */
+    private RegistrationAckPacket createRegistrationAckFromBytes(byte[] data) {
         
         int start = 1;
-        RegistrationHackPacket registration = new RegistrationHackPacket(null, null);
+        RegistrationAckPacket registration = new RegistrationAckPacket(null, null);
         
         ArrayList<byte[]> variableElements = new ArrayList<>();
         
@@ -81,7 +90,11 @@ public class Interpreter {
         }
         
     
-    
+    /**
+     * This method convert a byte array into a disconnectionServer packet.
+     * @param data a byte array received in input that represent a packet.
+     * @return a disconnectionServer packet.
+     */
     private DisconnectionServerPacket disconnectionServerPacketFromBytes(byte[] data) {
         
        
@@ -96,7 +109,11 @@ public class Interpreter {
     }
     
     
-    
+    /**
+     * This method convert a byte array into a error packet.
+     * @param data a byte array received in input that represent a packet.
+     * @return an errorPacket.
+     */
     private ErrorPacket errorPacketToBytes(byte[] data){
         
         ErrorPacket errorPacket = new ErrorPacket(null);
@@ -110,6 +127,11 @@ public class Interpreter {
         return errorPacket;
     }
     
+    /**
+     * This method convert a byte array into a groupUserList packet.
+     * @param data a byte array received in input that represent a packet.
+     * @return a groupUserList packet.
+     */
     private GroupUsersListPacket groupUsersListPacketFromBytes(byte[] data){
         
         byte type = data[1];
@@ -127,7 +149,11 @@ public class Interpreter {
     }
     
     
-
+    /**
+     * This method convert a byte array into a utuDPacket.
+     * @param data a byte array received in input that represent a packet.
+     * @return a utuDPacket.
+     */
     private UtuDPacket utuDPacketFromBytes(byte[] data){
         
         if(data.length > 2048)
@@ -161,7 +187,7 @@ public class Interpreter {
         for (Packet p : packetList){
             if(p.getClass().isInstance(utuDPacket)){
                 UtuDPacket u = (UtuDPacket) p;
-                if(u.getSourceAlias() == utuDPacket.getSourceAlias()){
+                if(u.getSourceAlias().equals(utuDPacket.getSourceAlias())){
                     u.setMessage(u.getMessage() + message);
                     added = true;
                     if(data.length < 2048){
@@ -181,7 +207,11 @@ public class Interpreter {
         return null;
     }
     
-    
+    /**
+     * This method convert a byte array into a utcDPacket.
+     * @param data a byte array received in input that represent a packet.
+     * @return a utcDPacket.
+     */
     private UtcDPacket utcDPacketFromBytes(byte[] data){
         
         UtcDPacket utcDPacket = new UtcDPacket(null, null);

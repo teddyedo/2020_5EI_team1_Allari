@@ -18,7 +18,7 @@ public class DisconnectionServerPacket implements Packet{
     
     /**
      * Constructor 
-     * @param reason 
+     * @param reason The reason of the disconnection.
      */
     
     public DisconnectionServerPacket(byte reason) {

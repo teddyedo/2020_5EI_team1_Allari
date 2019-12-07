@@ -24,7 +24,9 @@ public class UserInfo {
     //My alias
     public static String alias = null;
 
-    //Errors meaning
+    /**
+     *This is the enumeration for every possible error code.
+     */
     public static enum ErrorCode {
 
         /**
@@ -66,6 +68,11 @@ public class UserInfo {
             this.code = (byte) code;
         }
 
+        /**
+         * This method return the error name from his byte value.
+         * @param error byte value of the error.
+         * @return
+         */
         public static ErrorCode getErrorCodeFromByte(byte error) {
             switch (error) {
                 case 0:

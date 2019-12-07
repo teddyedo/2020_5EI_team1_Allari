@@ -14,7 +14,6 @@ import java.util.logging.Logger;
  *
  * @author Allari Edoardo
  *
- *
  */
 public class Executor extends Thread {
 

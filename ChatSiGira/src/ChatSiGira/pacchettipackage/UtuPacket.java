@@ -21,10 +21,9 @@ public class UtuPacket implements Packet {
 
     /**
      * Constructor 
-     * 
-     * @param SenderId
-     * @param DestinationAlias
-     * @param Message 
+     * @param SenderId The ID assigned by the server.
+     * @param DestinationAlias The addressee of our message.
+     * @param Message The content of the message.
      */
     
     public UtuPacket(byte[] SenderId, String DestinationAlias, String Message) {
@@ -106,8 +105,8 @@ public class UtuPacket implements Packet {
     //</editor-fold> 
 
     /**
-    * create the packet header
-    * @return byte[] --> header
+    * create the packet header.
+    * @return byte[] --> header.
     */
     
     public byte[] header() {
@@ -122,8 +121,8 @@ public class UtuPacket implements Packet {
     }   
     
     /**
-     * Get the size of the final packet
-     * @return int size
+     * Get the size of the final packet.
+     * @return int size.
      */
     
     public int size()
@@ -132,8 +131,8 @@ public class UtuPacket implements Packet {
     }
     
     /**
-     * convert our packet class into a byte[]
-     * @return byte [] --> complete packet
+     * convert our packet class into a byte[].
+     * @return byte [] --> complete packet.
      */
     
     public byte[] toBytes(){

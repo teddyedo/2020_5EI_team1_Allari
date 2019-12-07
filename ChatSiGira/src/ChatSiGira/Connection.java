@@ -36,13 +36,18 @@ public class Connection {
         is = new DataInputStream(client.getInputStream());
         os = new DataOutputStream(client.getOutputStream());
 
-        registration();
+        registration(UserInfo.alias);
         Reader reader = new Reader();
     }
 
-    public static void registration() throws IOException {
+    /**
+     * This method is used to perform login to the server.
+     * 
+     * @param alias the name choosen by the user logged in.
+     * @throws IOException 
+     */
+    public static void registration(String alias) throws IOException {
 
-        String alias = "GinoGino";
         String topic = "general";
 
         RegistrationPacket r = new RegistrationPacket(alias, topic);
@@ -53,6 +58,12 @@ public class Connection {
 
     }
 
+    /**
+     * This method is used to change our alias.
+     * 
+     * @param newAlias the new name choosen by the user.
+     * @throws IOException 
+     */
     public static void changeAlias(String newAlias) throws IOException {
 
         ChangeOfAliasPacket c = new ChangeOfAliasPacket(UserInfo.ID, UserInfo.alias, newAlias);
@@ -63,6 +74,11 @@ public class Connection {
 
     }
 
+    /**
+     * This method is used to disconnect our user from the server.
+     * 
+     * @throws IOException 
+     */
     public static void disconnection() throws IOException {
 
         DisconnectionClientPacket dscPkt = new DisconnectionClientPacket(UserInfo.ID);
@@ -72,6 +88,10 @@ public class Connection {
         System.out.println("Sended disconnection request");
     }
 
+    /**
+     * This method is used to request the list of the user "online".
+     * @throws IOException 
+     */
     public static void requestUserList() throws IOException {
 
         GroupUsersListRequestPacket g = new GroupUsersListRequestPacket(UserInfo.ID);
@@ -82,6 +102,12 @@ public class Connection {
 
     }
 
+    /**
+     * This method is used to send private message to another user.
+     * @param message the content of the message.
+     * @param dstAlias the name of the addressee.
+     * @throws IOException 
+     */
     public static void sendedPrivateMex(String message, String dstAlias) throws IOException {
 
         UtuPacket u = new UtuPacket(UserInfo.ID, dstAlias, message);
@@ -91,6 +117,11 @@ public class Connection {
         System.out.println("Sended private message");
     }
 
+    /**
+     * This method is used to send a topic message to a group of users.
+     * @param message the content of the message.
+     * @throws IOException 
+     */
     public static void sendedTopicMex(String message) throws IOException {
 
         UtCPacket u = new UtCPacket(UserInfo.ID, message);
@@ -100,6 +131,11 @@ public class Connection {
         System.out.println("Sended public message");
     }
 
+    /**
+     * This method is used to read on the inputStream.
+     * @return a byte array from the server.
+     * @throws IOException 
+     */
     public static byte[] read() throws IOException {
 
         byte[] buffer = new byte[2048];
@@ -109,6 +145,11 @@ public class Connection {
         return buffer;
     }
 
+    /**
+     * This method is used to sort every packet received to its specifical action.
+     * @param p packet received.
+     * @throws IOException 
+     */
     public static void whatToDo(Packet p) throws IOException {
 
         switch (p.getOpCode()) {
@@ -139,14 +180,19 @@ public class Connection {
 
     }
 
+    /**
+     * This method is used to confirm the registration and set our unique ID.
+     * @param p packet sorted by whatToDo method.
+     * @throws IOException 
+     */
     public static void registrationOccured(Packet p) throws IOException {
 
         //creation regAck packet
-        RegistrationHackPacket regAck = (RegistrationHackPacket) p;
+        RegistrationAckPacket regAck = (RegistrationAckPacket) p;
 
         //alias verification
         if (!regAck.getAliasConfirmation().equals("GinoGino")) {
-            registration();
+            registration(UserInfo.alias);
         }
 
         //set my ID
@@ -154,6 +200,10 @@ public class Connection {
 
     }
 
+    /**
+     * This method is used to set or update the list of the online users.
+     * @param p packet sorted by whatToDo method. 
+     */
     public static void userListReceived(Packet p) {
 
         //creation userList packet
@@ -177,6 +227,10 @@ public class Connection {
         }
     }
 
+    /**
+     * This method is used to print out the error message received from the server.
+     * @param p packet sorted by whatToDo method. 
+     */
     public static void errorPacketReceived(Packet p) {
 
         //creation ErrorPacket 
@@ -185,7 +239,11 @@ public class Connection {
         System.out.println(errPkt.getErrorCode().name());
     }
 
-    
+    /**
+     * This method is used to accept the disconnection from server and indicate
+     * what is the cause of disconnection.
+     * @param p packet sorted by whatToDo method.
+     */
     public static void serverDisconnection(Packet p) {
 
         //creation disconnection server packet
@@ -207,6 +265,10 @@ public class Connection {
 
     }
     
+    /**
+     * This method is used to receive and print out a user message. 
+     * @param p packet sorted by whatToDo method.
+     */
     public static void userMessageReceived(Packet p){
         
         //creation utuDPacket 
@@ -215,7 +277,10 @@ public class Connection {
         System.out.println(u.getSourceAlias() + ": " + u.getMessage());
     }
     
-    
+    /**
+     * This method is used to receive and print out a topic message. 
+     * @param p packet sorted by whatToDo method.
+     */
     public static void topicMessageReceived(Packet p){
         
         //creation utcDPacket

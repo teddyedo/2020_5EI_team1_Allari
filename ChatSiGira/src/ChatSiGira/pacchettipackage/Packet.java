@@ -8,9 +8,10 @@ package ChatSiGira.pacchettipackage;
 /**
  *
  * @author Allari Edoardo
- * 
+ *
+ * This interface is used to group every type of available packet under a single
+ * name.
  */
-
 public interface Packet {
 
     public int getOpCode();

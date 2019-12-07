@@ -12,7 +12,7 @@ package ChatSiGira.pacchettipackage;
  * 
  */
 
-public class RegistrationHackPacket implements Packet{
+public class RegistrationAckPacket implements Packet{
 
     private byte[] AssignedId;
     private String AliasConfirmation;
@@ -20,11 +20,11 @@ public class RegistrationHackPacket implements Packet{
     
     /**
      * Constructor
-     * @param AssignedId
-     * @param AliasConfirmation 
+     * @param AssignedId The ID assigned by the server.
+     * @param AliasConfirmation The alias that we have choosen.
      */
     
-    public RegistrationHackPacket(byte[] AssignedId, String AliasConfirmation) {
+    public RegistrationAckPacket(byte[] AssignedId, String AliasConfirmation) {
         this.AssignedId = AssignedId;
         this.AliasConfirmation = AliasConfirmation;
     }
