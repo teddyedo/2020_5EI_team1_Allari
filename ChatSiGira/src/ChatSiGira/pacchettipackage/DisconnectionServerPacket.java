@@ -13,7 +13,7 @@ package ChatSiGira.pacchettipackage;
 
 public class DisconnectionServerPacket implements Packet{
     
-    private byte[] reason;
+    private byte reason;
     private final int OpCode = 11; 
     
     /**
@@ -21,7 +21,7 @@ public class DisconnectionServerPacket implements Packet{
      * @param reason 
      */
     
-    public DisconnectionServerPacket(byte[] reason) {
+    public DisconnectionServerPacket(byte reason) {
         this.reason = reason;
     }
     
@@ -33,7 +33,7 @@ public class DisconnectionServerPacket implements Packet{
      * @return byte[] --> reason
      */
 
-    public byte[] getReason() {
+    public byte getReason() {
         return reason;
     }
     
@@ -42,7 +42,7 @@ public class DisconnectionServerPacket implements Packet{
      * @param reason 
      */
 
-    public void setReason(byte[] reason) {
+    public void setReason(byte reason) {
         this.reason = reason;
     }
 

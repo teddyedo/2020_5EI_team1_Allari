@@ -16,8 +16,8 @@ import java.util.ArrayList;
 
 public class GroupUsersListPacket implements Packet{
     
-    private byte[] type;
-    private byte[] ListLength;
+    private byte type;
+    private byte ListLength;
     private String JsonContent;
     private final int OpCode = 51;
     
@@ -28,7 +28,7 @@ public class GroupUsersListPacket implements Packet{
      * @param JsonContent 
      */
     
-    public GroupUsersListPacket(byte[] type, byte[] ListLength, String JsonContent) {
+    public GroupUsersListPacket(byte type, byte ListLength, String JsonContent) {
         this.type = type;
         this.ListLength = ListLength;
         this.JsonContent = JsonContent;
@@ -41,7 +41,7 @@ public class GroupUsersListPacket implements Packet{
      * @return byte[] --> type
      */
 
-    public byte[] getType() {
+    public byte getType() {
         return type;
     }
     
@@ -50,7 +50,7 @@ public class GroupUsersListPacket implements Packet{
      * @param type 
      */
 
-    public void setType(byte[] type) {
+    public void setType(byte type) {
         this.type = type;
     }
     
@@ -59,7 +59,7 @@ public class GroupUsersListPacket implements Packet{
      * @return byte[] --> ListLength
      */
 
-    public byte[] getListLength() {
+    public byte getListLength() {
         return ListLength;
     }
     
@@ -68,7 +68,7 @@ public class GroupUsersListPacket implements Packet{
      * @param ListLength 
      */
 
-    public void setListLength(byte[] ListLength) {
+    public void setListLength(byte ListLength) {
         this.ListLength = ListLength;
     }
     

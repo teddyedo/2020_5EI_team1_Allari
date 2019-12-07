@@ -5,6 +5,8 @@
  */
 package ChatSiGira.pacchettipackage;
 
+import ChatSiGira.UserInfo;
+
 
 /**
  *
@@ -13,9 +15,9 @@ package ChatSiGira.pacchettipackage;
  * 
  */
 
-public class ErrorsPacket implements Packet{
+public class ErrorPacket implements Packet{
     
-    private byte[] ErrorCode;
+    private UserInfo.ErrorCode ErrorCode;
     private final int OpCode = 255;
 
     /**
@@ -23,7 +25,7 @@ public class ErrorsPacket implements Packet{
      * @param ErrorCode 
      */
     
-    public ErrorsPacket(byte[] ErrorCode) {
+    public ErrorPacket(UserInfo.ErrorCode ErrorCode) {
         
         this.ErrorCode = ErrorCode;
     }
@@ -37,7 +39,7 @@ public class ErrorsPacket implements Packet{
      * @return byte[] --> ErrorCode
      */
 
-    public byte[] getErrorCode() {
+    public UserInfo.ErrorCode getErrorCode() {
         return ErrorCode;
     }
     
@@ -46,7 +48,7 @@ public class ErrorsPacket implements Packet{
      * @param ErrorCode 
      */
 
-    public void setErrorCode(byte[] ErrorCode) {
+    public void setErrorCode(UserInfo.ErrorCode ErrorCode) {
         this.ErrorCode = ErrorCode;
     }
 

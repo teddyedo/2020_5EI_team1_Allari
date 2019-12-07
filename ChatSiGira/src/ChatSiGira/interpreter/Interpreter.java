@@ -30,22 +30,22 @@ public class Interpreter {
         switch (opCode) {
 
             case 01:                        //message user to user
-                return utuDPacketToBytes(data);
+                return utuDPacketFromBytes(data);
          
             case 05:
-                return utcDPacketToBytes(data);
+                return utcDPacketFromBytes(data);
                 
             case 11:                        //disconnection
-                return disconnectionServerPacketToBytes(data);
+                return disconnectionServerPacketFromBytes(data);
 
             case 20:                        //registrationAck
                 return createRegistrationAckFromBytes(data);
 
             case 51:                        //group user list 
-                return groupUsersListPacketToBytes(data);
+                return groupUsersListPacketFromBytes(data);
                 
             case (byte) 255:
-                return errorsPacketToBytes(data);
+                return errorPacketToBytes(data);
 
         }
         return null;
@@ -82,67 +82,53 @@ public class Interpreter {
         
     
     
-    private DisconnectionServerPacket disconnectionServerPacketToBytes(byte[] data) {
+    private DisconnectionServerPacket disconnectionServerPacketFromBytes(byte[] data) {
         
-       DisconnectionServerPacket disconnectionServer = new DisconnectionServerPacket(null);
        
        //get the reason of the disconnection
-       byte[] reason = new byte[1];
-       reason[0] = data[1];
+       byte reason = data[1];
        
-       //set the reason
-       disconnectionServer.setReason(reason);
-    
+       //create disconnection packet
+       
+       DisconnectionServerPacket disconnectionServer = new DisconnectionServerPacket(reason);
+
        return disconnectionServer;
     }
     
-    private ErrorsPacket errorsPacketToBytes(byte[] data){
+    
+    
+    private ErrorPacket errorPacketToBytes(byte[] data){
         
-        ErrorsPacket errorsPacket = new ErrorsPacket(null);
+        ErrorPacket errorPacket = new ErrorPacket(null);
         
         //get the error 
-        byte[] error = new byte[1];
-        error[0] = data[1];
+        byte error = data[1];
         
         //set the error
-        errorsPacket.setErrorCode(error);
+        errorPacket.setErrorCode(UserInfo.ErrorCode.getErrorCodeFromByte(error));
         
-        return errorsPacket;
+        return errorPacket;
     }
     
-    private GroupUsersListPacket groupUsersListPacketToBytes(byte[] data){
-        
-        GroupUsersListPacket groupUsersListPacket = new GroupUsersListPacket(null, null, null);
+    private GroupUsersListPacket groupUsersListPacketFromBytes(byte[] data){
         
         byte type = data[1];
+       
+        byte listLength = data[2];
         
         byte[] jsonByte = Arrays.copyOfRange(data, 3, data.length);
         
         String jsonString = new String(jsonByte);
         
-        
-        Gson json = new Gson();
-        ArrayList<String> userList = json.fromJson(jsonString, ArrayList.class);
-        
-        switch(type){
-            
-            case 0:
-                UserInfo.chatUserList.clear();
-                UserInfo.chatUserList = userList;
- 
-            case 1:
-                UserInfo.chatUserList.add(userList.get(0));
-                
-            case 2:
-                UserInfo.chatUserList.remove(userList.get(0));
-        }
+        GroupUsersListPacket groupUsersListPacket = new GroupUsersListPacket
+        (type, listLength, jsonString);
         
         return groupUsersListPacket;
     }
     
     
 
-    private UtuDPacket utuDPacketToBytes(byte[] data){
+    private UtuDPacket utuDPacketFromBytes(byte[] data){
         
         if(data.length > 2048)
             throw new UnsupportedOperationException();
@@ -196,8 +182,7 @@ public class Interpreter {
     }
     
     
-    //bisogna implementare un nuovo pacchetto per i pacchetti che arrivano dalle chat pubbliche
-    private UtcDPacket utcDPacketToBytes(byte[] data){
+    private UtcDPacket utcDPacketFromBytes(byte[] data){
         
         UtcDPacket utcDPacket = new UtcDPacket(null, null);
         
