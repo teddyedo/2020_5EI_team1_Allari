@@ -10,7 +10,7 @@ import com.google.gson.Gson;
 import java.io.IOException;
 import java.util.ArrayList;
 import ChatSiGira.app.Connection;
-import ChatSiGira.functions.UserInfo;
+import ChatSiGira.graphicinterface.*;
 
 /**
  *
@@ -41,7 +41,7 @@ public class Actions {
 
         Connection.os.write(r.toBytes());
 
-        System.out.println("Sended registration request");
+        System.out.println("Sended registration request ");
 
     }
 
@@ -185,7 +185,7 @@ public class Actions {
         RegistrationAckPacket regAck = (RegistrationAckPacket) p;
 
         //alias verification
-        if (!regAck.getAliasConfirmation().equals("GinoGino")) {
+        if (!regAck.getAliasConfirmation().equals(UserInfo.alias)) {           
             registration(UserInfo.alias);
         }
 

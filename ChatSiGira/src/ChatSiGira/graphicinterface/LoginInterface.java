@@ -106,11 +106,6 @@ public class LoginInterface extends javax.swing.JFrame {
         TextField.setBackground(new java.awt.Color(255, 255, 255));
         TextField.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
         TextField.setBorder(null);
-        TextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TextFieldActionPerformed(evt);
-            }
-        });
         BackgroundWhite.add(TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, 220, 30));
         BackgroundWhite.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, 200, 10));
 
@@ -144,14 +139,14 @@ public class LoginInterface extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(LoginInterface.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+       
         
     }//GEN-LAST:event_LoginButtonActionPerformed
 
-    private void TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TextFieldActionPerformed
-
+    public void setTextErrorLabel(String text){
+        ErrorLabel.setText(text);
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -181,6 +176,7 @@ public class LoginInterface extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new LoginInterface().setVisible(true);
             }

@@ -37,9 +37,10 @@ public class Connection {
         //is = new DataInputStream(client.getInputStream());
         //os = new DataOutputStream(client.getOutputStream());
 
-        LoginInterface.main(args);
+        LoginInterface login = new LoginInterface();
+        login.setVisible(true);
         
-        Reader reader = new Reader();
+        //Reader reader = new Reader();
     }
 
 }
