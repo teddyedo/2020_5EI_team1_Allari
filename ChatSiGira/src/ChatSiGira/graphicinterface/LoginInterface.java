@@ -8,6 +8,10 @@ package ChatSiGira.graphicinterface;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import ChatSiGira.functions.Actions;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -84,7 +88,7 @@ public class LoginInterface extends javax.swing.JFrame {
         SignInLabel.setText("SIGN IN");
         BackgroundWhite.add(SignInLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 500, 100, 30));
 
-        LoginButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Button.png"))); // NOI18N
+        LoginButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ChatSiGira/images/Button.png"))); // NOI18N
         LoginButton.setToolTipText("");
         LoginButton.setBorder(null);
         LoginButton.setContentAreaFilled(false);
@@ -116,14 +120,14 @@ public class LoginInterface extends javax.swing.JFrame {
         UserLabel1.setText("Username");
         BackgroundWhite.add(UserLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 80, 60));
 
-        ChatSiGiraLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icona_1.png"))); // NOI18N
+        ChatSiGiraLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ChatSiGira/images/icona_1.png"))); // NOI18N
         BackgroundWhite.add(ChatSiGiraLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, -1, -1));
 
-        UserIconLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_user_male_circle_60px_1.png"))); // NOI18N
+        UserIconLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ChatSiGira/images/icons8_user_male_circle_60px_1.png"))); // NOI18N
         BackgroundWhite.add(UserIconLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, -1, -1));
 
         BackgroundPaper.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        BackgroundPaper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/DesignPNG .png"))); // NOI18N
+        BackgroundPaper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ChatSiGira/images/DesignPNG .png"))); // NOI18N
         BackgroundWhite.add(BackgroundPaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         getContentPane().add(BackgroundWhite, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 560));
@@ -133,6 +137,15 @@ public class LoginInterface extends javax.swing.JFrame {
 
     private void LoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginButtonActionPerformed
         // TODO add your handling code here:
+        String alias = TextField.getText();
+        
+        try {
+            Actions.registration(alias);
+        } catch (IOException ex) {
+            Logger.getLogger(LoginInterface.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
     }//GEN-LAST:event_LoginButtonActionPerformed
 
     private void TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldActionPerformed

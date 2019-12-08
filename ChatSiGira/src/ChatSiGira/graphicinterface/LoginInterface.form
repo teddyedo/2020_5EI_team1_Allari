@@ -94,7 +94,7 @@
         <Component class="javax.swing.JButton" name="LoginButton">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/images/Button.png"/>
+              <Image iconType="3" name="/ChatSiGira/images/Button.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -172,7 +172,7 @@
         <Component class="javax.swing.JLabel" name="ChatSiGiraLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/images/icona_1.png"/>
+              <Image iconType="3" name="/ChatSiGira/images/icona_1.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -184,7 +184,7 @@
         <Component class="javax.swing.JLabel" name="UserIconLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/images/icons8_user_male_circle_60px_1.png"/>
+              <Image iconType="3" name="/ChatSiGira/images/icons8_user_male_circle_60px_1.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -197,7 +197,7 @@
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/images/DesignPNG .png"/>
+              <Image iconType="3" name="/ChatSiGira/images/DesignPNG .png"/>
             </Property>
           </Properties>
           <Constraints>

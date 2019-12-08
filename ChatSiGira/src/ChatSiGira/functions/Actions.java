@@ -10,6 +10,7 @@ import com.google.gson.Gson;
 import java.io.IOException;
 import java.util.ArrayList;
 import ChatSiGira.app.Connection;
+import ChatSiGira.functions.UserInfo;
 
 /**
  *
@@ -32,13 +33,15 @@ public class Actions {
      */
     public static void registration(String alias) throws IOException {
 
+        UserInfo.alias = alias;
+        
         String topic = "general";
 
         RegistrationPacket r = new RegistrationPacket(alias, topic);
 
         Connection.os.write(r.toBytes());
 
-        System.out.println("Sended new Registration Packet");
+        System.out.println("Sended registration request");
 
     }
 

@@ -90,7 +90,7 @@
                       <Component id="TitlePanel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="MessageLabel" min="-2" pref="451" max="-2" attributes="0"/>
-                      <EmptySpace pref="30" max="32767" attributes="0"/>
+                      <EmptySpace pref="10" max="32767" attributes="0"/>
                       <Component id="MexPanel" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -141,7 +141,7 @@
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/images/icona_cutted.png"/>
+                      <Image iconType="3" name="/ChatSiGira/images/icona_cutted.png"/>
                     </Property>
                   </Properties>
                 </Component>
@@ -191,7 +191,7 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/images/icons8_paper_plane_35px.png"/>
+                      <Image iconType="3" name="/ChatSiGira/images/icons8_paper_plane_35px.png"/>
                     </Property>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="null"/>

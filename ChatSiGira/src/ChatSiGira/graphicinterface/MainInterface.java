@@ -97,7 +97,7 @@ public class MainInterface extends javax.swing.JFrame {
         TitleLabel.setText("  Chat pubblica");
 
         ChatIconLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        ChatIconLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icona_cutted.png"))); // NOI18N
+        ChatIconLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ChatSiGira/images/icona_cutted.png"))); // NOI18N
 
         javax.swing.GroupLayout TitlePanelLayout = new javax.swing.GroupLayout(TitlePanel);
         TitlePanel.setLayout(TitlePanelLayout);
@@ -118,7 +118,7 @@ public class MainInterface extends javax.swing.JFrame {
         MexPanel.setBackground(new java.awt.Color(255, 255, 255));
 
         SendButton.setBackground(new java.awt.Color(255, 255, 255));
-        SendButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_paper_plane_35px.png"))); // NOI18N
+        SendButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ChatSiGira/images/icons8_paper_plane_35px.png"))); // NOI18N
         SendButton.setBorder(null);
 
         MessageField.setBackground(new java.awt.Color(255, 255, 255));
@@ -189,7 +189,7 @@ public class MainInterface extends javax.swing.JFrame {
         IconPanel.setBackground(new java.awt.Color(255, 153, 0));
 
         IconButton2.setBackground(new java.awt.Color(255, 153, 0));
-        IconButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_user_filled_50px_1.png"))); // NOI18N
+        IconButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ChatSiGira/images/icons8_user_filled_50px_1.png"))); // NOI18N
         IconButton2.setBorder(null);
         IconButton2.setBorderPainted(false);
         IconButton2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -199,7 +199,7 @@ public class MainInterface extends javax.swing.JFrame {
         });
 
         IconButton3.setBackground(new java.awt.Color(255, 153, 0));
-        IconButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_topic_filled_50px_1.png"))); // NOI18N
+        IconButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ChatSiGira/images/icons8_topic_filled_50px_1.png"))); // NOI18N
         IconButton3.setBorder(null);
         IconButton3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -208,11 +208,11 @@ public class MainInterface extends javax.swing.JFrame {
         });
 
         IconButton4.setBackground(new java.awt.Color(255, 153, 0));
-        IconButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_settings_filled_50px_1.png"))); // NOI18N
+        IconButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ChatSiGira/images/icons8_settings_filled_50px_1.png"))); // NOI18N
         IconButton4.setBorder(null);
 
         IconButton1.setBackground(new java.awt.Color(255, 153, 0));
-        IconButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_home_filled_50px.png"))); // NOI18N
+        IconButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ChatSiGira/images/icons8_home_filled_50px.png"))); // NOI18N
         IconButton1.setBorder(null);
         IconButton1.setBorderPainted(false);
         IconButton1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -250,7 +250,7 @@ public class MainInterface extends javax.swing.JFrame {
         UsernameLabel.setText("Username");
 
         UserIconLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        UserIconLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_user_male_circle_50px_1.png"))); // NOI18N
+        UserIconLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ChatSiGira/images/icons8_user_male_circle_50px_1.png"))); // NOI18N
 
         ContentPanel.setBackground(new java.awt.Color(255, 204, 51));
         ContentPanel.setLayout(new java.awt.CardLayout());

@@ -70,7 +70,7 @@ public class ChatInterface extends javax.swing.JFrame {
         TitleLabel.setText("Nome Topic / Utente");
 
         ChatIconLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        ChatIconLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icona_cutted.png"))); // NOI18N
+        ChatIconLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ChatSiGira/images/icona_cutted.png"))); // NOI18N
 
         javax.swing.GroupLayout TitlePanelLayout = new javax.swing.GroupLayout(TitlePanel);
         TitlePanel.setLayout(TitlePanelLayout);
@@ -91,7 +91,7 @@ public class ChatInterface extends javax.swing.JFrame {
         MexPanel.setBackground(new java.awt.Color(255, 255, 255));
 
         SendButton.setBackground(new java.awt.Color(255, 255, 255));
-        SendButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_paper_plane_35px.png"))); // NOI18N
+        SendButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ChatSiGira/images/icons8_paper_plane_35px.png"))); // NOI18N
         SendButton.setBorder(null);
 
         MessageField.setBackground(new java.awt.Color(255, 255, 255));
@@ -155,7 +155,7 @@ public class ChatInterface extends javax.swing.JFrame {
                 .addComponent(TitlePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(MessageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 451, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addComponent(MexPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
