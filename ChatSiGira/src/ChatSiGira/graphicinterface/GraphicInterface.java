@@ -7,7 +7,8 @@ package ChatSiGira.graphicinterface;
 
 /**
  *
- * @author edoal
+ * @author Allari Edoardo
+ * 
  */
 public class GraphicInterface {
 

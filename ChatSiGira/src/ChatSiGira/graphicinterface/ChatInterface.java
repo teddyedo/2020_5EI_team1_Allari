@@ -9,7 +9,8 @@ import java.awt.CardLayout;
 
 /**
  *
- * @author edoal
+ * @author Allari Edoardo
+ * 
  */
 public class ChatInterface extends javax.swing.JFrame {
 

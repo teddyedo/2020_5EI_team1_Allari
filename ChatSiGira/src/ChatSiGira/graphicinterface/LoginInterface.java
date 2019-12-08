@@ -11,8 +11,10 @@ import java.awt.Toolkit;
 
 /**
  *
- * @author edoal
+ * @author Allari Edoardo
+ * 
  */
+
 public class LoginInterface extends javax.swing.JFrame {
 
     /**

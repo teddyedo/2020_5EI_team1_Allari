@@ -9,8 +9,10 @@ import java.awt.CardLayout;
 
 /**
  *
- * @author edoal
+ * @author Allari Edoardo
+ * 
  */
+
 public class MainInterface extends javax.swing.JFrame {
 
     /**
