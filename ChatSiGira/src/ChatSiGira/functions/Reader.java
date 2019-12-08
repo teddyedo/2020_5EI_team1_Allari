@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ChatSiGira;
+package ChatSiGira.functions;
 
+import ChatSiGira.app.Connection;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -31,7 +32,7 @@ public class Reader extends Thread {
         while(true){
             byte[] data = new byte[2048];
             try {
-                data = Connection.read();
+                data = Actions.read();
             } catch (IOException ex) {
                 Logger.getLogger(Reader.class.getName()).log(Level.SEVERE, null, ex);
             }

@@ -5,7 +5,7 @@
  */
 package ChatSiGira.pacchettipackage;
 
-import ChatSiGira.UserInfo;
+import ChatSiGira.functions.UserInfo;
 
 /**
  *

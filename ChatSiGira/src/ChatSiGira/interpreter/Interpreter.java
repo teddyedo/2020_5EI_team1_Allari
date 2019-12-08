@@ -8,7 +8,7 @@ package ChatSiGira.interpreter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import ChatSiGira.pacchettipackage.*;
-import ChatSiGira.UserInfo;
+import ChatSiGira.functions.UserInfo;
 
 /**
  *
