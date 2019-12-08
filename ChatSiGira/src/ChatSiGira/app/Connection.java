@@ -16,7 +16,7 @@ import ChatSiGira.interpreter.Interpreter;
 
 /**
  *
- * @author Allari Edoardo supported by Jonathan Pollinari
+ * @author Allari Edoardo
  *
  *
  */
