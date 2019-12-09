@@ -369,6 +369,16 @@ public class MainInterface extends javax.swing.JFrame {
         jLabel3.setText("TOPIC APERTI");
 
         UserListComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        UserListComboBox.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                UserListComboBoxItemStateChanged(evt);
+            }
+        });
+        UserListComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UserListComboBoxActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
@@ -501,6 +511,16 @@ public class MainInterface extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_SendButtonActionPerformed
+
+    private void UserListComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserListComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_UserListComboBoxActionPerformed
+
+    private void UserListComboBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_UserListComboBoxItemStateChanged
+        // TODO add your handling code here:
+        Actions.openPrivateChatRoom(evt.getItem().toString());
+        
+    }//GEN-LAST:event_UserListComboBoxItemStateChanged
 
     public void setUsername(String alias){
         UsernameLabel.setText(alias);

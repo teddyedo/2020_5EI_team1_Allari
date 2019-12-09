@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import ChatSiGira.app.Connection;
 import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
+import ChatSiGira.graphicinterface.ChatInterface;
 
 /**
  *
@@ -304,6 +305,14 @@ public class Actions {
         System.out.println(u.getSourceAlias() + ": " + u.getMessage());
         
         Connection.mainInterface.updateMessageLabel(u.getMessage());
+    }
+    
+    
+    public static void openPrivateChatRoom(String alias){
+        
+        ChatInterface c = new ChatInterface();
+        c.setTitle(alias);
+        
     }
 
 }

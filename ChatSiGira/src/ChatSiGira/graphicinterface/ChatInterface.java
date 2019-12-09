@@ -5,7 +5,12 @@
  */
 package ChatSiGira.graphicinterface;
 
+import ChatSiGira.functions.Actions;
 import java.awt.CardLayout;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.Action;
 
 /**
  *
@@ -93,6 +98,11 @@ public class ChatInterface extends javax.swing.JFrame {
         SendButton.setBackground(new java.awt.Color(255, 255, 255));
         SendButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ChatSiGira/images/icons8_paper_plane_35px.png"))); // NOI18N
         SendButton.setBorder(null);
+        SendButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SendButtonActionPerformed(evt);
+            }
+        });
 
         MessageField.setBackground(new java.awt.Color(255, 255, 255));
         MessageField.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
@@ -188,6 +198,21 @@ public class ChatInterface extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_MessageFieldActionPerformed
 
+    private void SendButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SendButtonActionPerformed
+        // TODO add your handling code here:
+        String message = MessageField.getText();
+        
+        try {
+            Actions.sendedPrivateMex(message, TitleLabel.getText());
+        } catch (IOException ex) {
+            Logger.getLogger(ChatInterface.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_SendButtonActionPerformed
+
+    public void setUsername(String username){
+        TitleLabel.setText(username);
+    }
+    
     /**
      * @param args the command line arguments
      */
