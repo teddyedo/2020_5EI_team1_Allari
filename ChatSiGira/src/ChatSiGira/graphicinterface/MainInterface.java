@@ -6,6 +6,11 @@
 package ChatSiGira.graphicinterface;
 
 import java.awt.CardLayout;
+import ChatSiGira.functions.*;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -69,7 +74,7 @@ public class MainInterface extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         TopicPanel = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        UserListComboBox = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -120,6 +125,11 @@ public class MainInterface extends javax.swing.JFrame {
         SendButton.setBackground(new java.awt.Color(255, 255, 255));
         SendButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ChatSiGira/images/icons8_paper_plane_35px.png"))); // NOI18N
         SendButton.setBorder(null);
+        SendButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SendButtonActionPerformed(evt);
+            }
+        });
 
         MessageField.setBackground(new java.awt.Color(255, 255, 255));
         MessageField.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
@@ -195,6 +205,11 @@ public class MainInterface extends javax.swing.JFrame {
         IconButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Icon2ButtonClicked(evt);
+            }
+        });
+        IconButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IconButton2ActionPerformed(evt);
             }
         });
 
@@ -353,7 +368,7 @@ public class MainInterface extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("TOPIC APERTI");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        UserListComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel4.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
@@ -368,7 +383,7 @@ public class MainInterface extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(TopicPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TopicPanelLayout.createSequentialGroup()
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(UserListComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(58, 58, 58))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TopicPanelLayout.createSequentialGroup()
                         .addComponent(jLabel3)
@@ -384,7 +399,7 @@ public class MainInterface extends javax.swing.JFrame {
                 .addGap(31, 31, 31)
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(UserListComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 257, Short.MAX_VALUE)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(77, 77, 77))
@@ -467,6 +482,42 @@ public class MainInterface extends javax.swing.JFrame {
 
     }//GEN-LAST:event_IconButton3MouseClicked
 
+    private void IconButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IconButton2ActionPerformed
+        try {
+            // TODO add your handling code here:
+            Actions.requestUserList();
+        } catch (IOException ex) {
+            Logger.getLogger(MainInterface.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_IconButton2ActionPerformed
+
+    private void SendButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SendButtonActionPerformed
+        // TODO add your handling code here:
+        String message = MessageField.getText();
+        try {
+            Actions.sendedTopicMex(message);
+        } catch (IOException ex) {
+            Logger.getLogger(MainInterface.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_SendButtonActionPerformed
+
+    public void setUsername(String alias){
+        UsernameLabel.setText(alias);
+    }
+    
+    public void updateUserList(ArrayList<String> userList){
+        UserListComboBox.removeAllItems();
+        userList.forEach((alias) -> {
+            UserListComboBox.addItem(alias);
+        });
+    }
+    
+    public void updateMessageLabel(String message){
+        MessageLabel.setText(MessageLabel.getText() + "\n\n" + message);
+    }
+
+    
     /**
      * @param args the command line arguments
      */
@@ -524,9 +575,9 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JPanel TitlePanel;
     private javax.swing.JPanel TopicPanel;
     private javax.swing.JLabel UserIconLabel;
+    private javax.swing.JComboBox<String> UserListComboBox;
     private javax.swing.JPanel UserPanel;
     private javax.swing.JLabel UsernameLabel;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

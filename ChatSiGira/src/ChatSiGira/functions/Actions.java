@@ -10,7 +10,6 @@ import com.google.gson.Gson;
 import java.io.IOException;
 import java.util.ArrayList;
 import ChatSiGira.app.Connection;
-import ChatSiGira.graphicinterface.*;
 import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 
@@ -28,7 +27,7 @@ public class Actions {
     }
 
     /**
-     * This method is used to perform login to the server.
+     * This method is used to perform loginInterface to the server.
      *
      * @param alias the name choosen by the user logged in.
      * @throws IOException
@@ -41,7 +40,7 @@ public class Actions {
 
         RegistrationPacket r = new RegistrationPacket(alias, topic);
 
-        Connection.os.write(r.toBytes());
+        //Connection.os.write(r.toBytes());
 
         System.out.println("Sended registration request ");
 
@@ -121,6 +120,8 @@ public class Actions {
         Connection.os.write(u.toBytes());
 
         System.out.println("Sended public message");
+        
+        Connection.mainInterface.updateMessageLabel(message);
     }
 
     /**
@@ -193,6 +194,10 @@ public class Actions {
 
         //set my ID
         UserInfo.ID = regAck.getAssignedId();
+        
+        Connection.loginInterface.setVisible(false);
+        Connection.mainInterface.setVisible(true);
+        Connection.mainInterface.setUsername(UserInfo.alias);
 
     }
 
@@ -201,7 +206,7 @@ public class Actions {
      *
      * @param p packet sorted by whatToDo method.
      */
-    public static void userListReceived(Packet p) {
+    public static void userListReceived(Packet p){
 
         //creation userList packet
         GroupUsersListPacket gUsrLst = (GroupUsersListPacket) p;
@@ -224,7 +229,12 @@ public class Actions {
             case 2:
                 UserInfo.chatUserList.remove(userList.get(0));
                 break;
+            default:
+                System.out.println("User list packet error!!");
+          
         }
+        
+        Connection.mainInterface.updateUserList(UserInfo.chatUserList); 
     }
 
     /**
@@ -292,6 +302,8 @@ public class Actions {
         UtcDPacket u = (UtcDPacket) p;
 
         System.out.println(u.getSourceAlias() + ": " + u.getMessage());
+        
+        Connection.mainInterface.updateMessageLabel(u.getMessage());
     }
 
 }

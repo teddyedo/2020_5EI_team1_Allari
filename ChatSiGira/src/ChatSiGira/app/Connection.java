@@ -5,13 +5,10 @@
  */
 package ChatSiGira.app;
 
-import ChatSiGira.functions.UserInfo;
-import ChatSiGira.functions.Reader;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
-import ChatSiGira.functions.Actions;
 import ChatSiGira.interpreter.Interpreter;
 import ChatSiGira.graphicinterface.*;
 
@@ -25,6 +22,9 @@ public class Connection {
 
     protected static Socket client;
 
+    public static LoginInterface loginInterface = new LoginInterface();
+    public static MainInterface mainInterface = new MainInterface();
+
     public static DataInputStream is;
     public static DataOutputStream os;
 
@@ -33,13 +33,12 @@ public class Connection {
     public static void main(String[] args) throws IOException, InterruptedException {
 
         //client = new Socket("127.0.0.1", 53101);
-
         //is = new DataInputStream(client.getInputStream());
         //os = new DataOutputStream(client.getOutputStream());
+        loginInterface.setVisible(true);
 
-        LoginInterface login = new LoginInterface();
-        login.setVisible(true);
-        
+  
+
         //Reader reader = new Reader();
     }
 
