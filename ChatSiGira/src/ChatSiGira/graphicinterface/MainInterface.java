@@ -533,8 +533,8 @@ public class MainInterface extends javax.swing.JFrame {
         });
     }
     
-    public void updateMessageLabel(String message){
-        MessageLabel.setText(MessageLabel.getText() + "\n\n" + message);
+    public void updateMessageLabel(String message, String alias){
+        MessageLabel.setText(MessageLabel.getText() + "\n\n" + alias + ": " + message);
     }
 
     

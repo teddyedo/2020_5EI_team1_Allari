@@ -122,7 +122,7 @@ public class Actions {
 
         System.out.println("Sended public message");
         
-        Connection.mainInterface.updateMessageLabel(message);
+        Connection.mainInterface.updateMessageLabel(message, UserInfo.alias);
     }
 
     /**
@@ -304,7 +304,7 @@ public class Actions {
 
         System.out.println(u.getSourceAlias() + ": " + u.getMessage());
         
-        Connection.mainInterface.updateMessageLabel(u.getMessage());
+        Connection.mainInterface.updateMessageLabel(u.getMessage(), u.getSourceAlias());
     }
     
     

@@ -202,6 +202,7 @@ public class ChatInterface extends javax.swing.JFrame {
         // TODO add your handling code here:
         String message = MessageField.getText();
         
+        
         try {
             Actions.sendedPrivateMex(message, TitleLabel.getText());
         } catch (IOException ex) {
@@ -211,6 +212,10 @@ public class ChatInterface extends javax.swing.JFrame {
 
     public void setUsername(String username){
         TitleLabel.setText(username);
+    }
+    
+    public void updateMessageLabel(String message, String alias){
+        MessageLabel.setText(MessageLabel.getText() + "\n\n" + alias + ": " + message);
     }
     
     /**
