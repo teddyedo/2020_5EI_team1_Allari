@@ -11,6 +11,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import ChatSiGira.app.Connection;
 import ChatSiGira.graphicinterface.*;
+import com.google.gson.reflect.TypeToken;
+import java.lang.reflect.Type;
 
 /**
  *
@@ -205,7 +207,10 @@ public class Actions {
         GroupUsersListPacket gUsrLst = (GroupUsersListPacket) p;
 
         Gson json = new Gson();
-        ArrayList<String> userList = json.fromJson(gUsrLst.getJsonContent(), ArrayList.class);
+        
+        Type userListType = new TypeToken<ArrayList<String>>(){}.getType();
+        
+        ArrayList<String> userList = json.fromJson(gUsrLst.getJsonContent(), userListType);
 
         switch (gUsrLst.getType()) {
 
