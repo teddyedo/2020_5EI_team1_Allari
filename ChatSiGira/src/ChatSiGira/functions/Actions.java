@@ -14,6 +14,9 @@ import static ChatSiGira.functions.UserInfo.chatRoomList;
 import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import ChatSiGira.graphicinterface.ChatInterface;
+import com.google.gson.stream.JsonReader;
+import java.io.StringReader;
+import java.util.List;
 
 /**
  *
@@ -108,9 +111,10 @@ public class Actions {
         System.out.println("Sended private message");
 
         for (ChatRoom c : chatRoomList) {
-                if(c.getAlias().equals(dstAlias))
-                    c.getChatInterface().updateMessageLabel(message, dstAlias);
+            if (c.getAlias().equals(dstAlias)) {
+                c.getChatInterface().updateMessageLabel(message, dstAlias);
             }
+        }
     }
 
     /**
@@ -123,7 +127,7 @@ public class Actions {
 
         UtCPacket u = new UtCPacket(UserInfo.ID, message);
         System.out.println(u.size());
-        
+
         Connection.os.write(u.toBytes());
 
         System.out.println("Sended public message");
@@ -217,19 +221,27 @@ public class Actions {
 
         //creation userList packet
         GroupUsersListPacket gUsrLst = (GroupUsersListPacket) p;
-
+        
         Gson json = new Gson();
 
+        JsonReader reader = new JsonReader( new StringReader(gUsrLst.getJsonContent()));
+        reader.setLenient(true);
+        
         Type userListType = new TypeToken<ArrayList<String>>() {
         }.getType();
 
-        ArrayList<String> userList = json.fromJson(gUsrLst.getJsonContent(), userListType);
+        List<String> userList = new ArrayList<>();
+                        
+        userList = json.fromJson(reader, userListType);
+
+        System.out.println(userList.size());
 
         switch (gUsrLst.getType()) {
 
             case 0:
                 UserInfo.chatUserList.clear();
-                UserInfo.chatUserList = userList;
+                for(String s : userList)
+                    UserInfo.chatUserList.add(s);
                 break;
             case 1:
                 UserInfo.chatUserList.add(userList.get(0));
@@ -241,8 +253,9 @@ public class Actions {
                 System.out.println("User list packet error!!");
 
         }
-
+        
         Connection.mainInterface.updateUserList(UserInfo.chatUserList);
+        
     }
 
     /**
@@ -297,10 +310,11 @@ public class Actions {
         UtuDPacket u = (UtuDPacket) p;
 
         System.out.println(u.getSourceAlias() + ": " + u.getMessage());
-        
-        for(ChatRoom c : chatRoomList){
-            if(c.getAlias().equals(u.getSourceAlias()))
+
+        for (ChatRoom c : chatRoomList) {
+            if (c.getAlias().equals(u.getSourceAlias())) {
                 c.getChatInterface().updateMessageLabel(u.getMessage(), u.getSourceAlias());
+            }
         }
     }
 
@@ -321,12 +335,22 @@ public class Actions {
 
     public static void openPrivateChatRoom(String alias) {
 
-        ChatInterface c = new ChatInterface();
-        c.setVisible(true);
-        c.setTitle(alias);
-        ChatRoom chatRoom = new ChatRoom(alias, c);
-        chatRoomList.add(chatRoom);
-
+        Boolean created = false;
+        
+        for(ChatRoom c : chatRoomList){
+            if(c.getAlias().equals(alias)){
+                System.out.println("A chatRoom with this user is just opened");
+                created = true;
+            }
+        }
+        
+        if(!created){
+            ChatInterface c = new ChatInterface();
+            c.setVisible(true);
+            c.setTitle(alias);
+            ChatRoom chatRoom = new ChatRoom(alias, c);
+            chatRoomList.add(chatRoom);
+        }
     }
 
 }

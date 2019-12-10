@@ -33,7 +33,7 @@ public class Connection {
 
     public static void main(String[] args) throws IOException, InterruptedException {
 
-        client = new Socket("172.16.7.166", 53101);
+        client = new Socket("127.0.0.1", 53101);
         is = new DataInputStream(client.getInputStream());
         os = new DataOutputStream(client.getOutputStream());
         loginInterface.setVisible(true);

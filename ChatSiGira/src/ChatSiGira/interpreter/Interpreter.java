@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import ChatSiGira.pacchettipackage.*;
 import ChatSiGira.functions.UserInfo;
+import com.google.gson.Gson;
+import java.nio.charset.StandardCharsets;
 
 /**
  *
@@ -140,8 +142,8 @@ public class Interpreter {
         
         byte[] jsonByte = Arrays.copyOfRange(data, 3, data.length);
         
-        String jsonString = new String(jsonByte);
-        
+        String jsonString = new String(jsonByte, StandardCharsets.ISO_8859_1);
+              
         GroupUsersListPacket groupUsersListPacket = new GroupUsersListPacket
         (type, listLength, jsonString);
         
