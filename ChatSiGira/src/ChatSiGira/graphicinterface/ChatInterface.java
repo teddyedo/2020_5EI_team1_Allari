@@ -109,6 +109,11 @@ public class ChatInterface extends javax.swing.JFrame {
         MessageField.setForeground(new java.awt.Color(0, 0, 0));
         MessageField.setText("Inserisci il messaggio...");
         MessageField.setBorder(null);
+        MessageField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MessageFieldMouseClicked(evt);
+            }
+        });
         MessageField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MessageFieldActionPerformed(evt);
@@ -144,7 +149,7 @@ public class ChatInterface extends javax.swing.JFrame {
 
         MessageLabel.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
         MessageLabel.setForeground(new java.awt.Color(0, 0, 0));
-        MessageLabel.setText("Qui verranno scritti tutti i messaggi della chat pubblica:                ");
+        MessageLabel.setText("<html>---------------------------------- Benvenuto nella chat privata!  ------------------------------------</html>");
         MessageLabel.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         MessageLabel.setAutoscrolls(true);
 
@@ -201,7 +206,7 @@ public class ChatInterface extends javax.swing.JFrame {
     private void SendButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SendButtonActionPerformed
         // TODO add your handling code here:
         String message = MessageField.getText();
-        
+        MessageField.setText(" ");
         
         try {
             Actions.sendedPrivateMex(message, TitleLabel.getText());
@@ -210,12 +215,23 @@ public class ChatInterface extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_SendButtonActionPerformed
 
+    private void MessageFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MessageFieldMouseClicked
+        // TODO add your handling code here:
+        MessageField.setText(" ");
+    }//GEN-LAST:event_MessageFieldMouseClicked
+
     public void setUsername(String username){
         TitleLabel.setText(username);
     }
     
     public void updateMessageLabel(String message, String alias){
-        MessageLabel.setText(MessageLabel.getText() + "\n\n" + alias + ": " + message);
+        
+        String s = MessageLabel.getText();
+        String oldMessage = s.substring(6, s.length() - 7);
+
+        MessageLabel.setText("<html>" + oldMessage + "<br><br>" + "<b>" + alias
+                + "</b>: " + message + "</html>");
+
     }
     
     /**

@@ -346,8 +346,9 @@ public class Actions {
         
         if(!created){
             ChatInterface c = new ChatInterface();
-            c.setVisible(true);
             c.setTitle(alias);
+            c.setUsername(alias);
+            c.setVisible(true);
             ChatRoom chatRoom = new ChatRoom(alias, c);
             chatRoomList.add(chatRoom);
         }

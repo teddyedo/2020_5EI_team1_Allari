@@ -104,7 +104,7 @@ public class LoginInterface extends javax.swing.JFrame {
         BackgroundWhite.add(ErrorLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 300, -1));
 
         TextField.setBackground(new java.awt.Color(255, 255, 255));
-        TextField.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
+        TextField.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
         TextField.setBorder(null);
         BackgroundWhite.add(TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, 220, 30));
         BackgroundWhite.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, 200, 10));

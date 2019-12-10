@@ -15,22 +15,19 @@ import java.util.logging.Logger;
 /**
  *
  * @author Allari Edoardo
- * 
+ *
  */
-
 public class MainInterface extends javax.swing.JFrame {
 
     /**
      * Creates new form MainInterface
      */
-    
-    
     CardLayout cardLayout;
-    
+
     public MainInterface() {
         initComponents();
-        
-        cardLayout = (CardLayout)(ContentPanel.getLayout());
+
+        cardLayout = (CardLayout) (ContentPanel.getLayout());
 
     }
 
@@ -183,7 +180,7 @@ public class MainInterface extends javax.swing.JFrame {
         jScrollPane1.setBackground(new java.awt.Color(187, 187, 187));
 
         MessageLabel.setBackground(new java.awt.Color(187, 187, 187));
-        MessageLabel.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
+        MessageLabel.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         MessageLabel.setForeground(new java.awt.Color(0, 0, 0));
         MessageLabel.setText("<html> </html>");
         MessageLabel.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
@@ -195,11 +192,11 @@ public class MainInterface extends javax.swing.JFrame {
         RightPanelLayout.setHorizontalGroup(
             RightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(TitlePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(RightPanelLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RightPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(RightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(MexPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 609, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1))
+                .addGroup(RightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1)
+                    .addComponent(MexPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 609, Short.MAX_VALUE))
                 .addContainerGap())
         );
         RightPanelLayout.setVerticalGroup(
@@ -544,31 +541,33 @@ public class MainInterface extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_MessageFieldActionPerformed
 
-    public void setUsername(String alias){
+    public void setUsername(String alias) {
         UsernameLabel.setText(alias);
     }
-    
-    public void updateUserList(ArrayList<String> userList){
+
+    public void updateUserList(ArrayList<String> userList) {
         jComboBox2.removeAllItems();
-        for(String s : userList)
+        for (String s : userList) {
             jComboBox2.addItem(s);
-       
-    }
-    
-    public void updateMessageLabel(String message, String alias){
-        
-        String s = MessageLabel.getText();
-        String oldMessage = s.substring(6, s.length()-7);
-        
-        MessageLabel.setText("<html>" + oldMessage + "<br><br>" + alias + ": " + message + "</html>");
-        
+        }
+
     }
 
-    public void openChatRoom(java.awt.event.ActionEvent evt){
+    public void updateMessageLabel(String message, String alias) {
+
+        String s = MessageLabel.getText();
+        String oldMessage = s.substring(6, s.length() - 7);
+
+        MessageLabel.setText("<html>" + oldMessage + "<br><br>" + "<b>" + alias
+                + "</b>: " + message + "</html>");
+
+    }
+
+    public void openChatRoom(java.awt.event.ActionEvent evt) {
         String alias = jComboBox2.getSelectedItem().toString();
         Actions.openPrivateChatRoom(alias);
     }
-    
+
     /**
      * @param args the command line arguments
      */
@@ -602,8 +601,7 @@ public class MainInterface extends javax.swing.JFrame {
                 new MainInterface().setVisible(true);
             }
         });
-        
-        
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

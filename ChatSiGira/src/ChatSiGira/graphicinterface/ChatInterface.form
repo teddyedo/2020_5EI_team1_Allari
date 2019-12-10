@@ -218,6 +218,7 @@
                     </Property>
                   </Properties>
                   <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="MessageFieldMouseClicked"/>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MessageFieldActionPerformed"/>
                   </Events>
                 </Component>
@@ -238,7 +239,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="0" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Qui verranno scritti tutti i messaggi della chat pubblica:                "/>
+                <Property name="text" type="java.lang.String" value="&lt;html&gt;---------------------------------- Benvenuto nella chat privata!  ------------------------------------&lt;/html&gt;"/>
                 <Property name="verticalAlignment" type="int" value="3"/>
                 <Property name="autoscrolls" type="boolean" value="true"/>
               </Properties>

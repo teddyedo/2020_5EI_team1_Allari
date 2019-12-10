@@ -175,7 +175,7 @@ public class Interpreter {
         }
         
         //message
-        variableElements.add( Arrays.copyOfRange( data, start, data.length -1));
+        variableElements.add( Arrays.copyOfRange( data, start, data.length - 1));
        
         
         String sourceAlias = new String(variableElements.get(0));
