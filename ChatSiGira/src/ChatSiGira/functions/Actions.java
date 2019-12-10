@@ -108,10 +108,9 @@ public class Actions {
         System.out.println("Sended private message");
 
         for (ChatRoom c : chatRoomList) {
-       
-                
+                if(c.getAlias().equals(dstAlias))
+                    c.getChatInterface().updateMessageLabel(message, dstAlias);
             }
-        
     }
 
     /**
@@ -298,6 +297,11 @@ public class Actions {
         UtuDPacket u = (UtuDPacket) p;
 
         System.out.println(u.getSourceAlias() + ": " + u.getMessage());
+        
+        for(ChatRoom c : chatRoomList){
+            if(c.getAlias().equals(u.getSourceAlias()))
+                c.getChatInterface().updateMessageLabel(u.getMessage(), u.getSourceAlias());
+        }
     }
 
     /**
