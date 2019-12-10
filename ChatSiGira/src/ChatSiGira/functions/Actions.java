@@ -10,6 +10,7 @@ import com.google.gson.Gson;
 import java.io.IOException;
 import java.util.ArrayList;
 import ChatSiGira.app.Connection;
+import static ChatSiGira.functions.UserInfo.chatRoomList;
 import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import ChatSiGira.graphicinterface.ChatInterface;
@@ -36,13 +37,12 @@ public class Actions {
     public static void registration(String alias) throws IOException {
 
         UserInfo.alias = alias;
-        
+
         String topic = "general";
 
         RegistrationPacket r = new RegistrationPacket(alias, topic);
 
         //Connection.os.write(r.toBytes());
-
         System.out.println("Sended registration request ");
 
     }
@@ -106,6 +106,12 @@ public class Actions {
         Connection.os.write(u.toBytes());
 
         System.out.println("Sended private message");
+
+        for (ChatRoom c : chatRoomList) {
+       
+                
+            }
+        }
     }
 
     /**
@@ -121,7 +127,7 @@ public class Actions {
         Connection.os.write(u.toBytes());
 
         System.out.println("Sended public message");
-        
+
         Connection.mainInterface.updateMessageLabel(message, UserInfo.alias);
     }
 
@@ -189,13 +195,13 @@ public class Actions {
         RegistrationAckPacket regAck = (RegistrationAckPacket) p;
 
         //alias verification
-        if (!regAck.getAliasConfirmation().equals(UserInfo.alias)) {           
+        if (!regAck.getAliasConfirmation().equals(UserInfo.alias)) {
             registration(UserInfo.alias);
         }
 
         //set my ID
         UserInfo.ID = regAck.getAssignedId();
-        
+
         Connection.loginInterface.setVisible(false);
         Connection.mainInterface.setVisible(true);
         Connection.mainInterface.setUsername(UserInfo.alias);
@@ -207,15 +213,16 @@ public class Actions {
      *
      * @param p packet sorted by whatToDo method.
      */
-    public static void userListReceived(Packet p){
+    public static void userListReceived(Packet p) {
 
         //creation userList packet
         GroupUsersListPacket gUsrLst = (GroupUsersListPacket) p;
 
         Gson json = new Gson();
-        
-        Type userListType = new TypeToken<ArrayList<String>>(){}.getType();
-        
+
+        Type userListType = new TypeToken<ArrayList<String>>() {
+        }.getType();
+
         ArrayList<String> userList = json.fromJson(gUsrLst.getJsonContent(), userListType);
 
         switch (gUsrLst.getType()) {
@@ -232,10 +239,10 @@ public class Actions {
                 break;
             default:
                 System.out.println("User list packet error!!");
-          
+
         }
-        
-        Connection.mainInterface.updateUserList(UserInfo.chatUserList); 
+
+        Connection.mainInterface.updateUserList(UserInfo.chatUserList);
     }
 
     /**
@@ -303,16 +310,18 @@ public class Actions {
         UtcDPacket u = (UtcDPacket) p;
 
         System.out.println(u.getSourceAlias() + ": " + u.getMessage());
-        
+
         Connection.mainInterface.updateMessageLabel(u.getMessage(), u.getSourceAlias());
     }
-    
-    
-    public static void openPrivateChatRoom(String alias){
-        
+
+    public static void openPrivateChatRoom(String alias) {
+
         ChatInterface c = new ChatInterface();
+        c.setVisible(true);
         c.setTitle(alias);
-        
+        ChatRoom chatRoom = new ChatRoom(alias, c);
+        chatRoomList.add(chatRoom);
+
     }
 
 }

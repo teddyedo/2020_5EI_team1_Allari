@@ -6,7 +6,7 @@
 package ChatSiGira.functions;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+ 
 
 /**
  *
@@ -15,13 +15,16 @@ import java.util.HashMap;
  */
 public class UserInfo {
 
-    //User list
+    //User list.
     public static ArrayList<String> chatUserList = new ArrayList<>();
+    
+    //ChatRoom list.
+    public static ArrayList<ChatRoom> chatRoomList = new ArrayList<>();
 
-    //Id assigned from the server 
+    //Id assigned from the server.
     public static byte[] ID = null;
 
-    //My alias
+    //My alias.
     public static String alias = null;
 
     /**
