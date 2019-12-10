@@ -42,7 +42,7 @@ public class Actions {
 
         RegistrationPacket r = new RegistrationPacket(alias, topic);
 
-        //Connection.os.write(r.toBytes());
+        Connection.os.write(r.toBytes());
         System.out.println("Sended registration request ");
 
     }
@@ -111,7 +111,7 @@ public class Actions {
        
                 
             }
-        }
+        
     }
 
     /**
@@ -123,7 +123,8 @@ public class Actions {
     public static void sendedTopicMex(String message) throws IOException {
 
         UtCPacket u = new UtCPacket(UserInfo.ID, message);
-
+        System.out.println(u.size());
+        
         Connection.os.write(u.toBytes());
 
         System.out.println("Sended public message");

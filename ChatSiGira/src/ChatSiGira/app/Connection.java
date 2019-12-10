@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.net.Socket;
 import ChatSiGira.interpreter.Interpreter;
 import ChatSiGira.graphicinterface.*;
+import ChatSiGira.functions.Reader;
 
 /**
  *
@@ -32,14 +33,14 @@ public class Connection {
 
     public static void main(String[] args) throws IOException, InterruptedException {
 
-        //client = new Socket("127.0.0.1", 53101);
-        //is = new DataInputStream(client.getInputStream());
-        //os = new DataOutputStream(client.getOutputStream());
+        client = new Socket("172.16.7.166", 53101);
+        is = new DataInputStream(client.getInputStream());
+        os = new DataOutputStream(client.getOutputStream());
         loginInterface.setVisible(true);
 
   
 
-        //Reader reader = new Reader();
+        Reader reader = new Reader();
     }
 
 }

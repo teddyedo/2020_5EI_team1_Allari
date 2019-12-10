@@ -97,7 +97,7 @@ public class UtCPacket implements Packet {
      */
     public int size() {
         return this.header().length + this.getID().length
-                + this.getMessage().length();
+                + this.getMessage().length() + 1;
     }
 
     /**
@@ -106,6 +106,7 @@ public class UtCPacket implements Packet {
      * @return byte [] --> complete packet.
      */
     public byte[] toBytes() {
+        
 
         byte[] buffer = new byte[this.size()];
 
