@@ -112,7 +112,7 @@ public class Actions {
 
         for (ChatRoom c : chatRoomList) {
             if (c.getAlias().equals(dstAlias)) {
-                c.getChatInterface().updateMessageLabel(message, dstAlias);
+                c.getChatInterface().updateMessageLabel(message, UserInfo.alias);
             }
         }
     }
