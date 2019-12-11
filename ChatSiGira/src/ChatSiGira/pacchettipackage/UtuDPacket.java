@@ -15,7 +15,7 @@ public class UtuDPacket implements Packet {
 
     private String SourceAlias;
     private String Message;
-    private final int OpCode = 01;
+    private final int OpCode = 1;
 
     /**
      * Constructor

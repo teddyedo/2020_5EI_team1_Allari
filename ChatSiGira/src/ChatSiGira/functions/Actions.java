@@ -163,9 +163,11 @@ public class Actions {
 
             case 01:
                 System.out.println("messaggio da utente");
+                userMessageReceived(p);
                 break;
             case 05:
                 System.out.println("messaggio da chat");
+                topicMessageReceived(p);
                 break;
             case 11:
                 System.out.println("disconnessioneDaServer");
