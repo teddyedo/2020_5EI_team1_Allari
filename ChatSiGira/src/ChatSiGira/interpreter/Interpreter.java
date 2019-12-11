@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import ChatSiGira.pacchettipackage.*;
 import ChatSiGira.functions.UserInfo;
-import com.google.gson.Gson;
 import java.nio.charset.StandardCharsets;
 
 /**

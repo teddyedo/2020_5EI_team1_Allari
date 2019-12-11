@@ -137,6 +137,17 @@ public class UtuPacket implements Packet {
      */
     public byte[] toBytes() {
 
+        byte[] messageBytes = this.getMessage().getBytes(StandardCharsets.ISO_8859_1);
+        
+        //max length of payload
+        int maxMexLength = 2043 - this.getDestinationAlias().length();
+        
+        //number of packet to send
+        int numberOfPacket = (this.getMessage().length() / maxMexLength) + 1;
+        
+        
+        
+        
         byte[] buffer = new byte[this.size()];
         int i = 0;
 
