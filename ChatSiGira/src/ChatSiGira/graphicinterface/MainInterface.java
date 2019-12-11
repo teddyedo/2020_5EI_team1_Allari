@@ -76,6 +76,11 @@ public class MainInterface extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         UserListComboBox = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
+        SettingPanel = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        ChangeAliasTextField = new javax.swing.JTextField();
+        ChangeAliasButton = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -238,6 +243,11 @@ public class MainInterface extends javax.swing.JFrame {
         IconButton4.setBackground(new java.awt.Color(255, 153, 0));
         IconButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ChatSiGira/images/icons8_settings_filled_50px_1.png"))); // NOI18N
         IconButton4.setBorder(null);
+        IconButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                IconButton4MouseClicked(evt);
+            }
+        });
 
         IconButton1.setBackground(new java.awt.Color(255, 153, 0));
         IconButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ChatSiGira/images/icons8_home_filled_50px.png"))); // NOI18N
@@ -310,7 +320,7 @@ public class MainInterface extends javax.swing.JFrame {
             .addGroup(HomePanelLayout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(460, Short.MAX_VALUE))
+                .addContainerGap(483, Short.MAX_VALUE))
             .addGroup(HomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(HomePanelLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -375,9 +385,9 @@ public class MainInterface extends javax.swing.JFrame {
                 .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(87, 87, 87)
                 .addComponent(openChatButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(111, 111, 111))
+                .addGap(146, 146, 146))
             .addGroup(UserPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(UserPanelLayout.createSequentialGroup()
                     .addContainerGap()
@@ -425,12 +435,62 @@ public class MainInterface extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
                 .addComponent(UserListComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 257, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 280, Short.MAX_VALUE)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(77, 77, 77))
         );
 
         ContentPanel.add(TopicPanel, "TopicPanel");
+
+        SettingPanel.setBackground(new java.awt.Color(255, 204, 51));
+
+        jLabel6.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("<html>\n<p style=\"text-align:center;\">\nVuoi cambiare nome? <br>\nInserisci nel campo qui <br>\nsotto il nuovo nome e <br>\npremi il pulsante \"cambia!\"\n</p>\n</html>");
+
+        ChangeAliasTextField.setBackground(new java.awt.Color(255, 255, 255));
+        ChangeAliasTextField.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
+        ChangeAliasTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        ChangeAliasButton.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
+        ChangeAliasButton.setText("Cambia!");
+
+        jLabel7.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout SettingPanelLayout = new javax.swing.GroupLayout(SettingPanel);
+        SettingPanel.setLayout(SettingPanelLayout);
+        SettingPanelLayout.setHorizontalGroup(
+            SettingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SettingPanelLayout.createSequentialGroup()
+                .addGroup(SettingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(SettingPanelLayout.createSequentialGroup()
+                        .addGap(59, 59, 59)
+                        .addGroup(SettingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
+                            .addComponent(ChangeAliasTextField)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(SettingPanelLayout.createSequentialGroup()
+                        .addGap(105, 105, 105)
+                        .addComponent(ChangeAliasButton, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(65, Short.MAX_VALUE))
+        );
+        SettingPanelLayout.setVerticalGroup(
+            SettingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SettingPanelLayout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addComponent(ChangeAliasTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44)
+                .addComponent(ChangeAliasButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(58, Short.MAX_VALUE))
+        );
+
+        ContentPanel.add(SettingPanel, "SettingPanel");
 
         javax.swing.GroupLayout LeftPanelLayout = new javax.swing.GroupLayout(LeftPanel);
         LeftPanel.setLayout(LeftPanelLayout);
@@ -503,6 +563,7 @@ public class MainInterface extends javax.swing.JFrame {
 
     }//GEN-LAST:event_IconButton3MouseClicked
 
+
     private void IconButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IconButton2ActionPerformed
         try {
             // TODO add your handling code here:
@@ -540,6 +601,12 @@ public class MainInterface extends javax.swing.JFrame {
     private void MessageFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MessageFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_MessageFieldActionPerformed
+
+    private void IconButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconButton4MouseClicked
+        // TODO add your handling code here:
+        cardLayout.show(ContentPanel, "SettingPanel");
+
+    }//GEN-LAST:event_IconButton4MouseClicked
 
     public void setUsername(String alias) {
         UsernameLabel.setText(alias);
@@ -606,6 +673,8 @@ public class MainInterface extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BackgroundPanel;
+    private javax.swing.JButton ChangeAliasButton;
+    private javax.swing.JTextField ChangeAliasTextField;
     private javax.swing.JLabel ChatIconLabel;
     private javax.swing.JPanel ContentPanel;
     private javax.swing.JPanel HomePanel;
@@ -620,6 +689,7 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JPanel MexPanel;
     private javax.swing.JPanel RightPanel;
     private javax.swing.JButton SendButton;
+    private javax.swing.JPanel SettingPanel;
     private javax.swing.JLabel TitleLabel;
     private javax.swing.JPanel TitlePanel;
     private javax.swing.JPanel TopicPanel;
@@ -633,6 +703,8 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
