@@ -5,7 +5,6 @@
  */
 package ChatSiGira.functions;
 
-import ChatSiGira.app.Connection;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -29,7 +28,7 @@ public class Reader extends Thread {
     public void run() {
         
         
-        while(true){
+        while(UserInfo.userOnline){
             byte[] data = new byte[2048];
             try {
                 data = Actions.read();

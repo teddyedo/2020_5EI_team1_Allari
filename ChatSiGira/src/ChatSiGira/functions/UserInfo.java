@@ -14,6 +14,9 @@ import java.util.ArrayList;
  *
  */
 public class UserInfo {
+    
+    //User status
+    public static Boolean userOnline = true;
 
     //User list.
     public static ArrayList<String> chatUserList = new ArrayList<>();

@@ -81,6 +81,7 @@ public class MainInterface extends javax.swing.JFrame {
         ChangeAliasTextField = new javax.swing.JTextField();
         ChangeAliasButton = new javax.swing.JButton();
         ErrorAliasLabel = new javax.swing.JLabel();
+        DisconnectionButton = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -320,7 +321,7 @@ public class MainInterface extends javax.swing.JFrame {
             .addGroup(HomePanelLayout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(483, Short.MAX_VALUE))
+                .addContainerGap(460, Short.MAX_VALUE))
             .addGroup(HomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(HomePanelLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -385,7 +386,7 @@ public class MainInterface extends javax.swing.JFrame {
                 .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(87, 87, 87)
                 .addComponent(openChatButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(146, 146, 146))
             .addGroup(UserPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -415,7 +416,7 @@ public class MainInterface extends javax.swing.JFrame {
         TopicPanelLayout.setHorizontalGroup(
             TopicPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TopicPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(66, Short.MAX_VALUE)
                 .addGroup(TopicPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TopicPanelLayout.createSequentialGroup()
                         .addComponent(UserListComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -424,9 +425,9 @@ public class MainInterface extends javax.swing.JFrame {
                         .addComponent(jLabel3)
                         .addGap(98, 98, 98))))
             .addGroup(TopicPanelLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addGap(23, 23, 23)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 31, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         TopicPanelLayout.setVerticalGroup(
             TopicPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -435,9 +436,9 @@ public class MainInterface extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
                 .addComponent(UserListComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 280, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 213, Short.MAX_VALUE)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(77, 77, 77))
+                .addGap(121, 121, 121))
         );
 
         ContentPanel.add(TopicPanel, "TopicPanel");
@@ -464,6 +465,21 @@ public class MainInterface extends javax.swing.JFrame {
         ErrorAliasLabel.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
         ErrorAliasLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
+        DisconnectionButton.setBackground(new java.awt.Color(255, 0, 0));
+        DisconnectionButton.setFont(new java.awt.Font("Product Sans", 1, 30)); // NOI18N
+        DisconnectionButton.setForeground(new java.awt.Color(0, 0, 0));
+        DisconnectionButton.setText("Disconnetti");
+        DisconnectionButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DisconnectionButtonMouseClicked(evt);
+            }
+        });
+        DisconnectionButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DisconnectionButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout SettingPanelLayout = new javax.swing.GroupLayout(SettingPanel);
         SettingPanel.setLayout(SettingPanelLayout);
         SettingPanelLayout.setHorizontalGroup(
@@ -480,11 +496,15 @@ public class MainInterface extends javax.swing.JFrame {
                             .addGroup(SettingPanelLayout.createSequentialGroup()
                                 .addGap(105, 105, 105)
                                 .addComponent(ChangeAliasButton, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 59, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(SettingPanelLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(ErrorAliasLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(SettingPanelLayout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(DisconnectionButton, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(44, Short.MAX_VALUE))
         );
         SettingPanelLayout.setVerticalGroup(
             SettingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -495,9 +515,11 @@ public class MainInterface extends javax.swing.JFrame {
                 .addComponent(ChangeAliasTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44)
                 .addComponent(ChangeAliasButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60)
-                .addComponent(ErrorAliasLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addGap(27, 27, 27)
+                .addComponent(ErrorAliasLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addComponent(DisconnectionButton, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16))
         );
 
         ContentPanel.add(SettingPanel, "SettingPanel");
@@ -629,6 +651,19 @@ public class MainInterface extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ChangeAliasButtonMouseClicked
 
+    private void DisconnectionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisconnectionButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DisconnectionButtonActionPerformed
+
+    private void DisconnectionButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DisconnectionButtonMouseClicked
+        try {
+            // TODO add your handling code here:
+            Actions.disconnection();
+        } catch (IOException ex) {
+            Logger.getLogger(MainInterface.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_DisconnectionButtonMouseClicked
+
     public void setUsername(String alias) {
         UsernameLabel.setText(alias);
     }
@@ -702,6 +737,7 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JTextField ChangeAliasTextField;
     private javax.swing.JLabel ChatIconLabel;
     private javax.swing.JPanel ContentPanel;
+    private javax.swing.JButton DisconnectionButton;
     private javax.swing.JLabel ErrorAliasLabel;
     private javax.swing.JPanel HomePanel;
     private javax.swing.JButton IconButton1;

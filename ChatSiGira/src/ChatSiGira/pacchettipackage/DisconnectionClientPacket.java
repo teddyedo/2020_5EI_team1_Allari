@@ -74,7 +74,7 @@ public class DisconnectionClientPacket implements Packet {
      * @return int size.
      */
     public int size() {
-        return 5 + this.getID().length;
+        return 1 + this.getID().length;
     }
 
     /**

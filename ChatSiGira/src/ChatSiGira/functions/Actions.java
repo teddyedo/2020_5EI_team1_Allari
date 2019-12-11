@@ -67,9 +67,9 @@ public class Actions {
             Connection.os.write(c.toBytes());
 
             System.out.println("Sended alias change packet");
-            
+
             Connection.mainInterface.setUsername(newAlias);
-            
+
             UserInfo.alias = newAlias;
         }
 
@@ -87,16 +87,14 @@ public class Actions {
         Connection.os.write(dscPkt.toBytes());
 
         System.out.println("Sended disconnection request");
-        
+
         Connection.mainInterface.setVisible(false);
-        
-        for (ChatRoom c : chatRoomList){
-            c.getChatInterface().setVisible(false);
-        }
-       
-        Connection.reader.interrupt();
+
+        UserInfo.userOnline = false;
         Connection.client.close();
-        
+
+        System.exit(0);
+
     }
 
     /**
@@ -318,16 +316,13 @@ public class Actions {
                 break;
 
         }
-        
+
         Connection.mainInterface.setVisible(false);
-        
-        for (ChatRoom c : chatRoomList){
-            c.getChatInterface().setVisible(false);
-        }
-       
-        Connection.reader.interrupt();
+
+        UserInfo.userOnline = false;
         Connection.client.close();
 
+        System.exit(0);
     }
 
     /**
