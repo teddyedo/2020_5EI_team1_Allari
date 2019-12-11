@@ -58,11 +58,20 @@ public class Actions {
      */
     public static void changeAlias(String newAlias) throws IOException {
 
-        ChangeOfAliasPacket c = new ChangeOfAliasPacket(UserInfo.ID, UserInfo.alias, newAlias);
+        if (UserInfo.chatUserList.contains(newAlias) || newAlias.length() < 6
+                || newAlias.length() > 32) {
+            Connection.mainInterface.invalidAlias();
+        } else {
+            ChangeOfAliasPacket c = new ChangeOfAliasPacket(newAlias);
 
-        Connection.os.write(c.toBytes());
+            Connection.os.write(c.toBytes());
 
-        System.out.println("Sended alias change packet");
+            System.out.println("Sended alias change packet");
+            
+            Connection.mainInterface.setUsername(newAlias);
+            
+            UserInfo.alias = newAlias;
+        }
 
     }
 
@@ -223,17 +232,17 @@ public class Actions {
 
         //creation userList packet
         GroupUsersListPacket gUsrLst = (GroupUsersListPacket) p;
-        
+
         Gson json = new Gson();
 
-        JsonReader reader = new JsonReader( new StringReader(gUsrLst.getJsonContent()));
+        JsonReader reader = new JsonReader(new StringReader(gUsrLst.getJsonContent()));
         reader.setLenient(true);
-        
+
         Type userListType = new TypeToken<ArrayList<String>>() {
         }.getType();
 
         List<String> userList = new ArrayList<>();
-                        
+
         userList = json.fromJson(reader, userListType);
 
         System.out.println(userList.size());
@@ -242,8 +251,9 @@ public class Actions {
 
             case 0:
                 UserInfo.chatUserList.clear();
-                for(String s : userList)
+                for (String s : userList) {
                     UserInfo.chatUserList.add(s);
+                }
                 break;
             case 1:
                 UserInfo.chatUserList.add(userList.get(0));
@@ -255,9 +265,9 @@ public class Actions {
                 System.out.println("User list packet error!!");
 
         }
-        
+
         Connection.mainInterface.updateUserList(UserInfo.chatUserList);
-        
+
     }
 
     /**
@@ -314,14 +324,14 @@ public class Actions {
         System.out.println(u.getSourceAlias() + ": " + u.getMessage());
 
         Boolean chatExisting = false;
-        
-        for (ChatRoom c : chatRoomList){
-            if(c.getAlias().equals(u.getSourceAlias())){
+
+        for (ChatRoom c : chatRoomList) {
+            if (c.getAlias().equals(u.getSourceAlias())) {
                 chatExisting = true;
             }
         }
-        
-        if(chatExisting == false){
+
+        if (chatExisting == false) {
             ChatInterface c = new ChatInterface();
             c.setTitle(u.getSourceAlias());
             c.setUsername(u.getSourceAlias());
@@ -329,7 +339,7 @@ public class Actions {
             ChatRoom chatRoom = new ChatRoom(u.getSourceAlias(), c);
             chatRoomList.add(chatRoom);
         }
-        
+
         for (ChatRoom c : chatRoomList) {
             if (c.getAlias().equals(u.getSourceAlias())) {
                 c.getChatInterface().updateMessageLabel(u.getMessage(), u.getSourceAlias());
@@ -355,15 +365,15 @@ public class Actions {
     public static void openPrivateChatRoom(String alias) {
 
         Boolean created = false;
-        
-        for(ChatRoom c : chatRoomList){
-            if(c.getAlias().equals(alias)){
+
+        for (ChatRoom c : chatRoomList) {
+            if (c.getAlias().equals(alias)) {
                 System.out.println("A chatRoom with this user is just opened");
                 created = true;
             }
         }
-        
-        if(!created){
+
+        if (!created) {
             ChatInterface c = new ChatInterface();
             c.setTitle(alias);
             c.setUsername(alias);

@@ -80,7 +80,7 @@ public class MainInterface extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         ChangeAliasTextField = new javax.swing.JTextField();
         ChangeAliasButton = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
+        ErrorAliasLabel = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -455,9 +455,14 @@ public class MainInterface extends javax.swing.JFrame {
 
         ChangeAliasButton.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
         ChangeAliasButton.setText("Cambia!");
+        ChangeAliasButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ChangeAliasButtonMouseClicked(evt);
+            }
+        });
 
-        jLabel7.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ErrorAliasLabel.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
+        ErrorAliasLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout SettingPanelLayout = new javax.swing.GroupLayout(SettingPanel);
         SettingPanel.setLayout(SettingPanelLayout);
@@ -466,15 +471,20 @@ public class MainInterface extends javax.swing.JFrame {
             .addGroup(SettingPanelLayout.createSequentialGroup()
                 .addGroup(SettingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(SettingPanelLayout.createSequentialGroup()
-                        .addGap(59, 59, 59)
-                        .addGroup(SettingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
-                            .addComponent(ChangeAliasTextField)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(SettingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(SettingPanelLayout.createSequentialGroup()
+                                .addGap(59, 59, 59)
+                                .addGroup(SettingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
+                                    .addComponent(ChangeAliasTextField)))
+                            .addGroup(SettingPanelLayout.createSequentialGroup()
+                                .addGap(105, 105, 105)
+                                .addComponent(ChangeAliasButton, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 59, Short.MAX_VALUE))
                     .addGroup(SettingPanelLayout.createSequentialGroup()
-                        .addGap(105, 105, 105)
-                        .addComponent(ChangeAliasButton, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(65, Short.MAX_VALUE))
+                        .addContainerGap()
+                        .addComponent(ErrorAliasLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         SettingPanelLayout.setVerticalGroup(
             SettingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -486,7 +496,7 @@ public class MainInterface extends javax.swing.JFrame {
                 .addGap(44, 44, 44)
                 .addComponent(ChangeAliasButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(60, 60, 60)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ErrorAliasLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(58, Short.MAX_VALUE))
         );
 
@@ -608,6 +618,17 @@ public class MainInterface extends javax.swing.JFrame {
 
     }//GEN-LAST:event_IconButton4MouseClicked
 
+    private void ChangeAliasButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ChangeAliasButtonMouseClicked
+        // TODO add your handling code here:
+        String newAlias = ChangeAliasTextField.getText();
+        try {
+            ErrorAliasLabel.setText(" ");
+            Actions.changeAlias(newAlias);
+        } catch (IOException ex) {
+            Logger.getLogger(MainInterface.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_ChangeAliasButtonMouseClicked
+
     public void setUsername(String alias) {
         UsernameLabel.setText(alias);
     }
@@ -633,6 +654,10 @@ public class MainInterface extends javax.swing.JFrame {
     public void openChatRoom(java.awt.event.ActionEvent evt) {
         String alias = jComboBox2.getSelectedItem().toString();
         Actions.openPrivateChatRoom(alias);
+    }
+    
+    public void invalidAlias(){
+        ErrorAliasLabel.setText("Lo username inserito non è valido!");
     }
 
     /**
@@ -677,6 +702,7 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JTextField ChangeAliasTextField;
     private javax.swing.JLabel ChatIconLabel;
     private javax.swing.JPanel ContentPanel;
+    private javax.swing.JLabel ErrorAliasLabel;
     private javax.swing.JPanel HomePanel;
     private javax.swing.JButton IconButton1;
     private javax.swing.JButton IconButton2;
@@ -704,7 +730,6 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;

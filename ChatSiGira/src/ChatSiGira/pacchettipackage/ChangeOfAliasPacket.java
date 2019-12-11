@@ -5,6 +5,9 @@
  */
 package ChatSiGira.pacchettipackage;
 
+import ChatSiGira.functions.UserInfo;
+import java.nio.charset.StandardCharsets;
+
 /**
  *
  * @author Zerbato,Nicolis
@@ -13,61 +16,21 @@ package ChatSiGira.pacchettipackage;
  */
 public class ChangeOfAliasPacket implements Packet {
 
-    private byte[] privateId;
-    private String oldAlias;
+  
     private String NewAlias;
     private final int OpCode = 18;
 
     /**
      * Constructor
      *
-     * @param privateId The ID assigned by the server.
-     * @param oldAlias My OldAlias.
+
      * @param NewAlias The new Alias that I want to set.
      */
-    public ChangeOfAliasPacket(byte[] privateId, String oldAlias, String NewAlias) {
-        this.privateId = privateId;
-        this.oldAlias = oldAlias;
+    public ChangeOfAliasPacket(String NewAlias) {
         this.NewAlias = NewAlias;
     }
 
     //<editor-fold defaultstate="collapsed" desc="getters and setters">
-    /**
-     * getter privateId
-     *
-     * @return byte[] --> privateId
-     */
-    public byte[] getPrivateId() {
-        return privateId;
-    }
-
-    /**
-     * setter privateId
-     *
-     * @param privateId
-     */
-    public void setPrivateId(byte[] privateId) {
-        this.privateId = privateId;
-    }
-
-    /**
-     * getter oldAlias
-     *
-     * @return String --> oldAlias
-     */
-    public String getOldAlias() {
-        return oldAlias;
-    }
-
-    /**
-     * setter oldAlias
-     *
-     * @param oldAlias
-     */
-    public void setOldAlias(String oldAlias) {
-        this.oldAlias = oldAlias;
-    }
-
     /**
      * getter newAlias
      *
@@ -111,7 +74,7 @@ public class ChangeOfAliasPacket implements Packet {
 
         buffer[i++] = (byte) this.OpCode;
 
-        for (byte b : this.getPrivateId()) {
+        for (byte b : UserInfo.ID) {
             buffer[i++] = b;
         }
 
@@ -124,7 +87,7 @@ public class ChangeOfAliasPacket implements Packet {
      * @return int size.
      */
     public int size() {
-        return 5 + this.getOldAlias().length() + this.getNewAlias().length();
+        return 5 + UserInfo.alias.length() + this.getNewAlias().length();
     }
 
     /**
@@ -143,7 +106,7 @@ public class ChangeOfAliasPacket implements Packet {
         }
 
         //Add the oldAlias
-        for (byte b : this.getOldAlias().getBytes()) {
+        for (byte b : UserInfo.alias.getBytes(StandardCharsets.ISO_8859_1)) {
             buffer[i++] = b;
         }
 
@@ -151,7 +114,7 @@ public class ChangeOfAliasPacket implements Packet {
         buffer[i++] = 0;
 
         //Add the message
-        for (byte b : this.getNewAlias().getBytes()) {
+        for (byte b : this.getNewAlias().getBytes(StandardCharsets.ISO_8859_1)) {
             buffer[i++] = b;
         }
 
