@@ -87,6 +87,16 @@ public class Actions {
         Connection.os.write(dscPkt.toBytes());
 
         System.out.println("Sended disconnection request");
+        
+        Connection.mainInterface.setVisible(false);
+        
+        for (ChatRoom c : chatRoomList){
+            c.getChatInterface().setVisible(false);
+        }
+       
+        Connection.reader.interrupt();
+        Connection.client.close();
+        
     }
 
     /**
@@ -290,7 +300,7 @@ public class Actions {
      *
      * @param p packet sorted by whatToDo method.
      */
-    public static void serverDisconnection(Packet p) {
+    public static void serverDisconnection(Packet p) throws IOException {
 
         //creation disconnection server packet
         DisconnectionServerPacket dscPkt = (DisconnectionServerPacket) p;
@@ -308,6 +318,15 @@ public class Actions {
                 break;
 
         }
+        
+        Connection.mainInterface.setVisible(false);
+        
+        for (ChatRoom c : chatRoomList){
+            c.getChatInterface().setVisible(false);
+        }
+       
+        Connection.reader.interrupt();
+        Connection.client.close();
 
     }
 

@@ -21,7 +21,9 @@ import ChatSiGira.functions.Reader;
  */
 public class Connection {
 
-    protected static Socket client;
+    public static Socket client;
+    
+    public static Reader reader;
 
     public static LoginInterface loginInterface = new LoginInterface();
     public static MainInterface mainInterface = new MainInterface();
@@ -40,7 +42,7 @@ public class Connection {
 
   
 
-        Reader reader = new Reader();
+        reader = new Reader();
     }
 
 }
