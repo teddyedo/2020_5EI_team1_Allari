@@ -311,6 +311,23 @@ public class Actions {
 
         System.out.println(u.getSourceAlias() + ": " + u.getMessage());
 
+        Boolean chatExisting = false;
+        
+        for (ChatRoom c : chatRoomList){
+            if(c.getAlias().equals(u.getSourceAlias())){
+                chatExisting = true;
+            }
+        }
+        
+        if(chatExisting == false){
+            ChatInterface c = new ChatInterface();
+            c.setTitle(u.getSourceAlias());
+            c.setUsername(u.getSourceAlias());
+            c.setVisible(true);
+            ChatRoom chatRoom = new ChatRoom(u.getSourceAlias(), c);
+            chatRoomList.add(chatRoom);
+        }
+        
         for (ChatRoom c : chatRoomList) {
             if (c.getAlias().equals(u.getSourceAlias())) {
                 c.getChatInterface().updateMessageLabel(u.getMessage(), u.getSourceAlias());
