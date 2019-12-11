@@ -680,7 +680,7 @@ public class MainInterface extends javax.swing.JFrame {
 
         String s = MessageLabel.getText();
         String oldMessage = s.substring(6, s.length() - 7);
-
+              
         MessageLabel.setText("<html>" + oldMessage + "<br><br>" + "<b>" + alias
                 + "</b>: " + message + "</html>");
 
