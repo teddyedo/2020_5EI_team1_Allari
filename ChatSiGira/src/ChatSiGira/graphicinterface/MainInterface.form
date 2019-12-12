@@ -216,8 +216,8 @@
                                   <Component id="jSeparator1" min="-2" pref="535" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="SendButton" min="-2" pref="56" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="SendButton" min="-2" pref="54" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -230,7 +230,7 @@
                               <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="1" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="SendButton" max="32767" attributes="0"/>
                           </Group>
@@ -466,10 +466,10 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-                              <Component id="jLabel1" min="-2" pref="192" max="-2" attributes="0"/>
-                              <EmptySpace pref="78" max="32767" attributes="0"/>
+                              <Component id="jLabel1" min="-2" pref="208" max="-2" attributes="0"/>
+                              <EmptySpace pref="62" max="32767" attributes="0"/>
                           </Group>
                           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
@@ -484,8 +484,8 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                              <Component id="jLabel1" min="-2" pref="61" max="-2" attributes="0"/>
-                              <EmptySpace pref="460" max="32767" attributes="0"/>
+                              <Component id="jLabel1" min="-2" pref="142" max="-2" attributes="0"/>
+                              <EmptySpace pref="379" max="32767" attributes="0"/>
                           </Group>
                           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
@@ -509,7 +509,7 @@
                           <Color blue="0" green="0" red="0" type="rgb"/>
                         </Property>
                         <Property name="horizontalAlignment" type="int" value="0"/>
-                        <Property name="text" type="java.lang.String" value="INFORMAZIONI GENERALI"/>
+                        <Property name="text" type="java.lang.String" value="&lt;html&gt;&#xa;&lt;p text align=&quot;center&quot;&gt;&#xa;INFORMAZIONI GENERALI&#xa;&lt;br&gt;&lt;br&gt;Versione GUI 1.0&#xa;&lt;br&gt;&lt;br&gt;Protocollo usato: PotatoChatProtocol&#xa;&lt;br&gt;&lt;br&gt;&#xa;&lt;/p&gt;&#xa;&lt;/html&gt;"/>
                       </Properties>
                     </Component>
                   </SubComponents>
@@ -675,8 +675,8 @@
                               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="UserListComboBox" min="-2" pref="34" max="-2" attributes="0"/>
-                              <EmptySpace pref="213" max="32767" attributes="0"/>
+                              <Component id="UserListComboBox" min="-2" pref="40" max="-2" attributes="0"/>
+                              <EmptySpace pref="207" max="32767" attributes="0"/>
                               <Component id="jLabel4" min="-2" pref="102" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
                           </Group>
