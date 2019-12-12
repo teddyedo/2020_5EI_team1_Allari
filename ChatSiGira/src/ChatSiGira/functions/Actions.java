@@ -35,7 +35,7 @@ public class Actions {
      * This method is used to perform loginInterface to the server.
      *
      * @param alias the name choosen by the user logged in.
-     * @throws IOException
+     * @throws IOException Exception
      */
     public static void registration(String alias) throws IOException {
 
@@ -54,7 +54,7 @@ public class Actions {
      * This method is used to change our alias.
      *
      * @param newAlias the new name choosen by the user.
-     * @throws IOException
+     * @throws IOException Exception
      */
     public static void changeAlias(String newAlias) throws IOException {
 
@@ -78,7 +78,7 @@ public class Actions {
     /**
      * This method is used to disconnect our user from the server.
      *
-     * @throws IOException
+     * @throws IOException Exception
      */
     public static void disconnection() throws IOException {
 
@@ -100,7 +100,7 @@ public class Actions {
     /**
      * This method is used to request the list of the user "online".
      *
-     * @throws IOException
+     * @throws IOException Exception
      */
     public static void requestUserList() throws IOException {
 
@@ -117,7 +117,7 @@ public class Actions {
      *
      * @param message the content of the message.
      * @param dstAlias the name of the addressee.
-     * @throws IOException
+     * @throws IOException Exception
      */
     public static void sendedPrivateMex(String message, String dstAlias) throws IOException {
 
@@ -138,7 +138,7 @@ public class Actions {
      * This method is used to send a topic message to a group of users.
      *
      * @param message the content of the message.
-     * @throws IOException
+     * @throws IOException Exception
      */
     public static void sendedTopicMex(String message) throws IOException {
 
@@ -156,7 +156,7 @@ public class Actions {
      * This method is used to read on the inputStream.
      *
      * @return a byte array from the server.
-     * @throws IOException
+     * @throws IOException Exception
      */
     public static byte[] read() throws IOException {
 
@@ -172,7 +172,7 @@ public class Actions {
      * action.
      *
      * @param p packet received.
-     * @throws IOException
+     * @throws IOException Exception
      */
     public static void whatToDo(Packet p) throws IOException {
 
@@ -210,7 +210,7 @@ public class Actions {
      * This method is used to confirm the registration and set our unique ID.
      *
      * @param p packet sorted by whatToDo method.
-     * @throws IOException
+     * @throws IOException Exception
      */
     public static void registrationOccured(Packet p) throws IOException {
 
@@ -341,6 +341,7 @@ public class Actions {
      * what is the cause of disconnection.
      *
      * @param p packet sorted by whatToDo method.
+     * @throws java.io.IOException Exception
      */
     public static void serverDisconnection(Packet p) throws IOException {
 

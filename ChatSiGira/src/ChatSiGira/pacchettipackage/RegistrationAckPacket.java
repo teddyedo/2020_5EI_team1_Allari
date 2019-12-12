@@ -34,7 +34,7 @@ public class RegistrationAckPacket implements Packet{
     
     /**
      * getter AssignedId
-     * @return byte[] --> AssignedId
+     * @return byte[] AssignedId
      */
 
     public byte[] getAssignedId() {
@@ -43,7 +43,7 @@ public class RegistrationAckPacket implements Packet{
     
     /**
      * setter AssignedId
-     * @param AssignedId 
+     * @param AssignedId my personal ID.
      */
 
     public void setAssignedId(byte[] AssignedId) {
@@ -52,7 +52,7 @@ public class RegistrationAckPacket implements Packet{
     
     /**
      * getter Alias COnfirmation
-     * @return String --> AliasConfirmation
+     * @return String AliasConfirmation
      */
 
     public String getAliasConfirmation() {
@@ -62,7 +62,7 @@ public class RegistrationAckPacket implements Packet{
     
     /**
      * setter AliasConfirmation
-     * @param AliasConfirmation 
+     * @param AliasConfirmation my alias.
      */
 
     public void setAliasConfirmation(String AliasConfirmation) {
@@ -71,7 +71,7 @@ public class RegistrationAckPacket implements Packet{
 
     /**
      * getter OpCode
-     * @return int --> OpCode
+     * @return int OpCode
      */
     
     public int getOpCode() {

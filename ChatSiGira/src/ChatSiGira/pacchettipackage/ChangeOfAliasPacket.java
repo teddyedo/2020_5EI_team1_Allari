@@ -34,7 +34,7 @@ public class ChangeOfAliasPacket implements Packet {
     /**
      * getter newAlias
      *
-     * @return String --> NewAlias
+     * @return String NewAlias
      */
     public String getNewAlias() {
         return NewAlias;
@@ -43,7 +43,7 @@ public class ChangeOfAliasPacket implements Packet {
     /**
      * setter NewAlias
      *
-     * @param NewAlias
+     * @param NewAlias new alias choosen
      */
     public void setNewAlias(String NewAlias) {
         this.NewAlias = NewAlias;
@@ -52,7 +52,7 @@ public class ChangeOfAliasPacket implements Packet {
     /**
      * getter OpCode
      *
-     * @return int --> OpCode
+     * @return int OpCode
      */
     @Override
     public int getOpCode() {
@@ -64,7 +64,7 @@ public class ChangeOfAliasPacket implements Packet {
     /**
      * create the packet header.
      *
-     * @return byte[] --> header.
+     * @return byte[] header.
      */
     public byte[] header() {
 
@@ -93,7 +93,7 @@ public class ChangeOfAliasPacket implements Packet {
     /**
      * convert our packet class into a byte[].
      *
-     * @return byte [] --> complete packet.
+     * @return byte [] complete packet.
      */
     public byte[] toBytes() {
 

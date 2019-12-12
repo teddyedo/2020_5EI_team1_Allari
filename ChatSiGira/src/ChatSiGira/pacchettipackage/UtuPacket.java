@@ -56,7 +56,7 @@ public class UtuPacket implements Packet {
     /**
      * setter senderId
      *
-     * @param SenderId
+     * @param SenderId the sender ID
      */
     public void setSenderId(byte[] SenderId) {
         this.SenderId = SenderId;
@@ -74,7 +74,7 @@ public class UtuPacket implements Packet {
     /**
      * setter DestinationAlias
      *
-     * @param DestinationAlias
+     * @param DestinationAlias the user alias that will receive the message.
      */
     public void setDestinationAlias(String DestinationAlias) {
         this.DestinationAlias = DestinationAlias;
@@ -93,7 +93,7 @@ public class UtuPacket implements Packet {
     /**
      * setter Message
      *
-     * @param Message
+     * @param Message the text of the message
      */
     public void setMessage(String Message) {
         this.Message = Message;
@@ -108,7 +108,7 @@ public class UtuPacket implements Packet {
     /**
      * create the packet header.
      *
-     * @return byte[] --> header.
+     * @return byte[] header.
      */
     public byte[] header() {
 
@@ -133,7 +133,7 @@ public class UtuPacket implements Packet {
     /**
      * convert our packet class into a byte[].
      *
-     * @return byte [] --> complete packet.
+     * @return byte [] complete packet.
      */
     public byte[] toBytes() {
 

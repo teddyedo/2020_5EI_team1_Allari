@@ -37,7 +37,7 @@ public class GroupUsersListPacket implements Packet {
     /**
      * getter tpye
      *
-     * @return byte[] --> type
+     * @return byte[] type
      */
     public byte getType() {
         return type;
@@ -46,7 +46,7 @@ public class GroupUsersListPacket implements Packet {
     /**
      * setter type
      *
-     * @param type
+     * @param type the type of list - see constructor
      */
     public void setType(byte type) {
         this.type = type;
@@ -55,7 +55,7 @@ public class GroupUsersListPacket implements Packet {
     /**
      * getter List
      *
-     * @return byte[] --> ListLength
+     * @return byte[] ListLength
      */
     public byte getListLength() {
         return ListLength;
@@ -64,7 +64,7 @@ public class GroupUsersListPacket implements Packet {
     /**
      * setter ListLength
      *
-     * @param ListLength
+     * @param ListLength the length of the list
      */
     public void setListLength(byte ListLength) {
         this.ListLength = ListLength;
@@ -73,7 +73,7 @@ public class GroupUsersListPacket implements Packet {
     /**
      * getter JsonContent
      *
-     * @return string --> JsonContent
+     * @return string JsonContent
      */
     public String getJsonContent() {
         return JsonContent;
@@ -82,7 +82,7 @@ public class GroupUsersListPacket implements Packet {
     /**
      * setter JsonContent
      *
-     * @param JsonContent
+     * @param JsonContent the user list in json format
      */
     public void setJsonContent(String JsonContent) {
         this.JsonContent = JsonContent;

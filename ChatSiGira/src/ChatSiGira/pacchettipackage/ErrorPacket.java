@@ -33,7 +33,7 @@ public class ErrorPacket implements Packet {
     /**
      * getter ErrorCode
      *
-     * @return byte[] --> ErrorCode
+     * @return byte[] ErrorCode
      */
     public UserInfo.ErrorCode getErrorCode() {
         return ErrorCode;
@@ -42,7 +42,7 @@ public class ErrorPacket implements Packet {
     /**
      * setter ErrorCode
      *
-     * @param ErrorCode
+     * @param ErrorCode the error code 
      */
     public void setErrorCode(UserInfo.ErrorCode ErrorCode) {
         this.ErrorCode = ErrorCode;
@@ -51,7 +51,7 @@ public class ErrorPacket implements Packet {
     /**
      * Getter OpCode
      *
-     * @return int --> OpCode
+     * @return int OpCode
      */
     public int getOpCode() {
         return OpCode;

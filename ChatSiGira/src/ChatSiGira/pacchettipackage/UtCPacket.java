@@ -34,7 +34,7 @@ public class UtCPacket implements Packet {
     /**
      * getter ID
      *
-     * @return byte[] --> ID
+     * @return byte[] ID
      */
     public byte[] getID() {
         return ID;
@@ -43,7 +43,7 @@ public class UtCPacket implements Packet {
     /**
      * setter ID
      *
-     * @param ID
+     * @param ID my ID
      */
     public void setID(byte[] ID) {
         this.ID = ID;
@@ -52,7 +52,7 @@ public class UtCPacket implements Packet {
     /**
      * getter Message
      *
-     * @return String --> Message
+     * @return String Message
      */
     public String getMessage() {
         return Message;
@@ -61,7 +61,7 @@ public class UtCPacket implements Packet {
     /**
      * setter Message
      *
-     * @param Message
+     * @param Message the text of the message.
      */
     public void setMessage(String Message) {
         this.Message = Message;
@@ -70,7 +70,7 @@ public class UtCPacket implements Packet {
     /**
      * getter OpCode
      *
-     * @return int --> Opcode
+     * @return int Opcode
      */
     public int getOpCode() {
         return OpCode;
@@ -80,7 +80,7 @@ public class UtCPacket implements Packet {
     /**
      * create the packet header.
      *
-     * @return byte[] --> header.
+     * @return byte[] header.
      */
     public byte[] header() {
 
@@ -95,7 +95,7 @@ public class UtCPacket implements Packet {
     /**
      * return the packet size.
      *
-     * @return int --> packetSize.
+     * @return int packetSize.
      */
     public int size() {
         return this.header().length + this.getID().length
@@ -105,7 +105,7 @@ public class UtCPacket implements Packet {
     /**
      * convert our packet class into a byte[].
      *
-     * @return byte [] --> complete packet.
+     * @return byte [] complete packet.
      */
     public byte[] toBytes() {
         

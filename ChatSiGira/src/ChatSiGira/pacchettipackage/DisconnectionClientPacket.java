@@ -27,7 +27,7 @@ public class DisconnectionClientPacket implements Packet {
     /**
      * getter ID
      *
-     * @return byte[] --> ID
+     * @return byte[] ID
      */
     public byte[] getID() {
         return ID;
@@ -36,7 +36,7 @@ public class DisconnectionClientPacket implements Packet {
     /**
      * setter ID
      *
-     * @param ID
+     * @param ID my ID.
      */
     public void setID(byte[] ID) {
         this.ID = ID;
@@ -45,7 +45,7 @@ public class DisconnectionClientPacket implements Packet {
     /**
      * getter OpCode
      *
-     * @return int --> OpCode
+     * @return int OpCode
      */
     @Override
     public int getOpCode() {
@@ -56,7 +56,7 @@ public class DisconnectionClientPacket implements Packet {
     
     /**
      * create the packet header.
-     * @return byte[] --> header.
+     * @return byte[] header.
      */
     public byte[] header() {
 
@@ -79,7 +79,7 @@ public class DisconnectionClientPacket implements Packet {
 
     /**
      * convert our packet class into a byte[].
-     * @return byte [] --> complete packet.
+     * @return byte [] complete packet.
      */
     public byte[] toBytes() {
 

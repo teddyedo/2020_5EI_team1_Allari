@@ -28,7 +28,7 @@ public class GroupUsersListRequestPacket implements Packet {
     /**
      * getter AssignedId
      *
-     * @return byte[] --> AssignedId
+     * @return byte[] AssignedId
      */
     public byte[] getAssignedId() {
         return AssignedId;
@@ -37,7 +37,7 @@ public class GroupUsersListRequestPacket implements Packet {
     /**
      * setter AssignedId
      *
-     * @param AssignedId
+     * @param AssignedId my ID.
      */
     public void setAssignedId(byte[] AssignedId) {
         this.AssignedId = AssignedId;
@@ -46,7 +46,7 @@ public class GroupUsersListRequestPacket implements Packet {
     /**
      * getter OpCode
      *
-     * @return int --> OpCode
+     * @return int OpCode
      */
     public int getOpCode() {
         return OpCode;
@@ -55,7 +55,7 @@ public class GroupUsersListRequestPacket implements Packet {
     //</editor-fold>
     /**
      * create the packet header.
-     * @return byte[] --> header.
+     * @return byte[] header.
      */
     public byte[] header() {
 
@@ -78,7 +78,7 @@ public class GroupUsersListRequestPacket implements Packet {
 
     /**
      * convert our packet class into a byte[].
-     * @return byte [] --> complete packet.
+     * @return byte [] complete packet.
      */
     public byte[] toBytes() {
 

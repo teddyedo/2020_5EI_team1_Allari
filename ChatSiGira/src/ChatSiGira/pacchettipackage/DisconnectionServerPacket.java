@@ -30,7 +30,7 @@ public class DisconnectionServerPacket implements Packet{
 
     /**
      * getter Reason
-     * @return byte[] --> reason
+     * @return byte[] reason
      */
 
     public byte getReason() {
@@ -39,7 +39,7 @@ public class DisconnectionServerPacket implements Packet{
     
     /**
      * setter reason
-     * @param reason 
+     * @param reason the reason of disconnection
      */
 
     public void setReason(byte reason) {
@@ -48,7 +48,7 @@ public class DisconnectionServerPacket implements Packet{
 
     /**
      * getter OpCode
-     * @return int --> Opcode
+     * @return int Opcode
      */
     public int getOpCode() {
         return OpCode;

@@ -77,7 +77,7 @@ public class UserInfo {
         /**
          * This method return the error name from his byte value.
          * @param error byte value of the error.
-         * @return
+         * @return the ErrorCode 
          */
         public static ErrorCode getErrorCodeFromByte(byte error) {
             switch (error) {

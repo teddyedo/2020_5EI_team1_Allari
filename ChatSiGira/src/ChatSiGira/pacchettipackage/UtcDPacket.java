@@ -31,7 +31,7 @@ public class UtcDPacket implements Packet {
     /**
      * getter SourceAlias
      *
-     * @return string --> SourceAlias
+     * @return string SourceAlias
      */
     public String getSourceAlias() {
         return SourceAlias;
@@ -40,7 +40,7 @@ public class UtcDPacket implements Packet {
     /**
      * setter sourceAlias
      *
-     * @param SourceAlias
+     * @param SourceAlias the sender alias.
      */
     public void setSourceAlias(String SourceAlias) {
         this.SourceAlias = SourceAlias;
@@ -49,7 +49,7 @@ public class UtcDPacket implements Packet {
     /**
      * getter message
      *
-     * @return String --> Message
+     * @return String Message
      */
     public String getMessage() {
         return Message;
@@ -58,7 +58,7 @@ public class UtcDPacket implements Packet {
     /**
      * setter Message
      *
-     * @param Message
+     * @param Message the text of the message
      */
     public void setMessage(String Message) {
         this.Message = Message;
@@ -67,7 +67,7 @@ public class UtcDPacket implements Packet {
     /**
      * getter OpCode
      *
-     * @return int --> OpCode
+     * @return int OpCode
      */
     public int getOpCode() {
         return OpCode;

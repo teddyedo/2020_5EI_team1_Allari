@@ -37,7 +37,7 @@ public class RegistrationPacket implements Packet {
     /**
      * getter version=
      *
-     * @return byte[] --> Version0
+     * @return byte[] Version0
      */
 
     public byte getVersion0() {
@@ -47,7 +47,7 @@ public class RegistrationPacket implements Packet {
     /**
      * setter version
      *
-     * @param version0
+     * @param version0 the version of the protocol - 0 default
      */
     public void setVersion0(byte version0) {
         this.version0 = version0;
@@ -56,7 +56,7 @@ public class RegistrationPacket implements Packet {
     /**
      * getter Alias
      *
-     * @return String --> Alias
+     * @return String Alias
      */
     public String getAlias() {
         return alias;
@@ -65,7 +65,7 @@ public class RegistrationPacket implements Packet {
     /**
      * setter Alias
      *
-     * @param alias
+     * @param alias my username
      */
     public void setAlias(String alias) {
         this.alias = alias;
@@ -74,7 +74,7 @@ public class RegistrationPacket implements Packet {
     /**
      * getter Topic
      *
-     * @return String --> Topic
+     * @return String Topic
      */
     public String getTopic() {
         return topic;
@@ -83,7 +83,7 @@ public class RegistrationPacket implements Packet {
     /**
      * setter Topic
      *
-     * @param topic
+     * @param topic the chatRoom that I want to join - version 0 only general.
      */
     public void setTopic(String topic) {
         this.topic = topic;
@@ -92,7 +92,7 @@ public class RegistrationPacket implements Packet {
     /**
      * getter Opcode
      *
-     * @return int --> Opcode
+     * @return int Opcode
      */
     public int getOpCode() {
         return this.OpCode;
@@ -101,7 +101,7 @@ public class RegistrationPacket implements Packet {
     //</editor-fold>
     /**
      * create the packet header.
-     * @return byte[] --> header.
+     * @return byte[] header.
      */
     public byte[] header() {
 
@@ -120,7 +120,7 @@ public class RegistrationPacket implements Packet {
 
     /**
      * return the packet size.
-     * @return int --> packetSize.
+     * @return int packetSize.
      */
 
     public int size() {
@@ -133,7 +133,7 @@ public class RegistrationPacket implements Packet {
 
     /**
      * convert our packet class into a byte[].
-     * @return byte [] --> complete packet.
+     * @return byte [] complete packet.
      */
     public byte[] toBytes() {
 
