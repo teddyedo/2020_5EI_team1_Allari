@@ -99,9 +99,10 @@ public class LoginInterface extends javax.swing.JFrame {
         });
         BackgroundWhite.add(LoginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, 300, 70));
 
-        ErrorLabel.setForeground(new java.awt.Color(0, 0, 0));
+        ErrorLabel.setFont(new java.awt.Font("Product Sans", 1, 14)); // NOI18N
+        ErrorLabel.setForeground(new java.awt.Color(255, 51, 51));
         ErrorLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        BackgroundWhite.add(ErrorLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 300, -1));
+        BackgroundWhite.add(ErrorLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 300, 30));
 
         TextField.setBackground(new java.awt.Color(255, 255, 255));
         TextField.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N

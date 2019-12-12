@@ -51,7 +51,7 @@ public class Interpreter {
                 return groupUsersListPacketFromBytes(data);
 
             case (byte) 255:
-                return errorPacketToBytes(data);
+                return errorPacketFromBytes(data);
         }
         return null;
     }
@@ -113,7 +113,7 @@ public class Interpreter {
      * @param data a byte array received in input that represent a packet.
      * @return an errorPacket.
      */
-    private ErrorPacket errorPacketToBytes(byte[] data) {
+    private ErrorPacket errorPacketFromBytes(byte[] data) {
 
         ErrorPacket errorPacket = new ErrorPacket(null);
 

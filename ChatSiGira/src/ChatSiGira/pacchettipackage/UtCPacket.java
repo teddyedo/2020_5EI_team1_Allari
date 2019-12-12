@@ -5,6 +5,8 @@
  */
 package ChatSiGira.pacchettipackage;
 
+import java.nio.charset.StandardCharsets;
+
 /**
  *
  * @author Zerbato,Nicolis
@@ -123,7 +125,7 @@ public class UtCPacket implements Packet {
         }
 
         //Add the message
-        for (byte b : this.getMessage().getBytes()) {
+        for (byte b : this.getMessage().getBytes(StandardCharsets.ISO_8859_1)) {
             buffer[i++] = b;
         }
 

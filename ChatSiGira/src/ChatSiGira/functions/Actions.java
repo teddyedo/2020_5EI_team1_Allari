@@ -17,6 +17,7 @@ import ChatSiGira.graphicinterface.ChatInterface;
 import com.google.gson.stream.JsonReader;
 import java.io.StringReader;
 import java.util.List;
+import oracle.jrockit.jfr.tools.ConCatRepository;
 
 /**
  *
@@ -179,27 +180,27 @@ public class Actions {
         switch (p.getOpCode()) {
 
             case 01:
-                System.out.println("messaggio da utente");
+                System.out.println("User message received");
                 userMessageReceived(p);
                 break;
             case 05:
-                System.out.println("messaggio da chat");
+                System.out.println("group message received");
                 topicMessageReceived(p);
                 break;
             case 11:
-                System.out.println("disconnessioneDaServer");
+                System.out.println("Server disconnection");
                 serverDisconnection(p);
                 break;
             case 20:
-                System.out.println("Registrazione avvenuta");
+                System.out.println("Registration occured");
                 registrationOccured(p);
                 break;
             case 51:
-                System.out.println("aggiornare lista");
+                System.out.println("UserList update");
                 userListReceived(p);
                 break;
             case 255:
-                System.out.println("pacchetto di errore");
+                System.out.println("Error packet");
                 errorPacketReceived(p);
                 break;
         }
@@ -290,6 +291,50 @@ public class Actions {
         ErrorPacket errPkt = (ErrorPacket) p;
 
         System.out.println(errPkt.getErrorCode().name());
+
+        switch (errPkt.getErrorCode()) {
+
+            case PackageMalformed:
+                System.out.println("Package malformed was sent");
+                break;
+
+            case MaxClientsReached:
+                Connection.loginInterface.setTextErrorLabel("Too much users connected!");
+                System.out.println("Too much users connected!");
+                break;
+
+            case InvalidAlias:
+                Connection.loginInterface.setTextErrorLabel("Your alias isn't valid!");
+                System.out.println("Your alias isn't valid!");
+                break;
+
+            case AliasInUse:
+                Connection.loginInterface.setTextErrorLabel("This alias is already in use!");
+                System.out.println("This alias is already in use!");
+                break;
+
+            case ChatDenied:
+                System.out.println("Access denied!");
+                break;
+
+            case InvalidRoomName:
+                System.out.println("The room name selected isn't valid!");
+                break;
+
+            case ServerExploded:
+                System.out.println("BOOOM!!");
+                System.exit(0);
+                break;
+
+            case Unspecified:
+                System.out.println("A fatal error was occured!");
+                break;
+
+            default:
+                System.out.println("generical error");
+
+        }
+
     }
 
     /**

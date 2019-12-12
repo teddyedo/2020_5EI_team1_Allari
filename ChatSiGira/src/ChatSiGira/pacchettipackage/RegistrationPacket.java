@@ -5,6 +5,8 @@
  */
 package ChatSiGira.pacchettipackage;
 
+import java.nio.charset.StandardCharsets;
+
 /**
  *
  * @author Zerbato,Nicolis
@@ -144,7 +146,7 @@ public class RegistrationPacket implements Packet {
         }
 
         //Alias
-        for (byte b : this.alias.getBytes()) {
+        for (byte b : this.alias.getBytes(StandardCharsets.ISO_8859_1)) {
             buffer[i++] = b;
         }
 
@@ -154,7 +156,7 @@ public class RegistrationPacket implements Packet {
         //Topic
         if (this.topic != null) {
 
-            for (byte b : this.topic.getBytes()) {
+            for (byte b : this.topic.getBytes(StandardCharsets.ISO_8859_1)) {
                 buffer[i++] = b;
             }
         }
