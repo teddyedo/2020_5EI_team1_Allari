@@ -3,43 +3,44 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ChatSiGira.pacchettipackage;
+package ChatSiGira.packets;
 
 /**
  *
  * @author Zerbato,Nicolis
  * @author Allari Edoardo
+ *
  */
-public class DisconnectionClientPacket implements Packet {
+public class GroupUsersListRequestPacket implements Packet {
 
-    private byte[] ID;
-    private final int OpCode = 11;
+    private byte[] AssignedId;
+    private final int OpCode = 50;
 
     /**
      * Constructor
-     * @param ID The ID assigned by the server.
+     * @param AssignedId The ID assigned by the server.
      */
-    public DisconnectionClientPacket(byte[] ID) {
-        this.ID = ID;
+    public GroupUsersListRequestPacket(byte[] AssignedId) {
+        this.AssignedId = AssignedId;
     }
 
     //<editor-fold defaultstate="collapsed" desc="getters and setters">
     /**
-     * getter ID
+     * getter AssignedId
      *
-     * @return byte[] ID
+     * @return byte[] AssignedId
      */
-    public byte[] getID() {
-        return ID;
+    public byte[] getAssignedId() {
+        return AssignedId;
     }
 
     /**
-     * setter ID
+     * setter AssignedId
      *
-     * @param ID my ID.
+     * @param AssignedId my ID.
      */
-    public void setID(byte[] ID) {
-        this.ID = ID;
+    public void setAssignedId(byte[] AssignedId) {
+        this.AssignedId = AssignedId;
     }
 
     /**
@@ -47,13 +48,11 @@ public class DisconnectionClientPacket implements Packet {
      *
      * @return int OpCode
      */
-    @Override
     public int getOpCode() {
         return OpCode;
     }
 
     //</editor-fold>
-    
     /**
      * create the packet header.
      * @return byte[] header.
@@ -74,7 +73,7 @@ public class DisconnectionClientPacket implements Packet {
      * @return int size.
      */
     public int size() {
-        return 1 + this.getID().length;
+        return 1 + this.getAssignedId().length;
     }
 
     /**
@@ -91,8 +90,8 @@ public class DisconnectionClientPacket implements Packet {
             buffer[i++] = b;
         }
 
-        //Add the ID
-        for (byte b : this.getID()) {
+        //Add the Id
+        for (byte b : this.getAssignedId()) {
             buffer[i++] = b;
         }
 

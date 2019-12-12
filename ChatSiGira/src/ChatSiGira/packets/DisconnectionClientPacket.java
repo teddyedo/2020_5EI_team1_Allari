@@ -3,44 +3,43 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ChatSiGira.pacchettipackage;
+package ChatSiGira.packets;
 
 /**
  *
  * @author Zerbato,Nicolis
  * @author Allari Edoardo
- *
  */
-public class GroupUsersListRequestPacket implements Packet {
+public class DisconnectionClientPacket implements Packet {
 
-    private byte[] AssignedId;
-    private final int OpCode = 50;
+    private byte[] ID;
+    private final int OpCode = 11;
 
     /**
      * Constructor
-     * @param AssignedId The ID assigned by the server.
+     * @param ID The ID assigned by the server.
      */
-    public GroupUsersListRequestPacket(byte[] AssignedId) {
-        this.AssignedId = AssignedId;
+    public DisconnectionClientPacket(byte[] ID) {
+        this.ID = ID;
     }
 
     //<editor-fold defaultstate="collapsed" desc="getters and setters">
     /**
-     * getter AssignedId
+     * getter ID
      *
-     * @return byte[] AssignedId
+     * @return byte[] ID
      */
-    public byte[] getAssignedId() {
-        return AssignedId;
+    public byte[] getID() {
+        return ID;
     }
 
     /**
-     * setter AssignedId
+     * setter ID
      *
-     * @param AssignedId my ID.
+     * @param ID my ID.
      */
-    public void setAssignedId(byte[] AssignedId) {
-        this.AssignedId = AssignedId;
+    public void setID(byte[] ID) {
+        this.ID = ID;
     }
 
     /**
@@ -48,11 +47,13 @@ public class GroupUsersListRequestPacket implements Packet {
      *
      * @return int OpCode
      */
+    @Override
     public int getOpCode() {
         return OpCode;
     }
 
     //</editor-fold>
+    
     /**
      * create the packet header.
      * @return byte[] header.
@@ -73,7 +74,7 @@ public class GroupUsersListRequestPacket implements Packet {
      * @return int size.
      */
     public int size() {
-        return 1 + this.getAssignedId().length;
+        return 1 + this.getID().length;
     }
 
     /**
@@ -90,8 +91,8 @@ public class GroupUsersListRequestPacket implements Packet {
             buffer[i++] = b;
         }
 
-        //Add the Id
-        for (byte b : this.getAssignedId()) {
+        //Add the ID
+        for (byte b : this.getID()) {
             buffer[i++] = b;
         }
 

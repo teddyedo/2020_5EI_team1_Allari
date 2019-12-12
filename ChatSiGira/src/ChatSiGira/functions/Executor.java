@@ -5,8 +5,8 @@
  */
 package ChatSiGira.functions;
 
+import ChatSiGira.packets.Packet;
 import ChatSiGira.app.Connection;
-import ChatSiGira.pacchettipackage.*;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -27,6 +27,7 @@ public class Executor extends Thread {
     }
 
     @Override
+    //This Thread interpret the read data and acts accordingly
     public void run() {
         packet = Connection.interpreter.interpret(data);
 

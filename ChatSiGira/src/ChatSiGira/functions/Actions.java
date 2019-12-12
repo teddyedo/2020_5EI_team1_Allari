@@ -5,7 +5,19 @@
  */
 package ChatSiGira.functions;
 
-import ChatSiGira.pacchettipackage.*;
+import ChatSiGira.packets.ChangeOfAliasPacket;
+import ChatSiGira.packets.Packet;
+import ChatSiGira.packets.RegistrationPacket;
+import ChatSiGira.packets.UtcDPacket;
+import ChatSiGira.packets.GroupUsersListRequestPacket;
+import ChatSiGira.packets.UtuPacket;
+import ChatSiGira.packets.UtuDPacket;
+import ChatSiGira.packets.ErrorPacket;
+import ChatSiGira.packets.DisconnectionServerPacket;
+import ChatSiGira.packets.RegistrationAckPacket;
+import ChatSiGira.packets.UtCPacket;
+import ChatSiGira.packets.GroupUsersListPacket;
+import ChatSiGira.packets.DisconnectionClientPacket;
 import com.google.gson.Gson;
 import java.io.IOException;
 import java.util.ArrayList;

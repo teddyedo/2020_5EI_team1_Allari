@@ -3,18 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ChatSiGira.pacchettipackage;
+package ChatSiGira.packets;
 
 /**
  *
+ * @author Zerbato,Nicolis
  * @author Allari Edoardo
  *
  */
-public class UtcDPacket implements Packet {
+public class UtuDPacket implements Packet {
 
     private String SourceAlias;
     private String Message;
-    private final int OpCode = 05;
+    private final int OpCode = 1;
 
     /**
      * Constructor
@@ -22,7 +23,7 @@ public class UtcDPacket implements Packet {
      * @param SourceAlias The alias that sent the message.
      * @param Message The content of the message.
      */
-    public UtcDPacket(String SourceAlias, String Message) {
+    public UtuDPacket(String SourceAlias, String Message) {
         this.SourceAlias = SourceAlias;
         this.Message = Message;
     }

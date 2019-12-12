@@ -5,9 +5,15 @@
  */
 package ChatSiGira.interpreter;
 
+import ChatSiGira.packets.Packet;
+import ChatSiGira.packets.RegistrationAckPacket;
+import ChatSiGira.packets.GroupUsersListPacket;
+import ChatSiGira.packets.UtcDPacket;
+import ChatSiGira.packets.UtuDPacket;
+import ChatSiGira.packets.ErrorPacket;
+import ChatSiGira.packets.DisconnectionServerPacket;
 import java.util.ArrayList;
 import java.util.Arrays;
-import ChatSiGira.pacchettipackage.*;
 import ChatSiGira.functions.UserInfo;
 import java.nio.charset.StandardCharsets;
 

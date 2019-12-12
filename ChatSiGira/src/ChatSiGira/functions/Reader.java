@@ -23,6 +23,9 @@ public class Reader extends Thread {
     @Override
     public void run() {
 
+        //while user is online, this Thread read the input stream and pass the data
+        //to the Executor.
+        
         while (UserInfo.userOnline) {
             byte[] data = new byte[2048];
             try {
