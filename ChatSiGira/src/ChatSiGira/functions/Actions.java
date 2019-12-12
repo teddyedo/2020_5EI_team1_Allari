@@ -17,7 +17,6 @@ import ChatSiGira.graphicinterface.ChatInterface;
 import com.google.gson.stream.JsonReader;
 import java.io.StringReader;
 import java.util.List;
-import oracle.jrockit.jfr.tools.ConCatRepository;
 
 /**
  *
@@ -401,6 +400,7 @@ public class Actions {
 
         for (ChatRoom c : chatRoomList) {
             if (c.getAlias().equals(u.getSourceAlias())) {
+                c.getChatInterface().setVisible(true);
                 c.getChatInterface().updateMessageLabel(u.getMessage(), u.getSourceAlias());
             }
         }
@@ -421,6 +421,11 @@ public class Actions {
         Connection.mainInterface.updateMessageLabel(u.getMessage(), u.getSourceAlias());
     }
 
+    /**
+     * This method is used to open a private chatRoom interface when required.
+     *
+     * @param alias is the name of the user with which we are chatting.
+     */
     public static void openPrivateChatRoom(String alias) {
 
         Boolean created = false;
@@ -428,6 +433,7 @@ public class Actions {
         for (ChatRoom c : chatRoomList) {
             if (c.getAlias().equals(alias)) {
                 System.out.println("A chatRoom with this user is just opened");
+                c.getChatInterface().setVisible(true);
                 created = true;
             }
         }
@@ -439,6 +445,16 @@ public class Actions {
             c.setVisible(true);
             ChatRoom chatRoom = new ChatRoom(alias, c);
             chatRoomList.add(chatRoom);
+        }
+    }
+
+    public static void closeChatRoom(String alias) {
+
+        for (ChatRoom c : chatRoomList) {
+            if (c.getAlias().equals(alias)) {
+                c.getChatInterface().setVisible(false);
+                break;
+            }
         }
     }
 

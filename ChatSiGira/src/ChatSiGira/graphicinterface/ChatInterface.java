@@ -46,6 +46,7 @@ public class ChatInterface extends javax.swing.JFrame {
         TitlePanel = new javax.swing.JPanel();
         TitleLabel = new javax.swing.JLabel();
         ChatIconLabel = new javax.swing.JLabel();
+        closeChatButton = new javax.swing.JButton();
         MexPanel = new javax.swing.JPanel();
         SendButton = new javax.swing.JButton();
         MessageField = new javax.swing.JTextField();
@@ -78,6 +79,21 @@ public class ChatInterface extends javax.swing.JFrame {
         ChatIconLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ChatIconLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ChatSiGira/images/icona_cutted.png"))); // NOI18N
 
+        closeChatButton.setBackground(new java.awt.Color(255, 0, 0));
+        closeChatButton.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
+        closeChatButton.setForeground(new java.awt.Color(0, 0, 0));
+        closeChatButton.setText("Chiudi");
+        closeChatButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                closeChatButtonMouseClicked(evt);
+            }
+        });
+        closeChatButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                closeChatButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout TitlePanelLayout = new javax.swing.GroupLayout(TitlePanel);
         TitlePanel.setLayout(TitlePanelLayout);
         TitlePanelLayout.setHorizontalGroup(
@@ -85,13 +101,19 @@ public class ChatInterface extends javax.swing.JFrame {
             .addGroup(TitlePanelLayout.createSequentialGroup()
                 .addComponent(ChatIconLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TitleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(TitleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(closeChatButton)
+                .addContainerGap())
         );
         TitlePanelLayout.setVerticalGroup(
             TitlePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(TitleLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(ChatIconLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TitlePanelLayout.createSequentialGroup()
+                .addGroup(TitlePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TitleLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(closeChatButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         MexPanel.setBackground(new java.awt.Color(255, 255, 255));
@@ -224,6 +246,15 @@ public class ChatInterface extends javax.swing.JFrame {
         MessageField.setText(" ");
     }//GEN-LAST:event_MessageFieldMouseClicked
 
+    private void closeChatButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeChatButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_closeChatButtonActionPerformed
+
+    private void closeChatButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeChatButtonMouseClicked
+        // TODO add your handling code here:
+        Actions.closeChatRoom(TitleLabel.getText());
+    }//GEN-LAST:event_closeChatButtonMouseClicked
+
     public void setUsername(String username){
         TitleLabel.setText(username);
     }
@@ -286,6 +317,7 @@ public class ChatInterface extends javax.swing.JFrame {
     private javax.swing.JButton SendButton;
     private javax.swing.JLabel TitleLabel;
     private javax.swing.JPanel TitlePanel;
+    private javax.swing.JButton closeChatButton;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
