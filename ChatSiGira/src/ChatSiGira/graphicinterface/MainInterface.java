@@ -473,7 +473,9 @@ public class MainInterface extends javax.swing.JFrame {
         ChangeAliasTextField.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
         ChangeAliasTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
+        ChangeAliasButton.setBackground(new java.awt.Color(102, 255, 102));
         ChangeAliasButton.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
+        ChangeAliasButton.setForeground(new java.awt.Color(0, 0, 0));
         ChangeAliasButton.setText("Cambia!");
         ChangeAliasButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
