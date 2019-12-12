@@ -21,26 +21,30 @@ import ChatSiGira.functions.Reader;
  */
 public class Connection {
 
+    //Declare socket
     public static Socket client;
     
-    public static Reader reader;
-
-    public static LoginInterface loginInterface = new LoginInterface();
-    public static MainInterface mainInterface = new MainInterface();
-
+    //Declare input and output stream
     public static DataInputStream is;
     public static DataOutputStream os;
 
-    public static Interpreter interpreter = new Interpreter();
+    //Declare GUI
+    public static LoginInterface loginInterface = new LoginInterface();
+    public static MainInterface mainInterface = new MainInterface();
 
-    public static void main(String[] args) throws IOException, InterruptedException {
+    //Declare interpreter
+    public static Interpreter interpreter = new Interpreter();
+    
+    //Declare reader
+    public static Reader reader;
+
+    public static void main(String[] args) throws IOException, 
+            InterruptedException {
 
         client = new Socket("127.0.0.1", 53101);
         is = new DataInputStream(client.getInputStream());
         os = new DataOutputStream(client.getOutputStream());
         loginInterface.setVisible(true);
-
-  
 
         reader = new Reader();
     }

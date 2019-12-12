@@ -26,10 +26,9 @@ public class Executor extends Thread {
         this.start();
     }
 
-
     @Override
     public void run() {
-                packet = Connection.interpreter.interpret(data);
+        packet = Connection.interpreter.interpret(data);
 
         try {
             Actions.whatToDo(packet);

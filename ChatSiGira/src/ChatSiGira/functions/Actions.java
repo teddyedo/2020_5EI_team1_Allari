@@ -46,6 +46,7 @@ public class Actions {
         RegistrationPacket r = new RegistrationPacket(alias, topic);
 
         Connection.os.write(r.toBytes());
+        
         System.out.println("Sended registration request ");
 
     }

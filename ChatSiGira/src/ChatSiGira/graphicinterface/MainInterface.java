@@ -76,6 +76,7 @@ public class MainInterface extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         UserListComboBox = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
+        openChatButton1 = new javax.swing.JButton();
         SettingPanel = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         ChangeAliasTextField = new javax.swing.JTextField();
@@ -344,6 +345,9 @@ public class MainInterface extends javax.swing.JFrame {
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("<html>\n<p style=\"text-align:center;\">Scegli un utente per iniziare a \nchattare con lui!\n</p>\n</html>");
 
+        openChatButton.setBackground(new java.awt.Color(102, 255, 102));
+        openChatButton.setFont(new java.awt.Font("Product Sans", 1, 14)); // NOI18N
+        openChatButton.setForeground(new java.awt.Color(0, 0, 0));
         openChatButton.setText("Apri chat");
         openChatButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -369,8 +373,8 @@ public class MainInterface extends javax.swing.JFrame {
                         .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(64, 64, 64))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, UserPanelLayout.createSequentialGroup()
-                        .addComponent(openChatButton)
-                        .addGap(120, 120, 120))))
+                        .addComponent(openChatButton, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(101, 101, 101))))
             .addGroup(UserPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(UserPanelLayout.createSequentialGroup()
                     .addContainerGap()
@@ -384,9 +388,9 @@ public class MainInterface extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addGap(28, 28, 28)
                 .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(87, 87, 87)
-                .addComponent(openChatButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                .addGap(79, 79, 79)
+                .addComponent(openChatButton, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(146, 146, 146))
             .addGroup(UserPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -411,23 +415,36 @@ public class MainInterface extends javax.swing.JFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("<html>\n<p style=\"text-align:center;\">Scegli un topic per iniziare a \nchattare con tutti i componenti \ndi quel topic!</p>\n</html>");
 
+        openChatButton1.setBackground(new java.awt.Color(102, 255, 102));
+        openChatButton1.setFont(new java.awt.Font("Product Sans", 1, 14)); // NOI18N
+        openChatButton1.setForeground(new java.awt.Color(0, 0, 0));
+        openChatButton1.setText("Apri topic");
+        openChatButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                openChatButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout TopicPanelLayout = new javax.swing.GroupLayout(TopicPanel);
         TopicPanel.setLayout(TopicPanelLayout);
         TopicPanelLayout.setHorizontalGroup(
             TopicPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TopicPanelLayout.createSequentialGroup()
-                .addContainerGap(66, Short.MAX_VALUE)
+                .addGap(23, 23, 23)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 34, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TopicPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(TopicPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TopicPanelLayout.createSequentialGroup()
                         .addComponent(UserListComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(58, 58, 58))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TopicPanelLayout.createSequentialGroup()
                         .addComponent(jLabel3)
+                        .addGap(98, 98, 98))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TopicPanelLayout.createSequentialGroup()
+                        .addComponent(openChatButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(98, 98, 98))))
-            .addGroup(TopicPanelLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
         );
         TopicPanelLayout.setVerticalGroup(
             TopicPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -436,7 +453,9 @@ public class MainInterface extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
                 .addComponent(UserListComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 207, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
+                .addComponent(openChatButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(69, 69, 69)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(121, 121, 121))
         );
@@ -664,6 +683,10 @@ public class MainInterface extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_DisconnectionButtonMouseClicked
 
+    private void openChatButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openChatButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_openChatButton1ActionPerformed
+
     public void setUsername(String alias) {
         UsernameLabel.setText(alias);
     }
@@ -774,5 +797,6 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JButton openChatButton;
+    private javax.swing.JButton openChatButton1;
     // End of variables declaration//GEN-END:variables
 }

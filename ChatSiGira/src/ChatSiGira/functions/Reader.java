@@ -9,39 +9,29 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
 /**
  *
  * @author Allari Edoardo
- * 
+ *
  */
-
 public class Reader extends Thread {
 
     public Reader() {
         this.start();
     }
-    
-    
 
     @Override
     public void run() {
-        
-        
-        while(UserInfo.userOnline){
+
+        while (UserInfo.userOnline) {
             byte[] data = new byte[2048];
             try {
                 data = Actions.read();
             } catch (IOException ex) {
                 Logger.getLogger(Reader.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
-            Executor i = new Executor(data);
-            
-        }
 
+            Executor i = new Executor(data);
+        }
     }
-    
-    
-    
 }

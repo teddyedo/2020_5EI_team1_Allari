@@ -99,6 +99,7 @@ public class RegistrationPacket implements Packet {
     }
 
     //</editor-fold>
+    
     /**
      * create the packet header.
      * @return byte[] header.
