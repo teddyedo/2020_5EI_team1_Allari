@@ -168,7 +168,6 @@ public class Actions {
      * This method is used to read on the inputStream.
      *
      * @return a byte array from the server.
-     * @throws IOException Exception
      */
     public static byte[] read() {
 
