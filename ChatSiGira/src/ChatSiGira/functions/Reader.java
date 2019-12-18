@@ -28,11 +28,7 @@ public class Reader extends Thread {
         
         while (UserInfo.userOnline) {
             byte[] data = new byte[2048];
-            try {
-                data = Actions.read();
-            } catch (IOException ex) {
-                Logger.getLogger(Reader.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            data = Actions.read();
 
             Executor i = new Executor(data);
         }

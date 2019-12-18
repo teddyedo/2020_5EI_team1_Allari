@@ -5,19 +5,7 @@
  */
 package ChatSiGira.functions;
 
-import ChatSiGira.packets.ChangeOfAliasPacket;
-import ChatSiGira.packets.Packet;
-import ChatSiGira.packets.RegistrationPacket;
-import ChatSiGira.packets.UtcDPacket;
-import ChatSiGira.packets.GroupUsersListRequestPacket;
-import ChatSiGira.packets.UtuPacket;
-import ChatSiGira.packets.UtuDPacket;
-import ChatSiGira.packets.ErrorPacket;
-import ChatSiGira.packets.DisconnectionServerPacket;
-import ChatSiGira.packets.RegistrationAckPacket;
-import ChatSiGira.packets.UtCPacket;
-import ChatSiGira.packets.GroupUsersListPacket;
-import ChatSiGira.packets.DisconnectionClientPacket;
+import ChatSiGira.packets.*;
 import com.google.gson.Gson;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -29,6 +17,8 @@ import ChatSiGira.graphicinterface.ChatInterface;
 import com.google.gson.stream.JsonReader;
 import java.io.StringReader;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -97,15 +87,24 @@ public class Actions {
 
         DisconnectionClientPacket dscPkt = new DisconnectionClientPacket(UserInfo.ID);
 
+        Connection.reader.interrupt();
+        UserInfo.userOnline = false;
+        
+        
         Connection.os.write(dscPkt.toBytes());
+        Connection.os.flush();
+        
+        
 
         System.out.println("Sended disconnection request");
+        
+        Connection.os.close();
+        Connection.is.close();
+        Connection.client.close();
 
         Connection.mainInterface.setVisible(false);
 
-        UserInfo.userOnline = false;
-        Connection.client.close();
-
+        
         System.exit(0);
 
     }
@@ -171,11 +170,18 @@ public class Actions {
      * @return a byte array from the server.
      * @throws IOException Exception
      */
-    public static byte[] read() throws IOException {
+    public static byte[] read() {
 
         byte[] buffer = new byte[2048];
 
-        Connection.is.read(buffer);
+        try {
+            Connection.is.read(buffer);
+        } catch (IOException ex) {
+             if(! UserInfo.userOnline)
+                System.exit(0);
+             else
+             Logger.getLogger(Actions.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         return buffer;
     }

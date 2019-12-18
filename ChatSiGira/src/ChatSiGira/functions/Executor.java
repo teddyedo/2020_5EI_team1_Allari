@@ -36,6 +36,8 @@ public class Executor extends Thread {
         } catch (IOException ex) {
             Logger.getLogger(Executor.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        this.interrupt();
 
     }
 
