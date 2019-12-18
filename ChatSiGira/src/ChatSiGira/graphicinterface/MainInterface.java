@@ -106,7 +106,7 @@ public class MainInterface extends javax.swing.JFrame {
         TitlePanel.setBackground(new java.awt.Color(255, 153, 0));
 
         TitleLabel.setBackground(new java.awt.Color(255, 153, 0));
-        TitleLabel.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        TitleLabel.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         TitleLabel.setForeground(new java.awt.Color(0, 0, 0));
         TitleLabel.setText("  Chat pubblica");
 
@@ -141,7 +141,7 @@ public class MainInterface extends javax.swing.JFrame {
         });
 
         MessageField.setBackground(new java.awt.Color(255, 255, 255));
-        MessageField.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
+        MessageField.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         MessageField.setForeground(new java.awt.Color(0, 0, 0));
         MessageField.setText("Inserisci il messaggio...");
         MessageField.setBorder(null);
@@ -187,7 +187,7 @@ public class MainInterface extends javax.swing.JFrame {
         jScrollPane1.setBackground(new java.awt.Color(187, 187, 187));
 
         MessageLabel.setBackground(new java.awt.Color(187, 187, 187));
-        MessageLabel.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        MessageLabel.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         MessageLabel.setForeground(new java.awt.Color(0, 0, 0));
         MessageLabel.setText("<html> </html>");
         MessageLabel.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
@@ -284,7 +284,7 @@ public class MainInterface extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        UsernameLabel.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        UsernameLabel.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         UsernameLabel.setForeground(new java.awt.Color(0, 0, 0));
         UsernameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         UsernameLabel.setText("Username");
@@ -298,7 +298,7 @@ public class MainInterface extends javax.swing.JFrame {
 
         HomePanel.setBackground(new java.awt.Color(255, 204, 51));
 
-        jLabel1.setFont(new java.awt.Font("Product Sans", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("<html>\n<p text align=\"center\">\nINFORMAZIONI GENERALI\n<br><br>Versione GUI 1.0\n<br><br>Protocollo usato: PotatoChatProtocol\n<br><br>\n</p>\n</html>");
@@ -334,19 +334,20 @@ public class MainInterface extends javax.swing.JFrame {
 
         UserPanel.setBackground(new java.awt.Color(255, 204, 51));
 
-        jLabel2.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("UTENTI CONNESSI");
 
+        jComboBox2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jLabel5.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("<html>\n<p style=\"text-align:center;\">Scegli un utente per iniziare a \nchattare con lui!\n</p>\n</html>");
 
         openChatButton.setBackground(new java.awt.Color(102, 255, 102));
-        openChatButton.setFont(new java.awt.Font("Product Sans", 1, 14)); // NOI18N
+        openChatButton.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         openChatButton.setForeground(new java.awt.Color(0, 0, 0));
         openChatButton.setText("Apri chat");
         openChatButton.addActionListener(new java.awt.event.ActionListener() {
@@ -390,7 +391,7 @@ public class MainInterface extends javax.swing.JFrame {
                 .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(79, 79, 79)
                 .addComponent(openChatButton, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(146, 146, 146))
             .addGroup(UserPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -404,19 +405,20 @@ public class MainInterface extends javax.swing.JFrame {
 
         TopicPanel.setBackground(new java.awt.Color(255, 204, 51));
 
-        jLabel3.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("TOPIC APERTI");
 
+        UserListComboBox.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         UserListComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jLabel4.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("<html>\n<p style=\"text-align:center;\">Scegli un topic per iniziare a \nchattare con tutti i componenti \ndi quel topic!</p>\n</html>");
 
         openChatButton1.setBackground(new java.awt.Color(102, 255, 102));
-        openChatButton1.setFont(new java.awt.Font("Product Sans", 1, 14)); // NOI18N
+        openChatButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         openChatButton1.setForeground(new java.awt.Color(0, 0, 0));
         openChatButton1.setText("Apri topic");
         openChatButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -453,7 +455,7 @@ public class MainInterface extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
                 .addComponent(UserListComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
                 .addComponent(openChatButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(69, 69, 69)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -464,17 +466,17 @@ public class MainInterface extends javax.swing.JFrame {
 
         SettingPanel.setBackground(new java.awt.Color(255, 204, 51));
 
-        jLabel6.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("<html>\n<p style=\"text-align:center;\">\nVuoi cambiare nome? <br>\nInserisci nel campo qui <br>\nsotto il nuovo nome e <br>\npremi il pulsante \"cambia!\"\n</p>\n</html>");
 
         ChangeAliasTextField.setBackground(new java.awt.Color(255, 255, 255));
-        ChangeAliasTextField.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
+        ChangeAliasTextField.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         ChangeAliasTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         ChangeAliasButton.setBackground(new java.awt.Color(102, 255, 102));
-        ChangeAliasButton.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
+        ChangeAliasButton.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         ChangeAliasButton.setForeground(new java.awt.Color(0, 0, 0));
         ChangeAliasButton.setText("Cambia!");
         ChangeAliasButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -487,7 +489,7 @@ public class MainInterface extends javax.swing.JFrame {
         ErrorAliasLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         DisconnectionButton.setBackground(new java.awt.Color(255, 0, 0));
-        DisconnectionButton.setFont(new java.awt.Font("Product Sans", 1, 30)); // NOI18N
+        DisconnectionButton.setFont(new java.awt.Font("Arial", 1, 30)); // NOI18N
         DisconnectionButton.setForeground(new java.awt.Color(0, 0, 0));
         DisconnectionButton.setText("Disconnetti");
         DisconnectionButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -508,24 +510,24 @@ public class MainInterface extends javax.swing.JFrame {
             .addGroup(SettingPanelLayout.createSequentialGroup()
                 .addGroup(SettingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(SettingPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(ErrorAliasLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(SettingPanelLayout.createSequentialGroup()
                         .addGroup(SettingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(SettingPanelLayout.createSequentialGroup()
-                                .addGap(59, 59, 59)
-                                .addGroup(SettingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
-                                    .addComponent(ChangeAliasTextField)))
-                            .addGroup(SettingPanelLayout.createSequentialGroup()
                                 .addGap(105, 105, 105)
-                                .addComponent(ChangeAliasButton, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(SettingPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(ErrorAliasLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(ChangeAliasButton, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(SettingPanelLayout.createSequentialGroup()
+                                .addGap(59, 59, 59)
+                                .addComponent(ChangeAliasTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(SettingPanelLayout.createSequentialGroup()
+                                .addGap(37, 37, 37)
+                                .addComponent(DisconnectionButton, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(SettingPanelLayout.createSequentialGroup()
+                                .addGap(50, 50, 50)
+                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 38, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(SettingPanelLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(DisconnectionButton, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(44, Short.MAX_VALUE))
         );
         SettingPanelLayout.setVerticalGroup(
             SettingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -538,7 +540,7 @@ public class MainInterface extends javax.swing.JFrame {
                 .addComponent(ChangeAliasButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(ErrorAliasLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addComponent(DisconnectionButton, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(16, 16, 16))
         );

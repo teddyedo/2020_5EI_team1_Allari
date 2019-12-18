@@ -72,7 +72,7 @@ public class ChatInterface extends javax.swing.JFrame {
         TitlePanel.setBackground(new java.awt.Color(255, 153, 0));
 
         TitleLabel.setBackground(new java.awt.Color(255, 153, 0));
-        TitleLabel.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        TitleLabel.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         TitleLabel.setForeground(new java.awt.Color(0, 0, 0));
         TitleLabel.setText("Nome Topic / Utente");
 
@@ -80,7 +80,7 @@ public class ChatInterface extends javax.swing.JFrame {
         ChatIconLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ChatSiGira/images/icona_cutted.png"))); // NOI18N
 
         closeChatButton.setBackground(new java.awt.Color(255, 0, 0));
-        closeChatButton.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
+        closeChatButton.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         closeChatButton.setForeground(new java.awt.Color(0, 0, 0));
         closeChatButton.setText("Chiudi");
         closeChatButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -128,7 +128,7 @@ public class ChatInterface extends javax.swing.JFrame {
         });
 
         MessageField.setBackground(new java.awt.Color(255, 255, 255));
-        MessageField.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
+        MessageField.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         MessageField.setForeground(new java.awt.Color(0, 0, 0));
         MessageField.setText("Inserisci il messaggio...");
         MessageField.setBorder(null);
@@ -175,9 +175,9 @@ public class ChatInterface extends javax.swing.JFrame {
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
-        MessageLabel.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
+        MessageLabel.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         MessageLabel.setForeground(new java.awt.Color(0, 0, 0));
-        MessageLabel.setText("<html>---------------------------------- Benvenuto nella chat privata!  ------------------------------------</html>");
+        MessageLabel.setText("<html>-------------------------------------- Benvenuto nella chat privata!  --------------------------------------------</html>");
         MessageLabel.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         MessageLabel.setAutoscrolls(true);
         jScrollPane1.setViewportView(MessageLabel);
@@ -190,7 +190,7 @@ public class ChatInterface extends javax.swing.JFrame {
             .addComponent(MexPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(RightPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                 .addContainerGap())
         );
         RightPanelLayout.setVerticalGroup(

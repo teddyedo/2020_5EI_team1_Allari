@@ -82,12 +82,13 @@ public class LoginInterface extends javax.swing.JFrame {
         BackgroundWhite.setBackground(new java.awt.Color(255, 255, 255));
         BackgroundWhite.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        SignInLabel.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        SignInLabel.setFont(new java.awt.Font("Arial", 1, 27)); // NOI18N
         SignInLabel.setForeground(new java.awt.Color(0, 0, 0));
         SignInLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         SignInLabel.setText("SIGN IN");
-        BackgroundWhite.add(SignInLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 500, 100, 30));
+        BackgroundWhite.add(SignInLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 500, 160, 30));
 
+        LoginButton.setFont(new java.awt.Font("Berlin Sans FB", 1, 12)); // NOI18N
         LoginButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ChatSiGira/images/Button.png"))); // NOI18N
         LoginButton.setToolTipText("");
         LoginButton.setBorder(null);
@@ -99,18 +100,23 @@ public class LoginInterface extends javax.swing.JFrame {
         });
         BackgroundWhite.add(LoginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, 300, 70));
 
-        ErrorLabel.setFont(new java.awt.Font("Product Sans", 1, 14)); // NOI18N
+        ErrorLabel.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         ErrorLabel.setForeground(new java.awt.Color(255, 51, 51));
         ErrorLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         BackgroundWhite.add(ErrorLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 300, 30));
 
         TextField.setBackground(new java.awt.Color(255, 255, 255));
-        TextField.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
+        TextField.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         TextField.setBorder(null);
+        TextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TextFieldActionPerformed(evt);
+            }
+        });
         BackgroundWhite.add(TextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, 220, 30));
         BackgroundWhite.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, 200, 10));
 
-        UserLabel1.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
+        UserLabel1.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         UserLabel1.setForeground(new java.awt.Color(0, 0, 0));
         UserLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         UserLabel1.setText("Username");
@@ -143,6 +149,10 @@ public class LoginInterface extends javax.swing.JFrame {
        
         
     }//GEN-LAST:event_LoginButtonActionPerformed
+
+    private void TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextFieldActionPerformed
 
     public void setTextErrorLabel(String text){
         ErrorLabel.setText(text);
