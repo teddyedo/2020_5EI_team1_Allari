@@ -1,5 +1,4 @@
-ChatSiGira
-------------------------------------                                   
+                               
 <h1> Software Requirements Specification </h1>
 For ChatSiGira, version 1.0 approved <br>
 
