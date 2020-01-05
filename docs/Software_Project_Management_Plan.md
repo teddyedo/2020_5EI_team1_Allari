@@ -132,6 +132,7 @@ These are the tools that will be used in this project:
 
 - Programming languages:
   - Java;
+- Markup languages:
   - Markdown;
 - Java Swing as GUI framework;
 - Git and GitHub;
@@ -165,4 +166,4 @@ The iteration plan for this project will be available soon on a [specific docume
 
 # Test plan
 
-The test plan for this project will be available soon on a [specific document](#)
+The test plan for this project will be available soon on a [specific document]()
