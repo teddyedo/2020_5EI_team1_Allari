@@ -74,7 +74,7 @@ For the same reason as the constraints, no financial outlay is necessary for the
 ## Schedule summary
 
 |  What                          | When       |
-| -----------------------------: | :--------- |
+| :----------------------------- | :--------- |
 |       Start the project   | 12/10/2019 |
 |       Started develop for main GUI   | 03/11/2019 |
 |       Started develop for packets class   | 08/11/2019 |
