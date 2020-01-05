@@ -16,6 +16,7 @@ Team 1:
   - [1.1 Overview](#11-overview)
   - [1.2 Goals and Objectives](#12-goals-and-objectives)
   - [1.3 Scope](#13-scope)
+  - [1.4 Product functions](#1.4-Product-functions)
 - [2 General Design Constraints](#2-general-design-constraints)
   - [2.1 ChatSiGira Application Environment](#21-chatsigira-application-environment)
   - [2.2 User Characteristics](#22-user-characteristics)
@@ -43,6 +44,7 @@ This document provides information about the requirements for the ChatSiGira sof
 ## 1.2 Goals and Objectives
 
 The main objective of this project is to allow users to communicate each other over a LAN using a centralized server that allows the interconnection of different clients. The ChatSiGira application should:
+
 1. provide a login interface to log in and start chatting with other users; 
 2. work in a simple and intuitive way;
 3. provide the ability to change the alias;
@@ -52,6 +54,14 @@ The main objective of this project is to allow users to communicate each other o
 
 ChatSiGira application provides users the access to a public chat with the list of users connected and and allows communication between users via a central server. Users can change their alias or log out whenever they want.
 
+## 1.4 Product functions
+
+Our product allows to:
+
+- Chat with another user connected on the same server;
+- Chat with a group of user connected to the same server;
+- Change the alias during the execution of the application;
+- Choose an icon as avatar;
 
 # 2  General Design Constraints
 
@@ -71,9 +81,7 @@ The application was developed in Java and runs in the Java Virtual Machine envir
 
 ## 3.1 Operational Requirements
 
-Usability: [GitHub](https://github.com/teddyedo/2020_5EI_team1_Allari) documentation has been created for the operation of both the server application and the client, but testing it is very simple and completely guided.
-
-  
+Usability: [GitHub](https://github.com/teddyedo/2020_5EI_team1_Allari/blob/master/docs/index.md) documentation has been created for the operation of both the server application and the client, but testing it is very simple and completely guided.
 
 ## 3.2 Performance Requirements
 
@@ -81,19 +89,15 @@ Maintainability: changes made to the server do not affect clients and the same a
 
 ## 3.3 Security Requirements
 
-ChatSiGira does not have any specification from a security point of view, however, it is a good practice to install and start the application on suitable and limited access machines.
-
+ChatSiGira does not have any specification from a security point of view.
   
-
 ## 3.4 Documentation and Training
 
-The ChatSiGira application must be started from the NetBeans platform. A user guide and system documentation can be found online on [GitHub](https://github.com/teddyedo/2020_5EI_team1_Allari).
+The ChatSiGira application must be started from the NetBeans platform. A user guide and system documentation can be found online on [GitHub](https://github.com/teddyedo/2020_5EI_team1_Allari/blob/master/docs/index.md).
 
-  
+For a depth explanation of the functioning of our application, please check [this presentation]()
 
 ## 3.5 External Interface
-
-  
 
 ### 3.5.1 User Interface
 
@@ -116,19 +120,19 @@ Actors: student or any user.
 
   
 
-Basic Path
+**Basic Path**
 
-1. the client opens the login interface
+1. the client opens the login interface;
 
-2. The user enters the username they want
+2. The user enters the username they want;
 
-3. when we click on the login button the server receives the request
+3. when we click on the login button the server receives the request;
 
-4. The server verifies that the alias is available and that it respects the restrictions
+4. The server verifies that the alias is available and that it respects the restrictions;
 
-5. The server then sends the list of people connected to the public room to the client
+5. The server then sends the list of people connected to the public room to the client;
 
-6. The user clicks Disconnect.
+6. The user clicks Disconnect;
 
 7. The system exits.
 
@@ -142,20 +146,20 @@ Basic Path
 
   
 
-Basic Path
+**Basic Path**
 
-1. the client opens the login interface
+1. the client opens the login interface;
 
-2. The user enters the username they want
+2. The user enters the username they want;
 
 3. the user clicks on the avatar icon and will be able to see who the users are and can
-request to start a private conversation with the client concerned
+request to start a private conversation with the client concerned;
 
-4. the server will manage and allow the connection between the two clients.
+4. the server will manage and allow the connection between the two clients;
 
-5. by clicking on the settings icon users can decide to change aliases as they wish.
+5. by clicking on the settings icon users can decide to change aliases as they wish;
 
-6. To disconnect from the global chat just click on the "disconnect" button.
+6. To disconnect from the global chat just click on the "disconnect" button;
 
 7. The system exits.
                                           
