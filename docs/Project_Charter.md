@@ -19,4 +19,3 @@
 | **Success criteria**          | The application must be able to communicate with other clients connected on the network|
 | **Risks**          | One risk the team can face is the lack of time to complete the project. Another risk may be the lack of knowledge for the development of some software components|
 |**Scope**           | The main purpose of the project is the creation of an application level protocol from scratch, based on TCP and to be used for the creation of a local communication system (chat) managed by a central server developed by a single group; communication must be made through client applications developed by the remaining groups.|
-
