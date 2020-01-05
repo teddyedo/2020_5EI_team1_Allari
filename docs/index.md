@@ -5,3 +5,4 @@
 - [Software Project Management Plan](https://github.com/teddyedo/2020_5EI_team1_Allari/blob/master/docs/Software_Project_Management_Plan.md)
 - [Project Model Canvas]()
 - [Business Model Canvas]()
+- [README](https://github.com/teddyedo/2020_5EI_team1_Allari/blob/master/docs/README.md)
