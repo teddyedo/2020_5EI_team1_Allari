@@ -95,7 +95,7 @@ ChatSiGira does not have any specification from a security point of view.
 
 The ChatSiGira application must be started from the NetBeans platform. A user guide and system documentation can be found online on [GitHub](https://github.com/teddyedo/2020_5EI_team1_Allari/blob/master/docs/index.md).
 
-For a depth explanation of the functioning of our application, please check [this presentation]()
+For a depth explanation of the functioning of our application, please check [this presentation](https://github.com/teddyedo/2020_5EI_team1_Allari/blob/master/docs/Software%20Project%20Documentation.pptx)
 
 ## 3.5 External Interface
 
