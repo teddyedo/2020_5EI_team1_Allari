@@ -71,7 +71,7 @@ The application was developed in Java and runs in the Java Virtual Machine envir
 
 ## 3.1 Operational Requirements
 
-Usability: [Github](https://github.com/teddyedo/2020_5EI_team1_Allari) documentation has been created for the operation of both the server application and the client, but testing it is very simple and completely guided.
+Usability: [GitHub](https://github.com/teddyedo/2020_5EI_team1_Allari) documentation has been created for the operation of both the server application and the client, but testing it is very simple and completely guided.
 
   
 
@@ -87,7 +87,7 @@ ChatSiGira does not have any specification from a security point of view, howeve
 
 ## 3.4 Documentation and Training
 
-The ChatSiGira application must be started from the NetBeans platform. A user guide and system documentation can be found online on [Github](https://github.com/teddyedo/2020_5EI_team1_Allari).
+The ChatSiGira application must be started from the NetBeans platform. A user guide and system documentation can be found online on [GitHub](https://github.com/teddyedo/2020_5EI_team1_Allari).
 
   
 
