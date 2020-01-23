@@ -5,6 +5,9 @@ nav:
     - 'Software Project Management Plan': 'Software_Project_Management_Plan.md'
     - 'Test Plan': 'Test_Plan.md'
     - 'Iteration Plan': 'Iteration_Plan.md'
+    - 'Business Model Canvas': 'Business_Model_Canvas.pdf'
+    - 'Project Model Canvas': 'Project_Model_Canvas.pdf'
+
     
 theme:
     name: readthedocs
