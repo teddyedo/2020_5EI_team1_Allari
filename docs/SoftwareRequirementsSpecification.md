@@ -3,11 +3,11 @@
 For ChatSiGira, version 1.0 approved <br>
 
 Team 1:
-* Edoardo Allari 
-* Abreham Bologna
-* Pietro Nicolis
-* Jonathan Pollinari
-* Nicolò Zerbato
+- Edoardo Allari 
+- Abreham Bologna
+- Pietro Nicolis
+- Jonathan Pollinari
+- Nicolò Zerbato
 ---
 
 **Table of Contents**
