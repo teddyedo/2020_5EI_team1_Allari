@@ -10,27 +10,7 @@ Team 1:
 - Nicolò Zerbato
 ---
 
-**Table of Contents**
 
-- [1 Introduction](#1-introduction)
-  - [1.1 Overview](#11-overview)
-  - [1.2 Goals and Objectives](#12-goals-and-objectives)
-  - [1.3 Scope](#13-scope)
-  - [1.4 Product functions](#1.4-Product-functions)
-- [2 General Design Constraints](#2-general-design-constraints)
-  - [2.1 ChatSiGira Application Environment](#21-chatsigira-application-environment)
-  - [2.2 User Characteristics](#22-user-characteristics)
-- [3 Nonfunctional Requirements](#3-nonfunctional-requirements)
-  - [3.1 Operational Requirements](#31-operational-requirements)
-  - [3.2 Performance Requirements](#32-performance-requirements)
-  - [3.3 Security Requirements](#33-security-requirements)
-  - [3.4 Documentation and Training](#34-documentation-and-training)
-  - [3.5 External Interface](#35-external-interface)
-    - [3.5.1 User Interface](#351-user-interface)
-- [4 Functional Requirements](#4-functional-requirements)
-  - [4.1 Required Features](#41-required-features)
-    - [4.1.1 Use Case: 1](#411-use-case-1)
-    - [4.1.2 Use Case: 2](#412-use-case-2)
 ---
 
 # 1  Introduction
