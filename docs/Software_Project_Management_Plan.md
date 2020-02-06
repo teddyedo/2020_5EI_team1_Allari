@@ -2,30 +2,6 @@
 # Software Project Management Plan
 For ChatSiGira, version 1.0 approved <br>
 
-## Table of contents
-
-- [**Overview**](#overview)
-  - [Purpose and scope](#Purpose-and-scope)
-  - [Goals and objectives](#Goals-and-objectives)
-  - [Project deliverables](#Project-deliverables)
-  - [Assumption and Constraints](#Assumption-and-constraints)
-    - [Assumption](#Assumption)
-    - [Constraints](#Constraints)
-  - [Schedule and budget Summary](#Schedule-and-budget-summary)
-    - [Cost estimate](#Cost-estimate)
-    - [Schedule summary](#Schedule-summary)
-  - [Success criteria](#Success-criteria)
-  - [Definitions](#Definitions)
-- [**Startup plan**](#Startup-plan)
-  - [Team organization](#Team-organization)
-  - [Project communications](#Project-comunications)
-  - [Technical process](#Technical-process)
-  - [Tools](#Tools)
-- [**Work plan**](#Work-plan)
-  - [Resource estimate](#Resource-estimate)
-  - [release plan](#Release-plan)
-  - [Iteration plans](#Iteration-plans)
-- [**Test plan**](#Test-plan)
 
 ---
 
