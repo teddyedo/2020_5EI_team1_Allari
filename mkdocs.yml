@@ -1,17 +1,16 @@
 site_name: 2020_5EI_Team1
 nav:
     - 'Project Charter': 'Project_Charter.md'
-    - 'Software Requirements Specification': 'SoftwareRequirementsSpecification.md'
+    - 'Software Requirements Specification': 'Software_Requirements_Specification.md'
     - 'Software Project Management Plan': 'Software_Project_Management_Plan.md'
     - 'Test Plan': 'Test_Plan.md'
     - 'Business Model Canvas': 'Business_Model_Canvas.pdf'
     - 'Project Model Canvas': 'Project_Model_Canvas.pdf' 
-    - 'Iteration Plan': 'IterationPlan.md'
+    - 'Iteration Plan': 'Iteration_Plan.md'
     - 'Release Plan': 'Release_Plan.md'
-    - 'Success Criteria': 'Success Criteria.md'
-    - 'System Documentation': 'SystemDocumentation.md'
-    - 'Test Case Specification': 'Test Case Specification.md'
-    - 'User Guide': 'UserGuide.md'
+    - 'Success Criteria': 'Success_Criteria.md'
+    - 'System Documentation': 'System_Documentation.md'
+    - 'Test Case Specification': 'Test_Case_Specification.md'
     
 
     
