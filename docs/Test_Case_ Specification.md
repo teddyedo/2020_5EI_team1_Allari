@@ -10,7 +10,7 @@ This document provides the test cases to be carried out for the Chat Application
 ## Test Cases: Chat Application
 |                							 |						   	   |
 |----------------|-------------------------------|-----------------------------|
-|Test ID	|###
+|Test ID	|100
 |Titles		|Correct Login
 |Features	|Login to [https://jitpack.io/#JacopoWolf/PotatoChatProtocol](https://jitpack.io/#JacopoWolf/PotatoChatProtocol) with Chat App
 |Objective	|Confirm that proper user's information yields access to the server as expected.
