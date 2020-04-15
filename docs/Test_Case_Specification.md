@@ -10,20 +10,20 @@ This document provides the test cases to be carried out for the Chat Application
 ## Test Cases: Chat Application
 |                							 |						   	   |
 |----------------|-------------------------------|-----------------------------|
-|Test ID	|100
+|Test ID	|###
 |Titles		|Correct Login
-|Features	|Login to [https://jitpack.io/#JacopoWolf/PotatoChatProtocol](https://jitpack.io/#JacopoWolf/PotatoChatProtocol) with Chat App
+|Features	|Login to [https://jitpack.io/JacopoWolf/PotatoChatProtocol](https://jitpack.io/#JacopoWolf/PotatoChatProtocol) with Chat App
 |Objective	|Confirm that proper user's information yields access to the server as expected.
 |Test Data	|Login information: User Name = Pippo; Room = school
 |Test Actions|Start Chat application; Enter login information
-|Expected Results|The system displays the user interface with the option to log out, to create a new room or to scroll through the list of all users connected to the server and chat with anyone. The list of users and rooms must match the one found on [https://jitpack.io/#JacopoWolf/PotatoChatProtocol](https://jitpack.io/#JacopoWolf/PotatoChatProtocol).
+|Expected Results|The system displays the user interface with the option to log out, to create a new room or to scroll through the list of all users connected to the server and chat with anyone. The list of users and rooms must match the one found on [https://jitpack.io/JacopoWolf/PotatoChatProtocol](https://jitpack.io/#JacopoWolf/PotatoChatProtocol).
 ___
 
 |                							 |						   	   |
 |----------------|-------------------------------|-----------------------------|
 |Test ID	|101
 |Titles		|Incorrect Username
-|Features	|Login to [https://jitpack.io/#JacopoWolf/PotatoChatProtocol](https://jitpack.io/#JacopoWolf/PotatoChatProtocol) with Chat App
+|Features	|Login to [https://jitpack.io/JacopoWolf/PotatoChatProtocol](https://jitpack.io/#JacopoWolf/PotatoChatProtocol) with Chat App
 |Objective	|Confirm that valid user id with an invalid username denies access to the server without leaving the user stranded.
 |Test Data	|Correct User ID, incorrect Username: Username = Peppo; Room = school
 |Test Actions|Start Chat application; Enter invalid login information
@@ -34,7 +34,7 @@ ___
 |----------------|-------------------------------|-----------------------------|
 |Test ID	|102
 |Titles		|Invalid room name
-|Features	|Login to [https://jitpack.io/#JacopoWolf/PotatoChatProtocol](https://jitpack.io/#JacopoWolf/PotatoChatProtocol) with Chat App
+|Features	|Login to [https://jitpack.io/JacopoWolf/PotatoChatProtocol](https://jitpack.io/#JacopoWolf/PotatoChatProtocol) with Chat App
 |Objective	|Confirm that invalid room name denies access to the server without leaving the user stranded.
 |Test Data	|Incorrect Username, Incorrect room name: Username = Peppo; Room = scool
 |Test Actions|Start Chat application; Enter invalid login information
@@ -45,10 +45,15 @@ ___
 |----------------|-------------------------------|-----------------------------|
 |Test ID	|000
 |Titles		|Malformed package
-|Features	|Login to [https://jitpack.io/#JacopoWolf/PotatoChatProtocol](https://jitpack.io/#JacopoWolf/PotatoChatProtocol) with Chat App
+|Features	|Login to [https://jitpack.io/JacopoWolf/PotatoChatProtocol](https://jitpack.io/#JacopoWolf/PotatoChatProtocol) with Chat App
 |Objective	|Warn that malformed package can't be read by clients. server without leaving the user stranded.
-|Test Actions|1. Start Chat application; 2. Select View Locations option; 3. Select a user with whom we want to chat; 4. Enter an amount of data greater than 256 bytes
-|Expected Results|System displays error message 
+|Test Actions   
+    
+    1. Start Chat application; 
+    2. Select View Locations option; 
+    3. Select a user with whom we want to chat; 
+    4. Enter an amount of data greater than 256 bytes
+|Expected Results     |System displays error message 
 ___
 
 |                							 |						   	   |
@@ -58,15 +63,19 @@ ___
 |Features	|Allow users to disconnect from the server
 |Objective	|Confirm that the disconnection had happen properly. server without leaving the user stranded.
 |Test Data	|Login information: User Name = Pippo; Room = school
-|Test Actions|1. Start Chat application; 2. Select Account option; 3. Select Disconnection option; 
-|Expected Results|System disconnect user properly from [https://jitpack.io/#JacopoWolf/PotatoChatProtocol](https://jitpack.io/#JacopoWolf/PotatoChatProtocol).
+|Test Actions
+    
+    1. Start Chat application; 
+    2. Select Account option; 
+    3. Select Disconnection option; 
+|Expected Results|System disconnect user properly from [https://jitpack.io/JacopoWolf/PotatoChatProtocol](https://jitpack.io/#JacopoWolf/PotatoChatProtocol).
 
 : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - :
-### Team: 
+### <span style="color:blue">**Team:**</span>
 
- - Allari Edoardo
- - Bologna Abreham
- - Nicolis Pietro
- - Pollinari Jonathan
- - Zerbato Nicolò
+    - Allari Edoardo
+    - Bologna Abreham
+    - Nicolis Pietro
+    - Pollinari Jonathan
+    - Zerbato Nicolò
 
