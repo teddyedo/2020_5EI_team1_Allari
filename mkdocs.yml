@@ -1,18 +1,32 @@
 site_name: 2020_5EI_Team1
 nav:
     - 'Project Charter': 'Project_Charter.md'
+    - 'Project Charter - PDF': 'PDF/Project_Charter.pdf'
     - 'Software Requirements Specification': 'Software_Requirements_Specification.md'
+    - 'Software Requirements Specification - PDF': 'PDF/Software_Requirements_Specification.pdf'
     - 'Software Project Management Plan': 'Software_Project_Management_Plan.md'
+    - 'Software Project Management Plan - PDF': 'PDF/Software_Project_Management_Plan.pdf'
     - 'Test Plan': 'Test_Plan.md'
+    - 'Test Plan - PDF': 'PDF/Test_Plan.pdf'
     - 'Business Model Canvas': 'Business_Model_Canvas.pdf'
     - 'Project Model Canvas': 'Project_Model_Canvas.pdf' 
     - 'Iteration Plan': 'Iteration_Plan.md'
-    - 'Release Plan': 'Release_Plan.md'
+    - 'Iteration Plan - PDF': 'PDF/teration_Plan.pdf'
     - 'Success Criteria': 'Success_Criteria.md'
+    - 'Success Criteria - PDF': 'PDF/Success_Criteria.pdf'
     - 'System Documentation': 'System_Documentation.md'
+    - 'System Documentation - PDF': 'PDF/System_Documentation.pdf'
     - 'Test Case Specification': 'Test_Case_Specification.md'
+    - 'Test Case Specification - PDF': 'PDF/Test_Case_Specification.pdf'
     - 'User Guide': 'User_Guide.md'
-    
+    - 'User Guide - PDF': 'PDF/User_Guide.pdf'
+    - 'Release Plan': 'Release_Plan.md'
+    - 'Release Plan - PDF': 'PDF/Release_Plan.pdf'
+    - 'Memo of understanding': 'Memo_Of_Understanding.md'
+    - 'Memo of understanding - PDF': 'PDF/Memo_Of_Understanding.pdf'
+    - 'Architecture And Design': 'Architecture_And_Design.md'
+    - 'Architecture And Design - PDF': 'PDF/Architecture_And_Design.pdf'
+
 
     
 theme:
