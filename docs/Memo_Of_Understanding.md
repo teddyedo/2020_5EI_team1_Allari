@@ -43,3 +43,7 @@ The scope of this project is to provide a chat client with a user interface that
 - Use the application following the use cases explained in the User Guide;
 - Report bugs through the client assistance provided by the developers group;
 - Don't distribute our application to other people that don't own the license of our product.
+
+## Duration
+
+This document is updated every 6 months.
