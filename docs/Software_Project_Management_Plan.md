@@ -134,12 +134,12 @@ and software, such as:
 
 ## Release plan
 
-The release plan for this project will be available soon on a [specific document](https://github.com/teddyedo/2020_5EI_team1_Allari/blob/master/docs/Release_Plan.md)
+The release plan for this project it's available on a  [specific document](https://github.com/teddyedo/2020_5EI_team1_Allari/blob/master/docs/Release_Plan.md)
 
 ## Iteration plan
 
-The iteration plan for this project will be available soon on a [specific document](https://github.com/teddyedo/2020_5EI_team1_Allari/blob/master/docs/Iteration_Plan.md)
+The iteration plan for this project it's available on a  [specific document](https://github.com/teddyedo/2020_5EI_team1_Allari/blob/master/docs/Iteration_Plan.md)
 
 # Test plan
 
-The test plan for this project will be available soon on a [specific document](https://github.com/teddyedo/2020_5EI_team1_Allari/blob/master/docs/Test_Plan.md)
+The test plan for this project it's available on a   [specific document](https://github.com/teddyedo/2020_5EI_team1_Allari/blob/master/docs/Test_Plan.md)

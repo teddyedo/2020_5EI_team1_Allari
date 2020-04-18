@@ -2,21 +2,6 @@
 
 For ChatSiGira, version 1.0 approved <br>
 
-## Table of contents
-- [Test Plan](#test-plan)
-  - [Table of contents](#table-of-contents)
-  - [Introduction](#introduction)
-  - [Items and features tested](#items-and-features-test)
-  - [Approach](#approach)
-  - [Item Pass /Fail Criteria](#item-pass-fail-criteria)
-- [Test Deliverables](#test-deliverables)
-
-  
----
-
-
-
-
 
 ## Introduction 
 This document outlines the test plan for the ChatSiGira client.  Incidents, Defects and Changes that need to be made will be presented here formally.  Although the ideas expressed here are separate entities, they will be combined into this one document.

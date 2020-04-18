@@ -14,19 +14,6 @@ March  3, 2020
 - Zerbato Nicolò
   
 
-
-## Contents
-
-**Contents**
-
->1) Introduction 
-
->2) Client-side configuration 
-
->3) Install on Simulator or Device 
-
->4) System Maintenance 
-
 ---
 | Version | Date   | Name| Description         |
 |---------|--------|---------------------------------------------------------------------------------|---------------------|
@@ -42,8 +29,11 @@ ChatSiGira is an application created for communication between different clients
 ### 2. Client-side configuration 
 
 For the client application you need to have a development environment based on your needs and preferences. The ChatSiGira project was based on the Java programming language because it was less complex for the team and we already had a solid preparation. This is the link of the repository to download the code and test it to see all the implemented features:
-https://github.com/teddyedo/2020_5EI_team1_Allari.git
-### 3. Install on Simulator or Device 
+https://github.com/teddyedo/2020_5EI_team1_Allari.git.
+
+
+
+###  3. Install on Simulator or Device 
 ---
 #### 3.1 Required Components
 To test the application you need to use a computer with a Windows or IOS operating system, the NetBeans development environment, the process of running a centralized server for communication between clients. This application can only be used locally and is not supported for mobile devices.

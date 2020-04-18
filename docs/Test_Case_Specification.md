@@ -1,6 +1,4 @@
 ﻿# Test Case Specification
-1) **Introduction**
-2) **Test Cases: Chat application**
 
 
 ## INTRODUCTION
@@ -79,8 +77,9 @@ ___
     3. Select Disconnection option; 
 
 
-: - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - : - :
-### <span style="color:blue">**Team:**</span>
+---
+
+### **Team:**
 
     - Allari Edoardo
     - Bologna Abreham
