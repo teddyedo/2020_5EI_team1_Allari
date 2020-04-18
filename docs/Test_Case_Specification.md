@@ -15,7 +15,8 @@ ___
 | Objective    | Confirm that proper user's information yields access to the server as expected.. |
 | Test Data    | Login information: User Name = Pippo; Room = school|
 | Expected Results | The system displays the user interface with the option to log out, to create a new room or to scroll through the list of all users connected to the server and chat with anyone. The list of users and rooms must match the one found on [https://jitpack.io/JacopoWolf/PotatoChatProtocol](https://jitpack.io/#JacopoWolf/PotatoChatProtocol).|
-| Test Actions    
+| Test Actions |
+
     1. Start Chat application; 
     2. Enter login information
 ___
@@ -28,7 +29,8 @@ ___
 | Objective    | Confirm that valid user id with an invalid username denies access to the server without leaving the user stranded. |
 | Test Data    | Correct User ID, incorrect Username: Username = Peppo; Room = school|
 | Expected Results    | System displays error message with option to try again.                                           |
-| Test Actions    
+| Test Actions  |
+
     1. Start Chat application; 
     2. Enter invalid login information
 
@@ -79,12 +81,10 @@ ___
 
 ---
 
-### **Team:**
+Team:
 
-    - Allari Edoardo
-    - Bologna Abreham
-    - Nicolis Pietro
-    - Pollinari Jonathan
-    - Zerbato Nicolò
-
-
+- Allari Edoardo
+- Bologna Abreham
+- Nicolis Pietro
+- Pollinari Jonathan
+- Zerbato Nicolò
