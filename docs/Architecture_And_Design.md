@@ -30,6 +30,8 @@ The purpose of this document is to describe the architecture and design of the *
 
 ## Logical and Process View
 
+![](https://github.com/teddyedo/2020_5EI_team1_Allari/blob/master/docs/Immagini/process%20view.png?raw=true)
+
 - The **Reader** class is a thread which has the task of waiting for input messages from the server;
 - The **Executor** class is a thread that has the task of take the message red by the Reader and pass it to the interpreter; after the interpretation the executor (that now knows what to do) consults the **WhatToDo** class;
 - The **Interpreter** class has the task of take the message received and understand what type of packet is arrived; after that it returns the packet to the executor;
@@ -38,6 +40,9 @@ The purpose of this document is to describe the architecture and design of the *
 ## Use Case View
 For this view, please consult the User Guide.
 
+## Architecture view
+
+![](https://github.com/teddyedo/2020_5EI_team1_Allari/blob/master/docs/Immagini/architecture.png?raw=true)
 
 ## Design Goals
 The design priorities for the ChatSiGira application are:
