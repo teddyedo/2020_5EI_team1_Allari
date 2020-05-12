@@ -1,5 +1,15 @@
 # Documentation
 
+This documentation is made for a school project (see the PCP protocol for more informations) made by TEAM 1, composed by:
+
+- Allari Edoardo
+- Bologna Abreham
+- Nicolis Pietro
+- Pollinari Jonathan
+- Zerbato Nicolò
+
+
+
 - [Project Charter](https://github.com/teddyedo/2020_5EI_team1_Allari/blob/master/docs/Project_Charter.md)
 - [Software Requirement Specification](https://github.com/teddyedo/2020_5EI_team1_Allari/blob/master/docs/Software_Requirements_Specification.md)
 - [Software Project Management Plan](https://github.com/teddyedo/2020_5EI_team1_Allari/blob/master/docs/Software_Project_Management_Plan.md)
