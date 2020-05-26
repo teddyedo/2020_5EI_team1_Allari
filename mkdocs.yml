@@ -1,5 +1,7 @@
 site_name: 2020_5EI_Team1
 nav:
+    - 'Business Model Canvas': 'Business_Model_Canvas.pdf'
+    - 'Project Model Canvas': 'Project_Model_Canvas.pdf' 
     - 'Project Charter': 'Project_Charter.md'
     - 'Project Charter - PDF': 'PDF/Project_Charter.pdf'
     - 'Software Requirements Specification': 'Software_Requirements_Specification.md'
@@ -8,8 +10,6 @@ nav:
     - 'Software Project Management Plan - PDF': 'PDF/Software_Project_Management_Plan.pdf'
     - 'Test Plan': 'Test_Plan.md'
     - 'Test Plan - PDF': 'PDF/Test_Plan.pdf'
-    - 'Business Model Canvas': 'Business_Model_Canvas.pdf'
-    - 'Project Model Canvas': 'Project_Model_Canvas.pdf' 
     - 'Iteration Plan': 'Iteration_Plan.md'
     - 'Iteration Plan - PDF': 'PDF/Iteration_Plan.pdf'
     - 'Success Criteria': 'Success_Criteria.md'
